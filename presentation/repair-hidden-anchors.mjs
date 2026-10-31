@@ -1,0 +1,1 @@
+import fs from 'node:fs';const p=new URL('./android-renderer.js',import.meta.url);let s=fs.readFileSync(p,'utf8');s=s.replace("for(const c of n.c){if(c.a.visibility==='gone')continue;const ca=", "for(const c of n.c){const ca=");fs.writeFileSync(p,s);

@@ -1,0 +1,169 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Based on the complete customer-only rules shown on October 11, 2026.
+    // Android must submit the driver user profile and application in one batch.
+    // Approval/admin review is a separate trusted backend operation, not a client write.
+    function owns(uid) {
+      return request.auth != null && request.auth.uid == uid;
+    }
+    function text(value, maximum) {
+      return value is string && value.size() > 0 && value.size() <= maximum;
+    }
+    function manualDate(value) {
+      return value is string
+        && value.matches('^(0?[1-9]|1[0-2])/(0?[1-9]|[12][0-9]|3[01])/[0-9]{4}$');
+    }
+
+    // Directory contains only display fields; uploaded ID/clearance and contact details
+    // remain in the owner-only application. Clients cannot invent approval status.
+    match /driverProfiles/{driverId} {
+      function day(d) {
+        return d is map && d.keys().hasOnly(['enabled', 'start', 'end', 'configured'])
+          && (!('configured' in d) || (d.configured is bool && (d.configured || !d.enabled)))
+          && d.enabled is bool && d.start is int && d.end is int
+          && d.start >= 0 && d.start < 1440 && d.end >= 0 && d.end < 1440
+          && (!d.enabled || d.start < d.end);
+      }
+      function validMatching(m) {
+        return m is map && m.keys().hasOnly(['areas', 'vehicles', 'transmissions', 'rate', 'accepting', 'weekly', 'experience', 'languages'])
+          && (!('languages' in m) || (m.languages is list && m.languages.size() <= 3
+            && m.languages.hasOnly(['Filipino', 'English', 'Cebuano/Bisaya'])))
+          && (!('experience' in m) || (m.experience is string && m.experience.size() <= 100))
+          && m.areas is list && m.areas.size() <= 30
+          && m.vehicles is list && m.vehicles.hasOnly(['Sedan', 'SUV', 'Van', 'Pickup', 'Truck', 'Luxury'])
+          && m.transmissions is list && m.transmissions.hasOnly(['Automatic', 'Manual'])
+          && (m.rate == null || (m.rate is int && m.rate >= 0 && m.rate <= 100000))
+          && m.accepting is bool && m.weekly is list
+          && (!m.accepting || (request.resource.data.status == 'approved'
+            && get(/databases/$(database)/documents/driverApplications/$(driverId)).data.status == 'approved'
+            && m.get('languages', []).size() > 0 && m.vehicles.size() > 0 && m.transmissions.size() > 0
+            && m.areas.size() > 0 && !m.areas.hasAny(['', 'Select service areas']) && m.rate != null
+            && 'experience' in m && m.experience.matches('^([0-9]|[1-7][0-9]|80)$')))
+          && (m.weekly.size() == 0 || (m.weekly.size() == 7 && day(m.weekly[0]) && day(m.weekly[1])
+            && day(m.weekly[2]) && day(m.weekly[3]) && day(m.weekly[4]) && day(m.weekly[5]) && day(m.weekly[6])));
+      }
+      function validBusyChange() {
+        let d = request.resource.data;
+        let id = d.busyBookingId;
+        let path = /databases/$(database)/documents/bookings/$(id);
+        let present = existsAfter(path);
+        let booking = present ? getAfter(path).data : {};
+        let active = present && booking.phase in ['ACCEPTED', 'ON_THE_WAY', 'ARRIVED', 'IN_PROGRESS'];
+        return id is string && id.size() > 0 && id.size() <= 200
+          && d.diff(resource.data).affectedKeys().hasOnly(['busySlots', 'busyBookingId'])
+          && d.busySlots is map && d.busySlots.size() <= 500
+          && d.busySlots.diff(resource.data.busySlots).affectedKeys().hasOnly([id])
+          && (!present || booking.driverUid == driverId)
+          && (active ? d.busySlots.get(id, null) == {
+            'date': booking.date, 'time': booking.time, 'hours': booking.hours,
+            'phase': booking.phase, 'started': booking.get('started', 0), 'extensionMinutes': booking.get('extensionMinutes', 0)
+          } : !(id in d.busySlots));
+      }
+      function validProfile() {
+        let source = get(/databases/$(database)/documents/driverApplications/$(driverId)).data;
+        let data = request.resource.data;
+        return data.keys().hasAll(['fullName', 'experience', 'bio', 'status'])
+          && data.keys().hasOnly(['fullName', 'experience', 'bio', 'status', 'thumbnail', 'matching',
+            'busySlots', 'busyBookingId', 'availabilityReady', 'savedLocation', 'address'])
+          && (!('savedLocation' in data) || (data.savedLocation is map
+            && data.savedLocation.keys().hasOnly(['latitude', 'longitude', 'capturedAt', 'source'])
+            && data.savedLocation.latitude is number && data.savedLocation.latitude >= -90 && data.savedLocation.latitude <= 90
+            && data.savedLocation.longitude is number && data.savedLocation.longitude >= -180 && data.savedLocation.longitude <= 180
+            && data.savedLocation.capturedAt is int && data.savedLocation.capturedAt > 0
+            && data.savedLocation.capturedAt <= request.time.toMillis() + 10000
+            && data.savedLocation.source in ['gps', 'address']))
+          && (!('matching' in data) ||
+            (resource != null && data.matching == resource.data.get('matching', null)) || validMatching(data.matching))
+          && (!('availabilityReady' in data) || (data.availabilityReady is bool && 'busySlots' in data))
+          // Ordinary profile edits may initialize empty slots, but cannot erase/change booked time.
+          && (resource == null ? data.get('busySlots', {}) == {} :
+            ((!('busySlots' in resource.data) || 'busySlots' in data) &&
+              data.get('busySlots', {}) == resource.data.get('busySlots', {})))
+          && (resource == null ? !('busyBookingId' in data) :
+            data.get('busyBookingId', null) == resource.data.get('busyBookingId', null))
+          && (!('address' in data) || data.address == source.address)
+          && data.fullName == source.fullName
+          && data.experience == source.experience
+          && data.bio == source.bio
+          && data.status == source.status
+          && (!('thumbnail' in data) || (data.thumbnail is string && data.thumbnail.size() <= 60000));
+      }
+      allow get: if owns(driverId) || (request.auth != null && resource.data.status == 'approved');
+      allow list: if request.auth != null && resource.data.status == 'approved';
+      allow create: if owns(driverId) && validProfile();
+      // Busy-slot transitions validate only their small projection, avoiding revalidating all seven schedule days.
+      allow update: if owns(driverId) &&
+        ((request.resource.data.diff(resource.data).affectedKeys().hasOnly(['busySlots', 'busyBookingId'])
+          && 'busyBookingId' in request.resource.data && validBusyChange()) ||
+          (request.resource.data.diff(resource.data).affectedKeys().hasOnly(['matching']) && validMatching(request.resource.data.matching)) ||
+          validProfile());
+      allow update: if request.auth != null && 'busyBookingId' in request.resource.data
+        && getAfter(/databases/$(database)/documents/bookings/$(request.resource.data.busyBookingId)).data.customerUid == request.auth.uid
+        && getAfter(/databases/$(database)/documents/bookings/$(request.resource.data.busyBookingId)).data.phase == 'CANCELLED'
+        && validBusyChange();
+      allow delete: if false;
+    }
+
+    match /users/{userId} {
+      // Preserve the existing customer profile fields and read-only permissions.
+      allow create: if owns(userId)
+        && request.resource.data.keys().hasAll([
+          'fullName', 'phoneNumber', 'email', 'role', 'createdAt'
+        ])
+        && request.resource.data.keys().hasOnly([
+          'fullName', 'phoneNumber', 'email', 'role', 'createdAt'
+        ])
+        && request.resource.data.email == request.auth.token.email
+        && request.resource.data.fullName is string
+        && request.resource.data.phoneNumber is string
+        && (request.resource.data.role == 'customer'
+          || (request.resource.data.role == 'driver'
+            && request.resource.data.createdAt == request.time
+            && getAfter(/databases/$(database)/documents/driverApplications/$(userId)).data.status == 'pending'));
+
+      allow get: if owns(userId);
+      allow list, update, delete: if false;
+    }
+
+    match /driverApplications/{driverId} {
+      function validApplication() {
+        let data = request.resource.data;
+        let fields = [
+          'fullName', 'email', 'phoneNumber', 'birthDate', 'address',
+          'experience', 'bio', 'licenseNumber', 'licenseExpiration',
+          'issueDate', 'validityDate', 'submissionId', 'licenseFrontPath',
+          'licenseBackPath', 'policeImagePath', 'profilePhotoPath',
+          'termsAccepted', 'status', 'createdAt'
+        ];
+        let profile = getAfter(/databases/$(database)/documents/users/$(driverId)).data;
+        let folder = driverId + '/' + data.submissionId + '/';
+        return data.keys().hasAll(fields) && data.keys().hasOnly(fields)
+          && profile.role == 'driver'
+          && data.email == request.auth.token.email
+          && data.email == profile.email
+          && data.fullName == profile.fullName
+          && data.phoneNumber == profile.phoneNumber
+          && text(data.fullName, 200) && text(data.phoneNumber, 32)
+          && manualDate(data.birthDate) && text(data.address, 1000)
+          && text(data.experience, 100) && text(data.bio, 2000)
+          && text(data.licenseNumber, 100)
+          && manualDate(data.licenseExpiration)
+          && manualDate(data.issueDate) && manualDate(data.validityDate)
+          && data.submissionId is string
+          && data.submissionId.matches('^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$')
+          && data.licenseFrontPath == folder + 'license-front.jpg'
+          && data.licenseBackPath == folder + 'license-back.jpg'
+          && data.policeImagePath == folder + 'police-clearance.jpg'
+          && data.profilePhotoPath == driverId + '/profile.jpg'
+          && data.termsAccepted == true
+          && data.status == 'pending'
+          && data.createdAt == request.time;
+      }
+      allow create: if owns(driverId) && validApplication();
+      allow get: if owns(driverId);
+      // Submitted details are view-only. Clients cannot approve themselves.
+      allow list, update, delete: if false;
+    }
+  }
+}

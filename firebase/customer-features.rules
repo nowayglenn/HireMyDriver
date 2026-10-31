@@ -1,0 +1,86 @@
+// Private editable customer details; contact sharing is scoped to each booking below.
+match /users/{uid}/settings/profile {
+  allow read: if owns(uid);
+  allow create, update: if owns(uid)
+    && request.resource.data.keys().hasAll(['name', 'phone', 'address'])
+    && request.resource.data.keys().hasOnly(['name', 'phone', 'address'])
+    && text(request.resource.data.name, 200)
+    && request.resource.data.phone is string && request.resource.data.phone.size() <= 32
+    && request.resource.data.address is string && request.resource.data.address.size() <= 1000;
+  allow delete: if false;
+}
+match /bookings/{bookingId}/customer/profile {
+  function trip() { return get(/databases/$(database)/documents/bookings/$(bookingId)).data; }
+  allow read: if request.auth != null && request.auth.uid in [trip().customerUid, trip().driverUid];
+  allow create, update: if owns(trip().customerUid)
+    && request.resource.data.keys().hasAll(['name', 'email', 'phone', 'address', 'updatedAt'])
+    && request.resource.data.keys().hasOnly(['name', 'email', 'phone', 'address', 'updatedAt'])
+    && text(request.resource.data.name, 200)
+    && request.resource.data.email == request.auth.token.email
+    && request.resource.data.phone is string && request.resource.data.phone.size() <= 32
+    && request.resource.data.address is string && request.resource.data.address.size() <= 1000
+    && request.resource.data.updatedAt == request.time;
+  allow delete: if false;
+}
+match /users/{uid}/public/profile {
+  allow read: if request.auth != null;
+  allow create, update: if owns(uid) && request.resource.data.keys().hasOnly(['thumbnail', 'name'])
+    && request.resource.data.keys().hasAny(['thumbnail', 'name'])
+    && (!('thumbnail' in request.resource.data) || (request.resource.data.thumbnail is string && request.resource.data.thumbnail.size() <= 60000))
+    && (!('name' in request.resource.data) || request.resource.data.name == get(/databases/$(database)/documents/users/$(uid)).data.fullName);
+  allow delete: if false;
+}
+match /users/{uid}/settings/emergencyContact {
+  allow read: if owns(uid);
+  allow create, update: if owns(uid)
+    && request.resource.data.keys().hasAll(['name', 'phone', 'relationship', 'tripDetails', 'updatedAt'])
+    && request.resource.data.keys().hasOnly(['name', 'phone', 'relationship', 'tripDetails', 'updatedAt'])
+    && text(request.resource.data.name, 100)
+    && request.resource.data.phone is string && request.resource.data.phone.matches('^[+]639[0-9]{9}$')
+    && request.resource.data.relationship in ['Mother', 'Father', 'Spouse', 'Sibling', 'Friend', 'Other']
+    && request.resource.data.tripDetails is bool && request.resource.data.updatedAt == request.time;
+  allow delete: if false;
+}
+match /reviews/{bookingId} {
+  function reviewedBooking() { return get(/databases/$(database)/documents/bookings/$(bookingId)).data; }
+  function validReview() {
+    let data = request.resource.data;
+    let booking = reviewedBooking();
+    return owns(booking.customerUid) && booking.phase == 'COMPLETED'
+      && data.keys().hasAll(['customerUid', 'driverUid', 'rating', 'comment', 'tags', 'createdAt', 'updatedAt'])
+      && data.keys().hasOnly(['customerUid', 'driverUid', 'rating', 'comment', 'tags', 'createdAt', 'updatedAt', 'customerName'])
+      && (!('customerName' in data) || data.customerName == booking.customer)
+      && data.customerUid == booking.customerUid && data.driverUid == booking.driverUid
+      && data.rating is int && data.rating >= 1 && data.rating <= 5
+      && data.comment is string && data.comment.size() <= 500
+      && data.tags is list && data.tags.size() <= 5
+      && data.tags.toSet().size() == data.tags.size()
+      && data.tags.hasOnly(['Punctual', 'Professional', 'Safe Driving', 'Good Communication', 'Friendly'])
+      && data.updatedAt == request.time;
+  }
+  // Display feedback and aggregate ratings to signed-in users. No contact or trip locations here.
+  allow read: if request.auth != null;
+  allow create: if validReview() && request.resource.data.createdAt == request.time;
+  allow update: if validReview() && request.resource.data.createdAt == resource.data.createdAt
+    && request.resource.data.diff(resource.data).affectedKeys().hasOnly(['rating', 'comment', 'tags', 'updatedAt', 'customerName']);
+  allow delete: if false;
+}
+// SMS is sent only by the authenticated server; clients cannot fabricate a sent status.
+match /emergencyAlerts/{alertId} {
+  allow read: if owns(resource.data.customerUid);
+  allow write: if false;
+}
+// Tokens and notification contents are private to their recipient; the trusted relay writes events.
+match /users/{uid}/devices/{deviceId} {
+  allow read, delete: if owns(uid);
+  allow create, update: if owns(uid) && request.resource.data.keys().hasOnly(['token', 'role', 'updatedAt'])
+    && text(request.resource.data.token, 4096)
+    && request.resource.data.role == get(/databases/$(database)/documents/users/$(uid)).data.role
+    && request.resource.data.updatedAt == request.time;
+}
+match /users/{uid}/notifications/{eventId} {
+  allow read: if owns(uid);
+  allow update: if owns(uid) && request.resource.data.diff(resource.data).affectedKeys().hasOnly(['read'])
+    && request.resource.data.read == true;
+  allow create, delete: if false;
+}

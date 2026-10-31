@@ -1,0 +1,11 @@
+import fs from 'node:fs';
+const path=new URL('./android-renderer.js',import.meta.url);let s=fs.readFileSync(path,'utf8');
+s=s.replace("nativeMeasure(c,innerW,/ScrollView/.test(t)?0:innerH)","nativeMeasure(c,t==='HorizontalScrollView'&&c.a.layout_width==='wrap_content'?10000:innerW,/ScrollView/.test(t)?0:innerH)");
+s=s.replace("${drawableSvg(a.icon.split('/').at(-1),a.iconTint||a.textColor)}", "${ASSETS[a.icon.split('/').at(-1)]?'<img src=\"'+ASSETS[a.icon.split('/').at(-1)]+'\" style=\"width:100%;height:100%;object-fit:contain\" alt=\"\">':drawableSvg(a.icon.split('/').at(-1),a.iconTint||a.textColor)}");
+s=s.replace("el.style.borderBottom=a.background===", "el.style.borderBottom=t==='TextInputEditText'||a.background===");
+s=s.replace("if(t==='TextInputLayout'){el.style.border", "if(t==='TextInputLayout'){if(a.startIconDrawable){const start=document.createElement('span');start.style.cssText='position:absolute;left:14px;top:16px;width:24px;height:24px';start.innerHTML=drawableSvg(a.startIconDrawable.split('/').at(-1),a.startIconTint);el.appendChild(start)}el.style.border");
+s=s.replace("c.box.x=12;c.box.y=6;c.box.w=innerW-24;c.box.h=44", "c.box.x=a.startIconDrawable?48:12;c.box.y=6;c.box.w=innerW-c.box.x-12;c.box.h=44");
+fs.writeFileSync(path,s);
+const screens=new URL('./android-screens.js',import.meta.url);s=fs.readFileSync(screens,'utf8');
+s=s.replace("if(screen==='home'&&!drv){", "if(screen==='home'&&!drv){['txtSeeAllAi','txtSeeAll'].forEach(id=>set(id,{layout_width:'wrap_content',layout_weight:'0'}));");
+fs.writeFileSync(screens,s);

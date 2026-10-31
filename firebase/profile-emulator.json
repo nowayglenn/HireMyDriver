@@ -1,0 +1,14 @@
+{
+  "firestore": {
+    "rules": "deployed-profile-rules-after.rules"
+  },
+  "emulators": {
+    "firestore": {
+      "port": 8188
+    },
+    "ui": {
+      "enabled": false
+    },
+    "singleProjectMode": true
+  }
+}

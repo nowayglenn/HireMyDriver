@@ -1,0 +1,132 @@
+// Add this match block INSIDE match /databases/{database}/documents in the existing rules.
+// Keep existing customer, driver, admin and messaging rules intact.
+match /bookings/{bookingId} {
+  function signedIn() {
+    return request.auth != null && request.auth.token.firebase.sign_in_provider != 'anonymous';
+  }
+  function driver() { return signedIn() && resource.data.driverUid == request.auth.uid; }
+  function customer() { return signedIn() && resource.data.customerUid == request.auth.uid; }
+  function readyDriver(uid) {
+    let p = get(/databases/$(database)/documents/driverProfiles/$(uid)).data;
+    let m = p.get('matching', {});
+    return p.status == 'approved'
+      && get(/databases/$(database)/documents/driverApplications/$(uid)).data.status == 'approved'
+      && m.get('accepting', false) == true
+      && m.get('vehicles', []).size() > 0 && m.get('transmissions', []).size() > 0
+      && m.get('areas', []).size() > 0 && !m.areas.hasAny(['', 'Select service areas'])
+      && m.get('languages', []).size() > 0
+      && m.languages.hasOnly(['Filipino', 'English', 'Cebuano/Bisaya'])
+      && m.get('rate', null) is int && m.rate >= 0 && m.rate <= 100000
+      && m.get('experience', '').matches('^([0-9]|[1-7][0-9]|80)$');
+  }
+  function place(p) {
+    return p is map && p.keys().hasOnly(['label', 'lat', 'lon'])
+      && p.label is string && p.label.size() > 0 && p.label.size() <= 1000
+      && p.lat is number && p.lat >= -85 && p.lat <= 85
+      && p.lon is number && p.lon >= -180 && p.lon <= 180;
+  }
+  function changes(fields) {
+    let changed = request.resource.data.diff(resource.data).affectedKeys();
+    let events = request.resource.data.get('statusEvents', {});
+    let extensionKey = 'EXTENSION_' + string(request.resource.data.get('extensionSequence', 0)) + '_' + request.resource.data.get('extensionStatus', '');
+    let extensionEvents = request.resource.data.get('extensionEvents', {});
+    return changed.hasOnly(fields.concat(['statusEvents', 'extensionEvents']))
+      && (!changed.hasAny(['extensionEvents']) || (changed.hasAny(['extensionStatus', 'extensionSequence'])
+        && extensionEvents is map && extensionEvents.diff(resource.data.get('extensionEvents', {})).affectedKeys().hasOnly([extensionKey])
+        && extensionEvents[extensionKey] == request.time))
+      && (!changed.hasAny(['statusEvents']) || (request.resource.data.phase != resource.data.phase
+        && events is map && events.diff(resource.data.get('statusEvents', {})).affectedKeys().hasOnly([request.resource.data.phase])
+        && events[request.resource.data.phase] == request.time));
+  }
+  function transition(from, to, fields) {
+    return resource.data.phase == from && request.resource.data.phase == to && changes(fields);
+  }
+  function availabilityConsistent() {
+    let p = getAfter(/databases/$(database)/documents/driverProfiles/$(resource.data.driverUid)).data;
+    let b = request.resource.data;
+    return !('busySlots' in p) || (b.phase in ['ACCEPTED', 'ON_THE_WAY', 'ARRIVED', 'IN_PROGRESS']
+      ? p.busySlots.get(bookingId, null) == {
+        'date': b.date, 'time': b.time, 'hours': b.hours, 'phase': b.phase, 'started': b.get('started', 0), 'extensionMinutes': b.get('extensionMinutes', 0)
+      } : !(bookingId in p.busySlots));
+  }
+  allow get: if signedIn() && (resource == null || driver() || customer());
+  allow list: if driver() || customer();
+  allow create: if signedIn()
+    && request.resource.data.keys().hasAll(['id', 'customerUid', 'driverUid', 'driver', 'customer',
+      'pickupLabel', 'destinationLabel', 'destinations', 'hours', 'vehicle', 'notes', 'fee', 'date', 'time',
+      'phase', 'request', 'reached', 'local', 'driverImage', 'driverRating', 'synced', 'createdAt', 'updatedAt'])
+    && request.resource.data.keys().hasOnly(['id', 'customerUid', 'driverUid', 'driver', 'customer',
+      'pickupLabel', 'destinationLabel', 'pickup', 'destinations', 'hours', 'vehicle', 'notes', 'fee', 'date', 'time',
+      'phase', 'request', 'reached', 'local', 'driverImage', 'driverRating', 'synced', 'createdAt', 'updatedAt', 'hourlyRate'])    && request.resource.data.id == bookingId
+    && request.resource.data.customerUid == request.auth.uid
+    && request.resource.data.driverUid is string && request.resource.data.driverUid != request.auth.uid
+    && !exists(/databases/$(database)/documents/driverApplications/$(request.auth.uid))
+    && exists(/databases/$(database)/documents/driverProfiles/$(request.resource.data.driverUid))
+    && readyDriver(request.resource.data.driverUid)
+    && request.resource.data.phase == 'REQUESTED'
+    && request.resource.data.synced == true && request.resource.data.local == true
+    && request.resource.data.hours is int && request.resource.data.hours >= 1 && request.resource.data.hours <= 24
+    && (!('hourlyRate' in request.resource.data) || request.resource.data.hourlyRate == get(/databases/$(database)/documents/driverProfiles/$(request.resource.data.driverUid)).data.matching.rate)
+    && request.resource.data.reached == 0 && request.resource.data.request == ''
+    && request.resource.data.driver is string && request.resource.data.customer is string
+    && request.resource.data.pickupLabel is string && request.resource.data.destinationLabel is string
+    && (!('pickup' in request.resource.data) || place(request.resource.data.pickup))
+    && request.resource.data.destinations is list && request.resource.data.destinations.size() <= 25
+    && request.resource.data.vehicle is string && request.resource.data.notes is string
+    && request.resource.data.notes.size() <= 5000 && request.resource.data.fee is string
+    && request.resource.data.date is string && request.resource.data.time is string
+    && request.resource.data.driverImage == 0 && request.resource.data.driverRating is string
+    && request.resource.data.createdAt == request.time && request.resource.data.updatedAt == request.time;
+  allow update: if signedIn() && request.resource.data.updatedAt == request.time && (
+    (driver() && availabilityConsistent() && (
+      (transition('REQUESTED', 'ACCEPTED', ['phase', 'updatedAt']) && readyDriver(resource.data.driverUid))
+      || (transition('REQUESTED', 'DECLINED', ['phase', 'request', 'updatedAt'])
+        && request.resource.data.request is string && request.resource.data.request.size() <= 1000)
+      || transition('ACCEPTED', 'ON_THE_WAY', ['phase', 'updatedAt'])
+      || transition('ON_THE_WAY', 'ARRIVED', ['phase', 'updatedAt'])
+      || (transition('ARRIVED', 'IN_PROGRESS', ['phase', 'started', 'updatedAt'])
+        && !('started' in resource.data) && request.resource.data.started is int
+        && request.resource.data.started > 0)
+      || (transition('IN_PROGRESS', 'COMPLETED', ['phase', 'completed', 'pending', 'updatedAt'])
+        && request.resource.data.completed is int && request.resource.data.completed >= resource.data.started
+        && !('pending' in request.resource.data))
+      || (resource.data.phase in ['ON_THE_WAY', 'ARRIVED', 'IN_PROGRESS']
+        && changes(['location', 'locationAt', 'updatedAt'])
+        && place(request.resource.data.location) && request.resource.data.locationAt is int)
+      || (resource.data.phase == 'IN_PROGRESS' && changes(['reached', 'updatedAt'])
+        && request.resource.data.reached == resource.data.reached + 1
+        && request.resource.data.reached <= resource.data.destinations.size())
+      || (resource.data.phase == 'IN_PROGRESS' && 'pending' in resource.data
+        && changes(['destinations', 'pending', 'request', 'updatedAt'])
+        && !('pending' in request.resource.data)
+        && ((request.resource.data.request == 'Destination declined'
+          && request.resource.data.destinations == resource.data.destinations)
+          || (request.resource.data.request == 'Destination accepted'
+            && request.resource.data.destinations == resource.data.destinations.concat([resource.data.pending]))))
+      || (resource.data.phase == 'IN_PROGRESS' && resource.data.get('extensionStatus', '') == 'PENDING'
+        && changes(['extensionStatus', 'extensionMinutes', 'updatedAt'])
+        && ((request.resource.data.extensionStatus == 'DECLINED'
+          && request.resource.data.get('extensionMinutes', 0) == resource.data.get('extensionMinutes', 0))
+          || (request.resource.data.extensionStatus == 'APPROVED'
+            && request.resource.data.extensionMinutes == resource.data.get('extensionMinutes', 0) + resource.data.requestedMinutes
+            && resource.data.hours * 60 + request.resource.data.extensionMinutes <= 1440)))
+    ))
+    || (customer() && resource.data.phase in ['REQUESTED', 'ACCEPTED', 'ON_THE_WAY', 'ARRIVED']
+      && request.resource.data.phase == 'CANCELLED' && availabilityConsistent()
+      && changes(['phase', 'request', 'cancellationReason', 'updatedAt'])
+      && request.resource.data.cancellationReason is string && request.resource.data.cancellationReason.size() > 0
+      && request.resource.data.cancellationReason.size() <= 1000
+      && request.resource.data.request == 'Cancelled: ' + request.resource.data.cancellationReason)
+    || (customer() && resource.data.phase == 'IN_PROGRESS' && resource.data.get('extensionStatus', '') != 'PENDING'
+      && changes(['requestedMinutes', 'extensionStatus', 'extensionSequence', 'updatedAt'])
+      && request.resource.data.extensionStatus == 'PENDING'
+      && request.resource.data.extensionSequence == resource.data.get('extensionSequence', 0) + 1
+      && request.resource.data.requestedMinutes is int && request.resource.data.requestedMinutes > 0
+      && resource.data.hours * 60 + resource.data.get('extensionMinutes', 0) + request.resource.data.requestedMinutes <= 1440)
+    || (customer() && resource.data.phase == 'IN_PROGRESS'
+      && !('pending' in resource.data) && resource.data.destinations.size() < 25
+      && changes(['pending', 'request', 'updatedAt']) && place(request.resource.data.pending)
+      && request.resource.data.request == 'Waiting for driver confirmation')
+  );
+  allow delete: if false;
+}

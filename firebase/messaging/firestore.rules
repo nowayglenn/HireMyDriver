@@ -1,0 +1,69 @@
+// Messaging rules ONLY. Merge these matches with reviewed existing rules; do not replace user/profile rules.
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    function member(data) {
+      return request.auth != null && (data.customerId == request.auth.uid || data.driverId == request.auth.uid);
+    }
+    match /conversations/{conversationId} {
+      function booking() { return get(/databases/$(database)/documents/bookings/$(conversationId)).data; }
+      function bookingMember() { return request.auth != null && request.auth.uid in [booking().customerUid, booking().driverUid]; }
+      allow create: if bookingMember()
+        && request.resource.data.keys().hasOnly(['customerId', 'driverId', 'customerName', 'driverName', 'active', 'lastMessageId', 'lastText', 'lastSenderId', 'readAt', 'updatedAt'])
+        && request.resource.data.customerId == booking().customerUid
+        && request.resource.data.driverId == booking().driverUid
+        && request.resource.data.customerName == booking().customer
+        && request.resource.data.driverName == booking().driver
+        && request.resource.data.active == true
+        && request.resource.data.lastMessageId == '' && request.resource.data.lastText == ''
+        && request.resource.data.lastSenderId == '' && request.resource.data.readAt == {}
+        && request.resource.data.updatedAt == request.time;
+      allow delete: if false;
+      allow get: if member(resource.data) || (!exists(/databases/$(database)/documents/conversations/$(conversationId)) && bookingMember());
+      allow list: if member(resource.data);
+
+      function readCursorUpdate() {
+        return request.resource.data.diff(resource.data).affectedKeys().hasOnly(['readAt'])
+          && request.resource.data.readAt is map
+          && request.resource.data.readAt.diff(resource.data.readAt).affectedKeys().hasOnly([request.auth.uid])
+          && request.resource.data.readAt[request.auth.uid] is timestamp
+          && request.resource.data.readAt[request.auth.uid] <= request.time
+          && request.resource.data.readAt[request.auth.uid] <= resource.data.updatedAt
+          && request.resource.data.readAt[request.auth.uid] >= resource.data.readAt.get(request.auth.uid, timestamp.date(1970, 1, 1));
+      }
+      function messageSummaryUpdate() {
+        let next = request.resource.data;
+        let messagePath = /databases/$(database)/documents/conversations/$(conversationId)/messages/$(next.lastMessageId);
+        return resource.data.active == true
+          && next.diff(resource.data).affectedKeys().hasOnly(['lastMessageId', 'lastText', 'lastSenderId', 'updatedAt'])
+          && next.lastMessageId is string && next.lastMessageId.size() > 0 && next.lastMessageId.size() <= 200
+          && next.lastMessageId != resource.data.lastMessageId
+          && next.lastSenderId == request.auth.uid && next.updatedAt == request.time
+          && !exists(messagePath)
+          && getAfter(messagePath).data.senderId == request.auth.uid
+          && getAfter(messagePath).data.text == next.lastText
+          && getAfter(messagePath).data.createdAt == request.time;
+      }
+      allow update: if member(resource.data) && (readCursorUpdate() || messageSummaryUpdate());
+
+      match /messages/{messageId} {
+        function thread() {
+          return get(/databases/$(database)/documents/conversations/$(conversationId)).data;
+        }
+        allow get, list: if member(thread());
+        allow create: if member(thread()) && thread().active == true
+          && messageId.size() > 0 && messageId.size() <= 200
+          && request.resource.data.keys().hasOnly(['senderId', 'text', 'createdAt'])
+          && request.resource.data.senderId == request.auth.uid
+          && request.resource.data.text is string
+          && request.resource.data.text.size() > 0 && request.resource.data.text.size() <= 2000
+          && request.resource.data.createdAt == request.time
+          && getAfter(/databases/$(database)/documents/conversations/$(conversationId)).data.lastMessageId == messageId
+          && getAfter(/databases/$(database)/documents/conversations/$(conversationId)).data.lastText == request.resource.data.text
+          && getAfter(/databases/$(database)/documents/conversations/$(conversationId)).data.lastSenderId == request.auth.uid
+          && getAfter(/databases/$(database)/documents/conversations/$(conversationId)).data.updatedAt == request.time;
+        allow update, delete: if false;
+      }
+    }
+  }
+}
