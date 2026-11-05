@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" android:layout_width="match_parent" android:layout_height="match_parent" android:background="#F8F9FB">
+    <LinearLayout android:id="@+id/driverSettingsHeader" android:layout_width="0dp" android:layout_height="wrap_content" android:minHeight="@dimen/screen_header_min_height" android:orientation="horizontal" android:gravity="center_vertical" android:background="#061B41" android:paddingStart="12dp" android:paddingEnd="24dp" android:tag="screen_header" app:layout_constraintTop_toTopOf="parent" app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent">
+        <ImageButton android:id="@+id/btnDriverSettingsBack" android:layout_width="48dp" android:layout_height="48dp" android:background="?attr/selectableItemBackgroundBorderless" android:padding="12dp" android:src="@drawable/ic_arrow_back" app:tint="#FFFFFF" android:contentDescription="Back"/>
+        <TextView android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content" android:paddingVertical="12dp" android:layout_marginStart="8dp" android:text="@string/driver_settings_title" android:textColor="#FFFFFF" android:textStyle="bold" android:textSize="@dimen/screen_header_title_size"/>
+    </LinearLayout>
+    <androidx.core.widget.NestedScrollView android:layout_width="0dp" android:layout_height="0dp" android:fillViewport="true" app:layout_constraintTop_toBottomOf="@id/driverSettingsHeader" app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent">
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="20dp">
+            <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/driver_preferences_title" android:textColor="#061B41" android:textSize="21sp" android:textStyle="bold"/>
+            <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="8dp" android:text="@string/driver_preferences_description" android:textColor="#667085" android:textSize="14sp" android:lineSpacingExtra="3dp"/>
+            <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="24dp" android:layout_marginBottom="10dp" android:text="@string/driver_preferences_heading" android:textColor="#667085" android:textSize="12sp" android:textStyle="bold" android:letterSpacing="0.06"/>
+            <com.google.android.material.card.MaterialCardView android:layout_width="match_parent" android:layout_height="wrap_content" app:cardBackgroundColor="#FFFFFF" app:cardCornerRadius="16dp" app:cardElevation="1dp" app:strokeColor="#E3E6EA" app:strokeWidth="1dp">
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical">
+                    <LinearLayout android:id="@+id/driverSettingsLanguage" android:layout_width="match_parent" android:layout_height="wrap_content" android:minHeight="80dp" android:padding="16dp" android:orientation="horizontal" android:gravity="center_vertical" android:background="?attr/selectableItemBackground" android:clickable="true" android:focusable="true">
+                        <ImageView android:layout_width="40dp" android:layout_height="40dp" android:background="@drawable/bg_circle_green" android:padding="10dp" android:src="@drawable/ic_language" app:tint="#2E7D32" android:importantForAccessibility="no"/>
+                        <LinearLayout android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content" android:layout_marginHorizontal="14dp" android:orientation="vertical">
+                            <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/menu_language" android:textColor="#061B41" android:textSize="15sp" android:textStyle="bold"/>
+                            <TextView android:id="@+id/driverSettingsLanguageSummary" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="4dp" android:text="@string/lang_english" android:textColor="#667085" android:textSize="12sp"/>
+                        </LinearLayout>
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="›" android:textColor="#B0B8C1" android:textSize="28sp" android:importantForAccessibility="no"/>
+                    </LinearLayout>
+                    <View android:layout_width="match_parent" android:layout_height="1dp" android:layout_marginStart="70dp" android:background="#F3F4F6"/>
+                    <LinearLayout android:id="@+id/driverSettingsLocation" android:layout_width="match_parent" android:layout_height="wrap_content" android:minHeight="80dp" android:padding="16dp" android:orientation="horizontal" android:gravity="center_vertical" android:background="?attr/selectableItemBackground" android:clickable="true" android:focusable="true">
+                        <ImageView android:layout_width="40dp" android:layout_height="40dp" android:background="@drawable/bg_circle_blue" android:padding="10dp" android:src="@drawable/ic_location" app:tint="#1463D9" android:importantForAccessibility="no"/>
+                        <LinearLayout android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content" android:layout_marginHorizontal="14dp" android:orientation="vertical">
+                            <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/location_settings_title" android:textColor="#061B41" android:textSize="15sp" android:textStyle="bold"/>
+                            <TextView  android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="4dp" android:text="@string/driver_location_summary" android:textColor="#667085" android:textSize="12sp"/>
+                        </LinearLayout>
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="›" android:textColor="#B0B8C1" android:textSize="28sp" android:importantForAccessibility="no"/>
+                    </LinearLayout>
+                    <View android:layout_width="match_parent" android:layout_height="1dp" android:layout_marginStart="70dp" android:background="#F3F4F6"/>
+                    <LinearLayout android:id="@+id/driverSettingsNotifications" android:layout_width="match_parent" android:layout_height="wrap_content" android:minHeight="80dp" android:padding="16dp" android:orientation="horizontal" android:gravity="center_vertical" android:background="?attr/selectableItemBackground" android:clickable="true" android:focusable="true">
+                        <ImageView android:layout_width="40dp" android:layout_height="40dp" android:background="@drawable/bg_circle_orange" android:padding="10dp" android:src="@drawable/ic_notification" app:tint="#FF7900" android:importantForAccessibility="no"/>
+                        <LinearLayout android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content" android:layout_marginHorizontal="14dp" android:orientation="vertical">
+                            <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/menu_notifications" android:textColor="#061B41" android:textSize="15sp" android:textStyle="bold"/>
+                            <TextView android:id="@+id/driverSettingsNotificationSummary" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="4dp" android:text="@string/driver_alerts_summary" android:textColor="#667085" android:textSize="12sp"/>
+                        </LinearLayout>
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="›" android:textColor="#B0B8C1" android:textSize="28sp" android:importantForAccessibility="no"/>
+                    </LinearLayout>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+            <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="24dp" android:layout_marginBottom="10dp" android:text="@string/driver_information_heading" android:textColor="#667085" android:textSize="12sp" android:textStyle="bold" android:letterSpacing="0.06"/>
+            <com.google.android.material.card.MaterialCardView android:layout_width="match_parent" android:layout_height="wrap_content" app:cardBackgroundColor="#FFFFFF" app:cardCornerRadius="16dp" app:cardElevation="1dp" app:strokeColor="#E3E6EA" app:strokeWidth="1dp">
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical">
+                    <LinearLayout android:id="@+id/driverSettingsTerms" android:layout_width="match_parent" android:layout_height="wrap_content" android:minHeight="80dp" android:padding="16dp" android:orientation="horizontal" android:gravity="center_vertical" android:background="?attr/selectableItemBackground" android:clickable="true" android:focusable="true">
+                        <ImageView android:layout_width="40dp" android:layout_height="40dp" android:background="@drawable/bg_circle_purple" android:padding="10dp" android:src="@drawable/ic_document" app:tint="#673AB7" android:importantForAccessibility="no"/>
+                        <LinearLayout android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content" android:layout_marginHorizontal="14dp" android:orientation="vertical">
+                            <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/menu_terms_conditions" android:textColor="#061B41" android:textSize="15sp" android:textStyle="bold"/>
+                            <TextView  android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="4dp" android:text="@string/driver_terms_summary" android:textColor="#667085" android:textSize="12sp"/>
+                        </LinearLayout>
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="›" android:textColor="#B0B8C1" android:textSize="28sp" android:importantForAccessibility="no"/>
+                    </LinearLayout>
+                    <View android:layout_width="match_parent" android:layout_height="1dp" android:layout_marginStart="70dp" android:background="#F3F4F6"/>
+                    <LinearLayout android:id="@+id/driverSettingsPrivacy" android:layout_width="match_parent" android:layout_height="wrap_content" android:minHeight="80dp" android:padding="16dp" android:orientation="horizontal" android:gravity="center_vertical" android:background="?attr/selectableItemBackground" android:clickable="true" android:focusable="true">
+                        <ImageView android:layout_width="40dp" android:layout_height="40dp" android:background="@drawable/bg_circle_green" android:padding="10dp" android:src="@drawable/ic_lock" app:tint="#2E7D32" android:importantForAccessibility="no"/>
+                        <LinearLayout android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content" android:layout_marginHorizontal="14dp" android:orientation="vertical">
+                            <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/menu_privacy_policy" android:textColor="#061B41" android:textSize="15sp" android:textStyle="bold"/>
+                            <TextView  android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="4dp" android:text="@string/driver_privacy_summary" android:textColor="#667085" android:textSize="12sp"/>
+                        </LinearLayout>
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="›" android:textColor="#B0B8C1" android:textSize="28sp" android:importantForAccessibility="no"/>
+                    </LinearLayout>
+                    <View android:layout_width="match_parent" android:layout_height="1dp" android:layout_marginStart="70dp" android:background="#F3F4F6"/>
+                    <LinearLayout android:id="@+id/driverSettingsAbout" android:layout_width="match_parent" android:layout_height="wrap_content" android:minHeight="80dp" android:padding="16dp" android:orientation="horizontal" android:gravity="center_vertical" android:background="?attr/selectableItemBackground" android:clickable="true" android:focusable="true">
+                        <ImageView android:layout_width="40dp" android:layout_height="40dp" android:background="@drawable/bg_circle_gray" android:padding="10dp" android:src="@drawable/ic_info" app:tint="#061B41" android:importantForAccessibility="no"/>
+                        <LinearLayout android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content" android:layout_marginHorizontal="14dp" android:orientation="vertical">
+                            <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/menu_about" android:textColor="#061B41" android:textSize="15sp" android:textStyle="bold"/>
+                            <TextView  android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="4dp" android:text="@string/driver_about_summary" android:textColor="#667085" android:textSize="12sp"/>
+                        </LinearLayout>
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="›" android:textColor="#B0B8C1" android:textSize="28sp" android:importantForAccessibility="no"/>
+                    </LinearLayout>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+            <TextView android:id="@+id/driverSettingsVersion" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="24dp" android:gravity="center" android:textColor="#667085" android:textSize="12sp"/>
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

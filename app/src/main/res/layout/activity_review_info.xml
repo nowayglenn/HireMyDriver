@@ -1,0 +1,586 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF">
+
+    <!-- TOP HEADER -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/header"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="#001B43"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:tag="screen_header"
+        android:minHeight="@dimen/screen_header_min_height" >
+
+        <ImageButton
+            android:id="@+id/btnLicenseBack"
+            android:layout_width="@dimen/touch_target_size"
+            android:layout_height="@dimen/touch_target_size"
+            android:background="@android:color/transparent"
+            android:contentDescription="Back"
+            android:padding="12dp"
+            android:src="@drawable/ic_arrow_back"
+            app:tint="#FFFFFF"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginStart="@dimen/screen_header_icon_margin" />
+
+        <TextView
+            android:id="@+id/txtHeaderTitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Review Information"
+            android:textColor="#FFFFFF"
+            android:textSize="@dimen/screen_header_title_size"
+            android:textStyle="bold"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:tag="screen_header_title"
+            android:layout_marginTop="@dimen/screen_header_title_gap"
+            android:layout_marginBottom="@dimen/screen_header_title_gap"
+            android:layout_marginStart="@dimen/screen_header_title_gap"
+            android:layout_marginEnd="@dimen/screen_header_text_inset"
+            app:layout_constraintStart_toEndOf="@id/btnLicenseBack"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:gravity="start|center_vertical" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!-- MAIN CONTENT -->
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        android:scrollbars="none"
+        app:layout_constraintTop_toBottomOf="@id/header"
+        app:layout_constraintBottom_toTopOf="@id/reviewBottomArea"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingStart="18dp"
+            android:paddingEnd="18dp"
+            android:paddingTop="14dp"
+            android:paddingBottom="24dp">
+
+            <!-- STEP PROCESS -->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/stepContainer"
+                android:layout_width="match_parent"
+                android:layout_height="82dp">
+
+                <TextView
+                    android:id="@+id/step1"
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:layout_marginStart="16dp"
+                    android:background="@drawable/bg_step_completed"
+                    android:text="✓"
+                    android:gravity="center"
+                    android:textColor="#FFFFFF"
+                    android:textSize="13sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/step2"
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:background="@drawable/bg_step_completed"
+                    android:text="✓"
+                    android:gravity="center"
+                    android:textColor="#FFFFFF"
+                    android:textSize="13sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toEndOf="@id/step1"
+                    app:layout_constraintEnd_toStartOf="@id/step3"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintHorizontal_chainStyle="spread" />
+
+                <TextView
+                    android:id="@+id/step3"
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:background="@drawable/bg_step_completed"
+                    android:text="✓"
+                    android:gravity="center"
+                    android:textColor="#FFFFFF"
+                    android:textSize="13sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toEndOf="@id/step2"
+                    app:layout_constraintEnd_toStartOf="@id/step4"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/step4"
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:layout_marginEnd="16dp"
+                    android:background="@drawable/bg_step_active"
+                    android:gravity="center"
+                    android:text="4"
+                    android:textColor="#FFFFFF"
+                    android:textSize="13sp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <View
+                    android:id="@+id/line1"
+                    android:layout_width="0dp"
+                    android:layout_height="2dp"
+                    android:background="#D9DEE7"
+                    app:layout_constraintStart_toEndOf="@id/step1"
+                    app:layout_constraintEnd_toStartOf="@id/step2"
+                    app:layout_constraintTop_toTopOf="@id/step1"
+                    app:layout_constraintBottom_toBottomOf="@id/step1" />
+
+                <View
+                    android:id="@+id/line2"
+                    android:layout_width="0dp"
+                    android:layout_height="2dp"
+                    android:background="#D9DEE7"
+                    app:layout_constraintStart_toEndOf="@id/step2"
+                    app:layout_constraintEnd_toStartOf="@id/step3"
+                    app:layout_constraintTop_toTopOf="@id/step2"
+                    app:layout_constraintBottom_toBottomOf="@id/step2" />
+
+                <View
+                    android:id="@+id/line3"
+                    android:layout_width="0dp"
+                    android:layout_height="2dp"
+                    android:background="#D9DEE7"
+                    app:layout_constraintStart_toEndOf="@id/step3"
+                    app:layout_constraintEnd_toStartOf="@id/step4"
+                    app:layout_constraintTop_toTopOf="@id/step3"
+                    app:layout_constraintBottom_toBottomOf="@id/step3" />
+
+                <TextView
+                    android:id="@+id/labelStep1"
+                    android:layout_width="72dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="3dp"
+                    android:gravity="center"
+                    android:text="Account"
+                    android:textColor="#001B43"
+                    android:textSize="9sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="@id/step1"
+                    app:layout_constraintEnd_toEndOf="@id/step1"
+                    app:layout_constraintTop_toBottomOf="@id/step1" />
+
+                <TextView
+                    android:id="@+id/labelStep2"
+                    android:layout_width="82dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="3dp"
+                    android:gravity="center"
+                    android:textStyle="bold"
+                    android:maxLines="1"
+                    android:text="Personal Info"
+                    android:textColor="#001B43"
+                    android:textSize="9sp"
+                    app:layout_constraintStart_toStartOf="@id/step2"
+                    app:layout_constraintEnd_toEndOf="@id/step2"
+                    app:layout_constraintTop_toBottomOf="@id/step2" />
+
+                <TextView
+                    android:id="@+id/labelStep3"
+                    android:layout_width="82dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="3dp"
+                    android:gravity="center"
+                    android:textStyle="bold"
+                    android:maxLines="1"
+                    android:text="Requirements"
+                    android:textColor="#001B43"
+                    android:textSize="9sp"
+                    app:layout_constraintStart_toStartOf="@id/step3"
+                    app:layout_constraintEnd_toEndOf="@id/step3"
+                    app:layout_constraintTop_toBottomOf="@id/step3" />
+
+                <TextView
+                    android:id="@+id/labelStep4"
+                    android:layout_width="72dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="3dp"
+                    android:gravity="center"
+                    android:textStyle="bold"
+                    android:text="Review"
+                    android:textColor="#FF8A00"
+                    android:textSize="9sp"
+                    app:layout_constraintStart_toStartOf="@id/step4"
+                    app:layout_constraintEnd_toEndOf="@id/step4"
+                    app:layout_constraintTop_toBottomOf="@id/step4" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <TextView
+                android:id="@+id/txtReviewInformation"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="@string/review_info_title"
+                android:textColor="#273142"
+                android:textSize="22sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/txtReviewSubtitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:text="@string/review_info_subtitle"
+                android:textColor="#687386"
+                android:textSize="13sp" />
+
+            <!-- ACCOUNT INFORMATION -->
+            <LinearLayout
+                android:id="@+id/accountReviewCard"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/bg_booking_card"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/account_info_header"
+                        android:textColor="#16233A"
+                        android:textSize="15sp"
+                        android:textStyle="bold" />
+                    <TextView
+                        android:id="@+id/btnEditAccount"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/edit_label"
+                        android:textColor="#FF7A00"
+                        android:textSize="@dimen/action_button_text_size"
+                        android:textStyle="bold"
+                        android:minHeight="@dimen/action_button_min_height"
+                        android:minWidth="@dimen/touch_target_size"
+                        android:gravity="center" />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/txtReviewFullName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:text="Full Name"
+                    android:textColor="#555555"
+                    android:textSize="15sp" />
+                <TextView
+                    android:id="@+id/txtReviewEmail"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="Email Address"
+                    android:textColor="#555555"
+                    android:textSize="15sp" />
+                <TextView
+                    android:id="@+id/txtReviewPhone"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="Mobile Number"
+                    android:textColor="#555555"
+                    android:textSize="15sp" />
+            </LinearLayout>
+
+            <!-- PERSONAL INFORMATION -->
+            <LinearLayout
+                android:id="@+id/personalReviewCard"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/bg_booking_card"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/personal_info_header"
+                        android:textColor="#16233A"
+                        android:textSize="15sp"
+                        android:textStyle="bold" />
+                    <TextView
+                        android:id="@+id/btnEditPersonal"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/edit_label"
+                        android:textColor="#FF7A00"
+                        android:textSize="@dimen/action_button_text_size"
+                        android:textStyle="bold"
+                        android:minHeight="@dimen/action_button_min_height"
+                        android:minWidth="@dimen/touch_target_size"
+                        android:gravity="center" />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/txtReviewBirthDate"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:text="Date of Birth"
+                    android:textColor="#555555"
+                    android:textSize="15sp" />
+                <TextView
+                    android:id="@+id/txtReviewAddress"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="Address"
+                    android:textColor="#555555"
+                    android:textSize="15sp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+                    <com.google.android.material.imageview.ShapeableImageView
+                        android:id="@+id/imgReviewProfile"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/no_profile"
+                        app:shapeAppearanceOverlay="@style/CircleImage"
+                        app:strokeColor="#EEF0F3"
+                        app:strokeWidth="1dp" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="12dp"
+                        android:text="Profile Picture"
+                        android:textColor="#777777"
+                        android:textSize="14sp" />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/txtReviewExperience"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:text="Years of Driving Experience"
+                    android:textColor="#555555"
+                    android:textSize="15sp" />
+                <TextView
+                    android:id="@+id/txtReviewBio"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="Short Description / Bio"
+                    android:textColor="#555555"
+                    android:textSize="15sp" />
+            </LinearLayout>
+
+            <!-- LICENSE INFORMATION -->
+            <LinearLayout
+                android:id="@+id/licenseReviewCard"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/bg_booking_card"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/requirements_info_header"
+                        android:textColor="#16233A"
+                        android:textSize="15sp"
+                        android:textStyle="bold" />
+                    <TextView
+                        android:id="@+id/btnEditLicense"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/edit_label"
+                        android:textColor="#FF7A00"
+                        android:textSize="@dimen/action_button_text_size"
+                        android:textStyle="bold"
+                        android:minHeight="@dimen/action_button_min_height"
+                        android:minWidth="@dimen/touch_target_size"
+                        android:gravity="center" />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/txtReviewLicenseNumber"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:text="License Number"
+                    android:textColor="#555555"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:id="@+id/txtReviewExpirationDate"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="License Expiration Date"
+                    android:textColor="#555555"
+                    android:textSize="15sp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:gravity="center_horizontal">
+                        <ImageView
+                            android:id="@+id/imgReviewLicenseFront"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content" android:minHeight="180dp" android:adjustViewBounds="true"
+                            android:scaleType="fitCenter"
+                            android:background="@drawable/bg_upload_photo"
+                            android:src="@drawable/ic_license"
+                            android:padding="8dp"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="4dp"
+                            android:text="Front Preview"
+                            android:textColor="#777777"
+                            android:textSize="13sp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:orientation="vertical"
+                        android:gravity="center_horizontal">
+                        <ImageView
+                            android:id="@+id/imgReviewLicenseBack"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content" android:minHeight="180dp" android:adjustViewBounds="true"
+                            android:scaleType="fitCenter"
+                            android:background="@drawable/bg_upload_photo"
+                            android:src="@drawable/ic_license"
+                            android:padding="8dp"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="4dp"
+                            android:text="Back Preview"
+                            android:textColor="#777777"
+                            android:textSize="13sp" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/txtReviewIssueDate"
+                    android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp" android:textColor="#555555" android:textSize="15sp" />
+                <TextView
+                    android:id="@+id/txtReviewValidityDate"
+                    android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp" android:textColor="#555555" android:textSize="15sp" />
+                <ImageView
+                    android:id="@+id/imgReviewPoliceClearance"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" android:minHeight="240dp" android:adjustViewBounds="true"
+                    android:layout_marginTop="12dp"
+                    android:background="@drawable/bg_upload_photo"
+                    android:padding="8dp"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/ic_upload"
+                    android:contentDescription="Police clearance preview" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:gravity="center"
+                    android:text="Police Clearance Preview"
+                    android:textColor="#777777"
+                    android:textSize="13sp" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+    <!-- BUTTONS -->
+    <LinearLayout
+        android:id="@+id/reviewBottomArea"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:padding="20dp"
+        android:background="@android:color/white"
+        app:layout_constraintBottom_toBottomOf="parent">
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnSubmitVerification"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/btn_submit_verification"
+            android:textAllCaps="false"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/action_button_text_size"
+            android:textStyle="bold"
+            app:backgroundTint="#FF8800"
+            app:cornerRadius="7dp"
+            android:minHeight="@dimen/action_button_min_height"
+            android:gravity="center"
+            android:insetTop="0dp"
+            android:insetBottom="0dp"
+            android:paddingTop="8dp"
+            android:paddingBottom="8dp"
+            android:paddingStart="12dp"
+            android:paddingEnd="12dp"
+            android:singleLine="false" />
+        <TextView
+            android:id="@+id/btnReviewBack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@string/btn_back"
+            android:textColor="#FF7A00"
+            android:textSize="@dimen/action_button_text_size"
+            android:textStyle="bold"
+            android:clickable="true"
+            android:focusable="true"
+            android:minHeight="@dimen/action_button_min_height"
+            android:minWidth="@dimen/touch_target_size"
+            android:gravity="center" />
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

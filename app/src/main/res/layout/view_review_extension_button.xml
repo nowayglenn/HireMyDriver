@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.button.MaterialButton
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    style="@style/MapFlowButton.Outline"
+    android:layout_marginTop="12dp"
+    android:text="Review extension on map"
+    app:icon="@drawable/ic_location"
+    app:iconSize="20dp"
+    app:iconPadding="10dp"
+    app:iconGravity="textStart"
+    app:iconTint="#102444" />

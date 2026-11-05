@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:orientation="vertical" android:background="#061B41" android:padding="20dp">
+    <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:text="@string/photo_crop_title" android:textColor="#FFFFFF"
+        android:textSize="24sp" android:textStyle="bold" android:gravity="center" />
+<com.example.hiremydriver.CustomerPhotoCropView android:id="@+id/photoCropView"
+        android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1"
+        android:contentDescription="@string/photo_crop_description" />
+    <ProgressBar android:id="@+id/photoCropProgress" android:layout_width="32dp"
+        android:layout_height="32dp" android:layout_gravity="center" android:indeterminateTint="#FF8A00" />
+<LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <com.google.android.material.button.MaterialButton android:id="@+id/photoCropCancel"
+            android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1"
+            android:minHeight="48dp" android:text="@string/photo_crop_cancel" android:textAllCaps="false"
+            android:textColor="#FFFFFF" app:backgroundTint="#203858" app:cornerRadius="12dp" />
+        <com.google.android.material.button.MaterialButton android:id="@+id/photoCropRotate"
+            android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1"
+            android:layout_marginStart="12dp" android:minHeight="48dp" android:text="@string/photo_crop_rotate"
+            android:textAllCaps="false" android:textColor="#FFFFFF" app:backgroundTint="#203858" app:cornerRadius="12dp" />
+    </LinearLayout>
+    <com.google.android.material.button.MaterialButton android:id="@+id/photoCropUse"
+        android:layout_width="match_parent" android:layout_height="wrap_content" android:minHeight="52dp"
+        android:text="@string/photo_crop_use" android:textAllCaps="false" android:textStyle="bold"
+        android:textColor="#FFFFFF" app:backgroundTint="#FF7900" app:cornerRadius="12dp" />
+</LinearLayout>

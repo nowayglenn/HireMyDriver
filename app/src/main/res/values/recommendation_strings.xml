@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="refresh_drivers">Refresh drivers</string>
+    <string name="nearby_connection_retry">Could not load drivers. Check your connection and tap to retry.</string>
+    <string name="nearby_location_required">Allow location and turn on phone Location to find nearby drivers. Tap to retry. No results are shown until your area is detected.</string>
+    <string name="nearby_summary">Drivers serving %1$s · Nearest saved locations first. Use Find My Best Driver for trip filters.</string>
+    <string name="nearby_empty">No available drivers serving %1$s right now. Tap to refresh your current location.</string>
+    <string name="recommendation_browse_preview">Find registered drivers serving your current area.</string>
+    <string name="recommendation_matches_loading">Checking registered drivers and their saved availability…</string>
+    <string name="recommendation_matches_heading">Driver matches</string>
+    <string name="recommendation_transmission">Transmission</string>
+    <string name="recommendation_find">Find Drivers</string>
+    <string name="recommendation_future_required">Choose a future date and time.</string>
+    <string name="recommendation_no_matches">No available drivers match your area and selected trip time. Try another time, vehicle, or transmission.</string>
+    <string name="recommendation_summary">%1$d matches serving %2$s. Sorted by saved location distance when available. Dates and times use Philippine time.</string>
+    <string name="recommendation_driver_profile">Driver profile</string>
+    <string name="recommendation_no_rating">No ratings yet</string>
+    <string name="recommendation_details">Available for selected time · %1$s · %2$s</string>
+    <string name="recommendation_your_area">Your location</string>
+    <string name="recommendation_locating">Finding your current location…</string>
+    <string name="recommendation_choose_area">Location unavailable · Tap to retry</string>
+    <string name="recommendation_detected">Current location · %1$s</string>
+    <string name="recommendation_location_help">Automatically find nearby drivers serving your current area. Tap to refresh your location. Exact pickup and destination are entered when booking.</string>
+    <string name="recommendation_location_unavailable">We could not detect your current area. Allow location permission, turn on phone Location, check your connection, then tap to retry.</string>
+    <string name="recommendation_area_required">Your current location is needed. Refresh location to find drivers in your area.</string>
+    <string name="recommendation_permission_help">Allow location access so we can find drivers in your current area. If Android no longer shows the permission prompt, open settings and allow Location for this app.</string>
+</resources>

@@ -1,0 +1,23 @@
+<?xml version='1.0' encoding='utf-8'?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@+id/bookingCard" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginBottom="8dp" app:cardCornerRadius="16dp" app:cardElevation="3dp" app:cardUseCompatPadding="true">
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="16dp">
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:gravity="center_vertical" android:orientation="horizontal">
+            <com.google.android.material.imageview.ShapeableImageView android:layout_width="56dp" android:layout_height="56dp" android:scaleType="centerCrop" android:src="@drawable/deandra" app:shapeAppearanceOverlay="@style/CircleImage" app:strokeColor="#EEF0F3" app:strokeWidth="1dp" android:id="@+id/bookingCardImage" />
+            <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:layout_marginStart="14dp" android:orientation="vertical">
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Maria Santos" android:textColor="#061B41" android:textSize="16sp" android:textStyle="bold" android:id="@+id/bookingCardName" />
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="3dp" android:text="May 21, 2025 • 02:00 PM" android:textColor="#667085" android:textSize="13sp" android:id="@+id/bookingCardSchedule" />
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="2dp" android:text="Cebu City → Mandaue City" android:textColor="#344054" android:textSize="13sp" android:id="@+id/bookingCardRoute" />
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="2dp" android:text="By the Day (1 day)" android:textColor="#667085" android:textSize="13sp" android:id="@+id/bookingCardPackage" />
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="4dp" android:text="₱2,000" android:textColor="#061B41" android:textSize="18sp" android:textStyle="bold" android:id="@+id/bookingCardFee" />
+            </LinearLayout>
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="›" android:textColor="#9CA3AF" android:textSize="26sp" />
+        </LinearLayout>
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="14dp" android:orientation="horizontal" android:baselineAligned="false">
+            <com.google.android.material.button.MaterialButton android:id="@+id/bookingCardAccept" android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" android:text="Accept" android:textAllCaps="false" android:textColor="#FFFFFF" android:textSize="@dimen/action_button_text_size" android:textStyle="bold" app:backgroundTint="#FF7900" app:cornerRadius="8dp" android:minHeight="@dimen/action_button_min_height" android:gravity="center" android:insetTop="0dp" android:insetBottom="0dp" android:paddingTop="8dp" android:paddingBottom="8dp" android:paddingStart="12dp" android:paddingEnd="12dp" android:singleLine="false" />
+            <com.google.android.material.button.MaterialButton android:id="@+id/bookingCardDecline" android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" android:layout_marginStart="10dp" android:text="Decline" android:textAllCaps="false" android:textColor="#344054" android:textSize="@dimen/action_button_text_size" android:textStyle="bold" app:strokeColor="#D1D5DB" app:strokeWidth="1dp" app:backgroundTint="#FFFFFF" app:cornerRadius="8dp" android:minHeight="@dimen/action_button_min_height" android:gravity="center" android:insetTop="0dp" android:insetBottom="0dp" android:paddingTop="8dp" android:paddingBottom="8dp" android:paddingStart="12dp" android:paddingEnd="12dp" android:singleLine="false" />
+        </LinearLayout>
+    </LinearLayout>
+</androidx.cardview.widget.CardView>
+
+                
+                

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="photo_crop_title">Adjust photo</string>
+    <string name="photo_crop_hint">Drag to move · Pinch to zoom</string>
+    <string name="photo_crop_rotate">Rotate</string>
+    <string name="photo_crop_use">Use photo</string>
+    <string name="photo_crop_cancel">Cancel</string>
+    <string name="photo_crop_zoom">Zoom</string>
+    <string name="photo_crop_description">Profile photo crop preview</string>
+</resources>

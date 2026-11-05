@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto"
+                        android:id="@+id/requestContainer1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:paddingBottom="12dp">
+
+                        <com.google.android.material.imageview.ShapeableImageView
+                            android:id="@+id/imgCustomer1"
+                            android:layout_width="60dp"
+                            android:layout_height="60dp"
+                            android:contentDescription="Customer"
+                            android:scaleType="centerCrop"
+                            app:shapeAppearanceOverlay="@style/CircleImage"
+                            app:strokeColor="#EEF0F3"
+                            app:strokeWidth="1dp" />
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:layout_marginStart="16dp"
+                            android:orientation="vertical">
+                            <TextView
+                                android:id="@+id/txtCustomer1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Maria Santos"
+                                android:textColor="#061B41"
+                                android:textSize="16sp"
+                                android:textStyle="bold" />
+                            <TextView
+                                android:id="@+id/txtRequestDate1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="4dp"
+                                android:text="May 21, 2025 • 02:00 PM"
+                                android:textColor="#667085"
+                                android:textSize="13sp" />
+                            <TextView
+                                android:id="@+id/txtRequestRoute1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="2dp"
+                                android:text="Cebu City → Mandaue"
+                                android:textColor="#344054"
+                                android:textSize="13sp" />
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:gravity="center">
+                            <com.google.android.material.button.MaterialButton
+                                android:id="@+id/btnAccept1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/driver_accept_action"
+                                android:textAllCaps="false"
+                                android:textColor="@android:color/white"
+                                android:textSize="@dimen/action_button_text_size"
+                                android:textStyle="bold"
+                                android:minWidth="90dp"
+                                android:minHeight="@dimen/action_button_min_height"
+                                app:backgroundTint="#FF7900"
+                                app:cornerRadius="8dp"
+                                android:gravity="center"
+                                android:insetTop="0dp"
+                                android:insetBottom="0dp"
+                                android:paddingTop="8dp"
+                                android:paddingBottom="8dp"
+                                android:paddingStart="12dp"
+                                android:paddingEnd="12dp"
+                                android:singleLine="false" />
+                            <TextView
+                                android:id="@+id/btnDecline1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="6dp"
+                                android:text="@string/driver_decline_action"
+                                android:textColor="#667085"
+                                android:textSize="@dimen/action_button_text_size"
+                                android:textStyle="bold"
+                                android:padding="4dp"
+                                android:clickable="true"
+                                android:focusable="true"
+                                android:minHeight="@dimen/action_button_min_height"
+                                android:minWidth="@dimen/touch_target_size"
+                                android:gravity="center" />
+                        </LinearLayout>
+                    </LinearLayout>

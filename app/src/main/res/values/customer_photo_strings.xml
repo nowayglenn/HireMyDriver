@@ -1,0 +1,6 @@
+<resources>
+    <string name="customer_profile_photo">Profile photo</string>
+    <string name="customer_change_profile_photo">Change profile photo</string>
+    <string name="customer_photo_preview">Photo selected. Tap Save to keep it.</string>
+    <string name="customer_photo_error">Could not open this photo. Please choose another image.</string>
+</resources>

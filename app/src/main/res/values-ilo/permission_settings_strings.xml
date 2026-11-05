@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="permission_precise_granted">Napalubosan ti husto a lokasion</string>
+    <string name="permission_approximate_granted">Napalubosan ti agarup a lokasion</string>
+    <string name="location_precision_help">Tumulong a mangbirok iti pickup ken mangipakita iti posisionmo bayat a nakalukat ti mapa. I-tap tapno maurnos ti permiso iti settings ti telepono.</string>
+    <string name="foreground_location_note">Agsardeng dagiti update ti lokasion no panawam ti mapa wenno i-minimize ti app. Sabsabali ti notification ti timer ti biyahe iti panangsurot ti lokasion.</string>
+    <string name="device_location_off">Naka-off ti Location ti telepono. I-on iti settings tapno mausarto ti GPS uray no napalubosan ti app.</string>
+    <string name="permission_settings_unavailable">Lukatan ti settings ti telepono tapno maurnos dagiti permiso ti app.</string>
+    <string name="notification_prefs_scope">I-save iti daytoy a telepono dagiti kayatmo para iti booking ken mensahe. Awan pay dagiti live alert ti booking ken mensahe. I-manage dagiti notification ti timer iti settings ti telepono.</string>
+    <string name="notification_os_enabled">Notifications iti telepono: Napalubosan</string>
+    <string name="notification_os_disabled">Notifications iti telepono: Naserraan</string>
+    <string name="notification_phone_settings">I-manage dagiti notification ti telepono</string>
+    <string name="notification_saved_local">Nai-save dagiti kayatmo iti daytoy a telepono</string>
+    <string name="notification_pref_booking_desc">Dagiti sungbat ti booking, panagdanon, ken kasasaad ti biyahe.</string>
+    <string name="notification_pref_chat_desc">Dagiti baro a mensahe manipud iti driver-mo.</string>
+</resources>

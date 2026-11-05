@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/txtBookingId"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="10dp"
+    android:background="@drawable/bg_booking_reference"
+    android:paddingHorizontal="10dp"
+    android:paddingVertical="6dp"
+    android:textColor="#344054"
+    android:textSize="11sp"
+    android:textDirection="ltr"
+    android:gravity="start"
+    android:breakStrategy="simple"
+    android:hyphenationFrequency="none"
+    android:textIsSelectable="true" />

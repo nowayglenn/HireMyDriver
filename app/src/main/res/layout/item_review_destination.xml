@@ -1,0 +1,32 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:layout_marginTop="16dp">
+    <TextView
+        android:layout_width="20dp"
+        android:layout_height="wrap_content"
+        android:text="●"
+        android:textSize="14sp"
+        android:textColor="#FF7900"
+        android:importantForAccessibility="no" />
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:layout_marginStart="10dp"
+        android:orientation="vertical">
+        <TextView
+            android:id="@+id/reviewStopName"
+            style="@style/TripText"
+            android:textColor="#061B41"
+            tools:text="Panglao Elementary School" />
+        <TextView
+            android:id="@+id/reviewStopCaption"
+            style="@style/TripText"
+            android:layout_marginTop="6dp"
+            android:textSize="12sp"
+            tools:text="Stop 2" />
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,317 @@
+<resources>
+    <!-- Navigation -->
+    <string name="nav_home">Home</string>
+    <string name="nav_bookings">Bookings</string>
+    <string name="nav_messages">Mensahe</string>
+    <string name="nav_profile">Profile</string>
+
+    <!-- Home Screen -->
+    <string name="hello_user">Kablaaw, %1$s!</string>
+    <string name="question_today">Ayanna ti pangitugotam\nti driver tatta?</string>
+    <string name="search_hint">Sapulen ti lokasion wenno nagan…</string>
+    <string name="popular_drivers">Dagiti Nadayeg a Driver</string>
+    <string name="see_all">Kitaen amin</string>
+    <string name="find_best_driver">Sapulen ti Kasayaatan a Driver</string>
+    <string name="ai_recommend_desc">Sapulen ti kasayaatan a driver a maitutop iti lokasion, iskediul, ken kasapulan ti biyaheyo.</string>
+    <string name="ai_recommended">Inrekomenda para kenka</string>
+
+    <!-- Booking Screen -->
+    <string name="my_bookings_title">Dagiti Booking-ko</string>
+    <string name="tab_all">Amin</string>
+    <string name="tab_pending">Maur-uray</string>
+    <string name="tab_accepted">Naawat</string>
+    <string name="tab_completed">Nakalpas</string>
+    <string name="tab_cancelled">Na-kanselar</string>
+    <string name="status_on_trip">MADAMA NGA AG-BIYAHE</string>
+    <string name="status_pending">MAUR-URAY</string>
+    <string name="status_accepted">NAAWAT</string>
+    <string name="status_completed">NAKALPAS</string>
+    <string name="status_cancelled">NA-KANSELAR</string>
+    <string name="btn_track_trip">Suroten ti Biyahe</string>
+    <string name="btn_emergency">Emergency</string>
+    <string name="btn_view_details">Kitaen ti Detalye</string>
+
+    <!-- Profile Screen -->
+    <string name="my_profile_title">Profile-ko</string>
+    <string name="menu_edit_profile">Urnosen ti Profile</string>
+    <string name="desc_edit_profile">I-update ti personal nga impormasyonmo</string>
+    <string name="menu_payment_methods">Wagas ti Panagbayad</string>
+    <string name="desc_payment_methods">I-manage dagiti opsyon ti panagbayad</string>
+    <string name="menu_my_reviews">Dagiti Review-ko</string>
+    <string name="desc_my_reviews">Kitaen ken i-manage dagiti review-mo</string>
+    <string name="menu_emergency_contact">Kontak iti Emergency</string>
+    <string name="desc_emergency_contact">Inayon wenno urnosen dagiti kontak iti emergency</string>
+    <string name="menu_settings">Settings</string>
+    <string name="desc_settings">Kayatmo iti app ken dadduma pay</string>
+    <string name="btn_logout">Ag-Log Out</string>
+
+    <!-- Settings Screen -->
+    <string name="settings_title">Settings</string>
+    <string name="menu_notifications">Notifications</string>
+    <string name="desc_notifications">I-manage dagiti kayatmo iti notification</string>
+    <string name="menu_change_password">Sukatan ti Password</string>
+    <string name="desc_change_password">I-update ti password ti account-mo</string>
+    <string name="menu_language">Pagsasao</string>
+    <string name="menu_location_permissions">Permissions ti Lokasion</string>
+    <string name="desc_location_permissions">I-manage ti access iti lokasion</string>
+    <string name="menu_terms_conditions">Pagannurotan ken Kondisyon</string>
+    <string name="menu_privacy_policy">Patakaran ti Privacy</string>
+    <string name="menu_help_support">Tulong ken Suporta</string>
+    <string name="desc_help_support">Agkiddaw ti tulong wenno ag-contact kadakami</string>
+    <string name="menu_about">Maipapan iti HireMyDriver</string>
+    <string name="version_text">Versyon %1$s</string>
+    <string name="menu_delete_account">I-delete ti Account</string>
+    <string name="desc_delete_account">I-delete ti account-mo iti permanente</string>
+
+    <!-- Notification Settings -->
+    <string name="notifications_guidance">I-manage no kasano ti panag-awatmo kadagiti update ken alerts.</string>
+    <string name="label_booking_updates">Dagiti Update ti Booking</string>
+    <string name="desc_booking_updates">Ma-notifiy no naawat, dumanon, wenno nakalpasen ti driver iti biyahe.</string>
+    <string name="label_chat_messages">Dagiti Mensahe ti Chat</string>
+    <string name="desc_chat_messages">Ma-alert kadagiti baro a mensahe manipud iti driver-mo.</string>
+    <string name="label_promotions">Dagiti Promo ken Alok</string>
+    <string name="desc_promotions">Ag-update kadagiti kabaruan a discounts ken rewards ti driver.</string>
+    <string name="header_email_notifications">Email Notifications</string>
+    <string name="label_trip_receipts">Dagiti Resibo ti Biyahe</string>
+    <string name="desc_trip_receipts">Ma-awat ti dagup ti biyaheyo babaen iti email.</string>
+    <string name="label_news_updates">Dagiti Kabaruan a Balita</string>
+    <string name="desc_news_updates">Ma-awat ti impormasyon maipapan kadagiti baro a features ti app.</string>
+    <string name="btn_save_preferences">I-save dagiti Kayatmo</string>
+
+    <!-- About Screen -->
+    <string name="about_app_desc">Ti HireMyDriver ket maysa a marketplace platform a mangisilpo kadagiti propesyonal a driver kadagiti customer para iti natalged, napasnek, ken nalaka a biyahe.</string>
+    <string name="developed_by_label">Binuo da</string>
+    <string name="developer_names">Glenndhel Jay Dano\nMark Laurence Polinar</string>
+    <string name="copyright_text">© 2025 HireMyDriver. Amin a karbengan ket na-reserve.</string>
+
+    <!-- Delete Account Screen -->
+    <string name="delete_account_confirm_title">I-delete ti account-mo?</string>
+    <string name="delete_account_warning">Siguradoka kadi a kayatmo nga i-delete ti account-mo? Daytoy nga aksyon ket mang-disable iti profile-mo ken mangikkat iti access-mo iti HireMyDriver.</string>
+    <string name="delete_30_days_notice">Ti account-mo ket permanente a ma-delete kalpasan ti 30 nga aldaw. Bayat daytoy a tiempo, mabalinmo pay a ma-recover ti account-mo babaen ti panag-log in manen.</string>
+    <string name="btn_confirm_delete">I-delete ti Account-ko</string>
+    <string name="btn_keep_account">Saan nga i-delete ti Account-ko</string>
+
+    <!-- Location Settings -->
+    <string name="location_settings_title">Permissions ti Lokasion</string>
+    <string name="location_guidance">I-manage no kasano ti panagusar ti app iti lokasionmo.</string>
+    <string name="precise_location_label">Husto a Lokasion</string>
+    <string name="precise_location_desc">Agusar iti GPS tapno masapulan ti husto a pickup point ken masurot ti biyaheyo.</string>
+    <string name="background_location_label">Palubosan iti Background</string>
+    <string name="background_location_desc">Palubosan ti driver a makita ti lokasionmo uray no naka-minimize ti app.</string>
+    <string name="btn_open_settings">Lukatan ti System Settings</string>
+    <string name="status_label">Agdama a Status:</string>
+    <string name="status_granted">Naited ti Permiso</string>
+    <string name="status_denied">Saan a Naited ti Permiso</string>
+
+    <!-- Terms & Conditions Text -->
+    <string name="terms_and_conditions_full_text">
+        Kablaaw iti HireMyDriver. Iti panagusar iti platform-mi, umanamongka kadagiti sumaruno a pagannurotan ken kondisyon:\n\n
+        1. SAKLAW TI SERBISYO\n
+        Ti HireMyDriver ket maysa a marketplace platform a mangisilpo kadagiti independiyente a driver ken dagiti customer. Saankami a mangipaay iti mismong serbisyo ti transportasyon ken saankami a responsable iti kababalin dagiti driver wenno pasahero.\n\n
+        2. CASH-ONLY A PANAGBAYAD\n
+        Amin a bayad para iti serbisyo ti panagmaneho ket masapul a maited iti CASH nangisigud iti driver kalpasan ti biyahe. Ti HireMyDriver ket saan a mangiggem iti transaksyong pinansyal iti nagbaetan dagiti user ken saan a responsable iti aniaman a riri iti panagbayad.\n\n
+        3. RESPONSIBILIDAD TI USER\n
+        Masapul a mangited dagiti user iti husto a personal ken kontak nga impormasyon. Sika ti responsable iti panangtalinaed iti kinalinteg ti account-mo.\n\n
+        4. KINATALGED KEN KABABALIN\n
+        Masapul a tratuhin dagiti user ken driver ti maysa ken maysa nga addaan iti pammadayaw. Ti Emergency Alert feature ket masapul laeng nga usaren kadagiti seryoso a situwasyon. Dagiti ilegal nga aktibidad bayat ti biyahe ket agresulta iti permanente a pannaka-delete ti account.\n\n
+        5. LIMITASYON TI PANANAGUTAN\n
+        Ti HireMyDriver ket saan a responsable iti aniaman a dadael, aksidente, sugat, wenno pannakapukaw a resulta ti panagusar iti platform-mi wenno dagiti serbisyo a naitugot dagiti driver.\n\n
+        6. PANAG-KANSELAR\n
+        Ti mamin-adu a panag-kansela kadagiti naka-book a biyahe ket mabalin a mangiduron iti pannakasuspinde ti account tapno masiguro ti nasayaat a padas para iti amin.\n\n
+        7. PRIVACY TI DATA\n
+        Ti lokasionmo ken dagiti personal a datam ket ma-manage sigun iti Patakaran ti Privacy-mi tapno mangipaay iti natalged ken nalaing a panang-manage iti biyahe.
+    </string>
+
+    <!-- Privacy Policy Text -->
+    <string name="privacy_policy_title">Patakaran ti Privacy</string>
+    <string name="privacy_policy_full_text">
+        Iti HireMyDriver, ipategmi ti privacy-mo. Daytoy a patakaran ket mangilawlawag no kasano ti panang-manage-mi kadagiti datam:\n\n
+        1. IMPORMASYON A KOLEKTAENMI\n
+        Mang-kolektakami iti personal nga impormasyon nga i-providemo (nagan, email, numero ti telepono) ken data ti lokasion no usarem ti app tapno ag-book wenno mangipaay iti serbisyo ti panagmaneho.\n\n
+        2. NO KASANO NGA USARENMI TI DATA TI LOKASION\n
+        Tapno maipaay ti kangrunaan a serbisyo-mi, mang-kolektakami iti husto a data ti lokasion tapno maitugotka kadagiti driver iti asidegmo ken masurot ti biyaheyo. Napateg daytoy para iti kinatalged ken kinalinteg ti serbisyo.\n\n
+        3. PANAG-SHARE ITI DATA\n
+        No na-kumpirma ti booking, ti naganmo ken pickup point-mo ket ma-share iti driver. Iti emergency, ti lokasionmo ket ma-share iti kontakmo.\n\n
+        4. KINATALGED TI DATA\n
+        Mang-isagutkami kadagiti industry-standard a security measures tapno maprotektaran ti impormasyonmo.\n\n
+        5. PANANGTALINAED ITI DATA\n
+        Talinaedanmi dagiti personal a datam agingga nga aktibo ti account-mo wenno kasapulan tapno maipaaymi dagiti serbisyo-mi ken mataginayon dagiti trip records.\n\n
+        6. DAGITI KARBENGAM\n
+        Mabalinmo nga i-update ti profile-mo wenno i-delete ti account-mo iti aniaman a gundaway babaen kadagiti settings ti app.
+    </string>
+
+    <!-- Notifications Screen -->
+    <string name="notifications_title">Dagiti Notification</string>
+    <string name="section_today">Tatta</string>
+    <string name="section_yesterday">Idi Kalman</string>
+    <string name="section_earlier">Nasapsapa</string>
+    <string name="no_notifications_msg">Awan baro a notification</string>
+    <string name="btn_mark_all_read">Markaan amin a nabasa</string>
+
+    <!-- Language Settings -->
+    <string name="language_title">Pagsasao</string>
+    <string name="select_preferred_language">Pilien ti kayatmo a pagsasao</string>
+    <string name="lang_english">Ingles</string>
+    <string name="lang_tagalog">Tagalog</string>
+    <string name="lang_ilocano">Ilocano</string>
+    <string name="btn_save_selection">I-save ti Pinili</string>
+
+    <!-- AI Recommendation Result -->
+    <string name="recommended_drivers_title">Dagiti Inrekomenda a Driver</string>
+    <string name="ai_best_drivers_msg">Daytoy dagiti kasayaatan a driver para kenka!</string>
+    <string name="ai_based_on_trip">Base iti detalye ti biyaheyo ken dagiti kayatmo</string>
+    <string name="match_percent">%1$s a Maitugot</string>
+    <string name="exp_vehicle_format">%1$s • %2$s</string>
+    <string name="btn_view_profile">Kitaen ti Profile</string>
+
+    <!-- Driver Details -->
+    <string name="driver_profile_title">Profile ti Driver</string>
+    <string name="reviews_count">(%1$s a review)</string>
+    <string name="years_experience">%1$s tawen a padas</string>
+    <string name="years_experience_label">%1$s tawen a padas</string>
+    <string name="price_per_hour">₱%1$s/oras</string>
+    <string name="price_per_hour_full">₱%1$s / oras</string>
+    <string name="about_me">Maipapan Kaniak</string>
+    <string name="availability">Availability</string>
+    <string name="response_rate">Response Rate</string>
+    <string name="languages">Dagiti Pagsasao</string>
+    <string name="btn_book_now">I-book itan</string>
+    <string name="badge_verified">Beripikado</string>
+    <string name="badge_professional">Propesyonal</string>
+    <string name="badge_highly_rated">Nangato ti Rating-na</string>
+
+    <!-- Book Driver -->
+    <string name="book_driver_title">I-book ti Driver</string>
+    <string name="booking_details_label">Dagiti Detalye ti Booking</string>
+    <string name="label_date">Petsa</string>
+    <string name="label_start_time">Oras ti Panagrugi</string>
+    <string name="label_duration">Kapaut</string>
+    <string name="label_pickup">Lokasion ti Pickup</string>
+    <string name="label_destination">Destinasyon</string>
+    <string name="label_vehicle_type">Klase ti Sasakyan (Kayatmo)</string>
+    <string name="label_notes_optional">Inayon a Nota (Opsyonal)</string>
+    <string name="hint_notes">padasen: dadduma pay a pagannurotan…</string>
+    <string name="estimated_fee">Estimated a Bayad ti Driver</string>
+    <string name="btn_confirm_booking">I-kumpirma ti Booking</string>
+
+    <!-- Confirm Booking -->
+    <string name="confirm_booking_title">I-kumpirma ti Booking</string>
+    <string name="trip_details_label">Dagiti Detalye ti Biyahe</string>
+    <string name="payment_summary_label">Dagup ti Pagbayadan</string>
+    <string name="label_driver_fee">Bayad ti Driver</string>
+    <string name="label_total_amount">Dagup ti Halaga</string>
+    <string name="payment_method_label">Wagas ti Panagbayad</string>
+    <string name="terms_policy_agreement">Iti panag-kumpirma, umanamongka kadagiti Pagannurotan ti Serbisyo ken Patakaran ti Booking-mi.</string>
+    <string name="btn_confirm_and_book">I-kumpirma ken I-book</string>
+
+    <!-- Trip In Progress -->
+    <string name="trip_in_progress_title">Madama a Biyahe</string>
+    <string name="status_driver_on_way">Umayen ti driver</string>
+    <string name="estimated_arrival">Tantiyang dumanon: %1$d mins</string>
+    <string name="started_at">Nagrugi idi %1$s</string>
+    <string name="emergency_alert_title">Emergency Alert</string>
+    <string name="emergency_alert_desc">Ipatulod ti lokasionmo iti kontak iti emergency</string>
+    <string name="btn_call_driver">Tawagan ti Driver</string>
+    <string name="btn_message">Mensahe</string>
+
+    <!-- Emergency Contact -->
+    <string name="emergency_contact_title">Kontak iti Emergency</string>
+    <string name="emergency_contact_guidance">Maawat daytoy a kontak ti lokasionmo no mangipatulodka iti emergency alert bayat ti biyahe.</string>
+    <string name="label_contact_name">Nagan ti Kontak</string>
+    <string name="label_relationship">Relasyon</string>
+    <string name="label_phone_number">Numero ti Telepono</string>
+    <string name="label_send_trip_details">Ipatulod dagiti detalye ti biyahe (driver, ruta, oras)</string>
+    <string name="btn_save_contact">I-save ti Kontak</string>
+
+    <!-- Emergency Alert Confirmation -->
+    <string name="send_emergency_alert_q">Mangipatulod iti Emergency Alert?</string>
+    <string name="emergency_alert_confirm_desc">Ipatulod daytoy ti agdama a lokasionmo ken dagiti detalye ti biyahe iti kontakmo iti emergency.</string>
+    <string name="info_to_be_sent">Impormasyon nga ipatulod:</string>
+    <string name="current_location_label">Ti agdama a lokasionmo</string>
+    <string name="driver_label">Driver: %1$s</string>
+    <string name="trip_time_label">Oras ti biyahe: %1$s</string>
+    <string name="emergency_message_label">Mensahe ti emergency</string>
+    <string name="btn_yes_send_alert">Wen, Ipatulod ti Alert</string>
+    <string name="btn_cancel">I-kanselar</string>
+
+    <!-- Customer Reviews -->
+    <string name="reviewed_drivers_msg">Daytoy dagiti driver a na-review-mo.</string>
+
+    <!-- Messages -->
+    <string name="no_messages_title">Awan pay ti mensahe</string>
+    <string name="no_messages_desc">No makitugotkayo iti driver, agparang ditoy dagiti tungtongyo.</string>
+    <string name="btn_explore_drivers">Sapulen dagiti Driver</string>
+
+    <!-- Review Submitted -->
+    <string name="review_submitted_title">Na-submit ti Review</string>
+    <string name="thank_you">Agyamankami!</string>
+    <string name="review_submitted_msg">Na-submit ti review-mo.</string>
+    <string name="feedback_help_msg">Ti feedback-mo ket tumulong kadakami tapno mataginayon ti kinatalged ken kinalinteg ti komunidadmi.</string>
+    <string name="btn_back_to_bookings">Agsubli kadagiti Booking-ko</string>
+    <string name="btn_view_my_reviews">Kitaen dagiti Review-ko</string>
+
+    <!-- Review Info -->
+    <string name="review_info_title">Surienda ti Impormasyonyo</string>
+    <string name="review_info_subtitle">Surienda koma dagiti detalye sakbay nga i-submit.</string>
+    <string name="account_info_header">Impormasyon ti Account</string>
+    <string name="personal_info_header">Personal nga Impormasyon</string>
+    <string name="requirements_info_header">Impormasyon kadagiti Kasapulan</string>
+    <string name="edit_label">Urnosen</string>
+    <string name="uploaded_label">Na-upload</string>
+    <string name="provided_label">I-provide</string>
+    <string name="btn_submit_verification">I-submit para iti Beripikasyon</string>
+
+    <!-- Driver Registration -->
+    <string name="driver_registration_title">Panagrehistro ti Driver</string>
+    <string name="driver_requirements_title">Dagiti Kasapulan ti Driver</string>
+    <string name="account_label">Account</string>
+    <string name="personal_info_label">Personal nga Impormasyon</string>
+    <string name="requirements_label">Kasapulan</string>
+    <string name="review_label">Pagsusuri</string>
+    <string name="drivers_license_label">Lisensya ti Panagmaneho</string>
+    <string name="license_provide_msg">I-provide-yo ti husto a lisensya ti panagmaneho.</string>
+    <string name="license_number_label">Numero ti Lisensya</string>
+    <string name="license_expiration_label">Expiration ti Lisensya</string>
+    <string name="front_license_label">Harap ti Lisensya</string>
+    <string name="back_license_label">Likod ti Lisensya</string>
+    <string name="police_clearance_label">Police Clearance</string>
+    <string name="police_provide_msg">I-provide-yo ti husto a police clearance.</string>
+    <string name="date_issue_label">Petsa ti Panag-release</string>
+    <string name="validity_date_label">Petsa ti Bisa</string>
+    <string name="upload_police_clearance">I-upload ti Police Clearance</string>
+    <string name="police_note">Nota: Masapul a husto ken saan nga expired ti police clearance-yo. Siguraduenda a nalawag ken mabasa ti file nga in-upload-yo.</string>
+    <string name="btn_next">Sumaruno</string>
+    <string name="btn_back">Agsubli</string>
+
+    <!-- Edit Profile -->
+    <string name="edit_profile_title">Urnosen ti Profile</string>
+    <string name="full_name_label">Nagan</string>
+    <string name="email_address_label">Email Address</string>
+    <string name="phone_number_label">Numero ti Telepono</string>
+    <string name="birth_date_label">Petsa ti Panakayanak</string>
+    <string name="address_label">Address</string>
+    <string name="btn_save_changes">I-save dagiti Balbaliw</string>
+
+    <!-- Welcome Screen -->
+    <string name="btn_get_started">Irugin</string>
+    <string name="btn_i_am_customer">Customer-ak</string>
+    <string name="btn_i_am_driver">Driver-ak</string>
+
+    <!-- Login Screen -->
+    <string name="login_title">Ag-Log In</string>
+    <string name="login_subtitle">Naragsak a panagsubli! Isuratyo dagiti detalye-yo.</string>
+    <string name="label_email">Email</string>
+    <string name="label_password">Password</string>
+    <string name="btn_login">Ag-Log In</string>
+    <string name="forgot_password">Naliwatan ti Password?</string>
+    <string name="no_account_q">Awan pay account-mo?</string>
+    <string name="sign_up">Ag-Sign Up</string>
+    <string name="or_continue_with">Wenno ituloy babaen ti</string>
+
+    <!-- Booking Success Screen -->
+    <string name="booking_successful_title">Nakalpas ti Booking</string>
+    <string name="booking_successful_msg">Naipatulod a naimbag ti kiddawmo para iti booking!</string>
+    <string name="booking_success_desc">Surienda ti driver ti kiddawyo iti mabiit. Masurotyo ti status kadagiti booking-yo.</string>
+    <string name="btn_view_bookings">Kitaen dagiti Booking-ko</string>
+    <string name="btn_back_to_home">Agsubli iti Home</string>
+</resources>

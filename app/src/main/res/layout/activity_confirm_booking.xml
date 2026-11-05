@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent" android:layout_height="match_parent" android:orientation="vertical" android:background="#F5F7FB">
+<LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:minHeight="@dimen/screen_header_min_height" android:background="#061B41" android:tag="screen_header" android:gravity="center_vertical" android:paddingHorizontal="12dp">
+ <ImageButton android:id="@+id/btnBack" android:layout_width="48dp" android:layout_height="48dp" android:padding="12dp" android:background="?attr/selectableItemBackgroundBorderless" android:src="@drawable/ic_arrow_back" android:contentDescription="Back" app:tint="#FFFFFF" />
+ <TextView android:id="@+id/txtMapTitle" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:layout_margin="8dp" android:text="Review booking" android:textSize="@dimen/screen_header_title_size" android:textStyle="bold" android:textColor="#FFFFFF" />
+ </LinearLayout>
+<androidx.core.widget.NestedScrollView android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1" android:fillViewport="true">
+<LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="16dp">
+<LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginBottom="16dp" android:orientation="vertical" android:background="@drawable/bg_trip_card" android:padding="16dp">
+<TextView  style="@style/TripText" android:text="YOUR ROUTE" android:textSize="11sp" android:letterSpacing="0.12" />
+<LinearLayout android:id="@+id/reviewRouteTimeline" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="16dp" android:orientation="vertical" />
+</LinearLayout>
+<LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginBottom="16dp" android:orientation="vertical" android:background="@drawable/bg_trip_card" android:padding="16dp">
+<LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:paddingVertical="12dp" android:gravity="top">
+ <TextView  style="@style/TripText" android:text="Date" android:layout_width="0dp" android:layout_weight="1" android:layout_marginEnd="12dp" />
+ <TextView android:id="@+id/txtDate" style="@style/TripText" android:text="" android:layout_width="0dp" android:layout_weight="1.3" android:textColor="#061B41" android:gravity="end" tools:text="2026-09-28" />
+ </LinearLayout>
+<LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:paddingVertical="12dp" android:gravity="top">
+ <TextView  style="@style/TripText" android:text="Start time" android:layout_width="0dp" android:layout_weight="1" android:layout_marginEnd="12dp" />
+ <TextView android:id="@+id/txtTime" style="@style/TripText" android:text="" android:layout_width="0dp" android:layout_weight="1.3" android:textColor="#061B41" android:gravity="end" tools:text="9:00 AM" />
+ </LinearLayout>
+<LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:paddingVertical="12dp" android:gravity="top">
+ <TextView  style="@style/TripText" android:text="Duration" android:layout_width="0dp" android:layout_weight="1" android:layout_marginEnd="12dp" />
+ <TextView android:id="@+id/txtDuration" style="@style/TripText" android:text="" android:layout_width="0dp" android:layout_weight="1.3" android:textColor="#061B41" android:gravity="end" tools:text="4 hours" />
+ </LinearLayout>
+<LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:paddingVertical="12dp" android:gravity="top">
+ <TextView  style="@style/TripText" android:text="Vehicle type" android:layout_width="0dp" android:layout_weight="1" android:layout_marginEnd="12dp" />
+ <TextView android:id="@+id/txtVehicle" style="@style/TripText" android:text="" android:layout_width="0dp" android:layout_weight="1.3" android:textColor="#061B41" android:gravity="end" tools:text="SUV" />
+ </LinearLayout>
+<View android:layout_width="match_parent" android:layout_height="1dp" android:background="#E8EDF4" android:layout_marginVertical="8dp" />
+<TextView android:id="@+id/txtConfirmNotes" style="@style/TripText" android:text="" android:lineSpacingExtra="6dp" tools:text="Additional notes&#10;Meet at the main entrance." />
+</LinearLayout>
+<LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginBottom="16dp" android:orientation="vertical" android:background="@drawable/bg_trip_card" android:padding="16dp">
+<TextView  style="@style/TripText" android:text="YOUR DRIVER" android:textSize="11sp" android:letterSpacing="0.12" android:layout_marginBottom="16dp" />
+<LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:gravity="center_vertical">
+<com.google.android.material.imageview.ShapeableImageView android:id="@+id/imgDriverSmall" android:layout_width="56dp" android:layout_height="56dp" android:scaleType="centerCrop" android:src="@drawable/no_profile" app:shapeAppearanceOverlay="@style/CircleImage" android:contentDescription="Selected driver" />
+<LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:orientation="vertical" android:layout_marginStart="14dp">
+<TextView android:id="@+id/txtDriverName" style="@style/TripText" android:text="" android:textStyle="bold" android:textColor="#061B41" tools:text="Mark Laurence Polinar" />
+<TextView android:id="@+id/txtPriceHeader" style="@style/TripText" android:text="" android:layout_marginTop="4dp" tools:text="₱650 / hour" />
+<TextView android:id="@+id/txtRating" style="@style/TripText" android:text="" android:textColor="#FF7900" android:layout_marginTop="4dp" tools:text="★ 4.9" />
+</LinearLayout></LinearLayout></LinearLayout>
+<LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginBottom="16dp" android:orientation="vertical" android:background="@drawable/bg_trip_card" android:padding="16dp">
+<TextView  style="@style/TripText" android:text="Payment summary" android:textStyle="bold" android:textColor="#061B41" android:layout_marginBottom="8dp" />
+<LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:paddingVertical="12dp" android:gravity="top">
+ <TextView  style="@style/TripText" android:text="Driver fee" android:layout_width="0dp" android:layout_weight="1" android:layout_marginEnd="12dp" />
+ <TextView android:id="@+id/txtSubtotal" style="@style/TripText" android:text="" android:layout_width="0dp" android:layout_weight="1.3" android:textColor="#061B41" android:gravity="end" tools:text="₱2,600.00" />
+ </LinearLayout>
+<TextView android:id="@+id/txtCalculation" style="@style/TripText" android:text="" tools:text="₱650 × 4 hours" android:textSize="12sp" />
+<View android:layout_width="match_parent" android:layout_height="1dp" android:background="#E8EDF4" android:layout_marginVertical="12dp" />
+<LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:paddingVertical="12dp" android:gravity="top">
+ <TextView  style="@style/TripText" android:text="Estimated total" android:layout_width="0dp" android:layout_weight="1" android:layout_marginEnd="12dp" />
+ <TextView android:id="@+id/txtTotalAmount" style="@style/TripText" android:text="" android:layout_width="0dp" android:layout_weight="1.3" android:textColor="#061B41" android:gravity="end" tools:text="₱2,600.00" />
+ </LinearLayout>
+<TextView  style="@style/TripText" android:text="Payment method · Cash" android:layout_marginTop="8dp" />
+</LinearLayout>
+</LinearLayout></androidx.core.widget.NestedScrollView>
+<com.google.android.material.button.MaterialButton android:id="@+id/btnConfirmAndBook" style="@style/TripButton" android:text="@string/btn_confirm_and_book" android:layout_margin="16dp" />
+</LinearLayout>

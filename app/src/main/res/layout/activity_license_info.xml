@@ -1,0 +1,568 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF">
+
+    <!-- ====================================================== -->
+    <!-- TOP HEADER -->
+    <!-- ====================================================== -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#001B43"
+        app:layout_constraintTop_toTopOf="parent"
+        android:tag="screen_header"
+        android:minHeight="@dimen/screen_header_min_height" >
+
+        <ImageButton
+            android:id="@+id/btnLicenseBack"
+            android:layout_width="@dimen/touch_target_size"
+            android:layout_height="@dimen/touch_target_size"
+            android:background="@android:color/transparent"
+            android:contentDescription="Back"
+            android:padding="12dp"
+            android:src="@drawable/ic_arrow_back"
+            app:tint="#FFFFFF"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginStart="@dimen/screen_header_icon_margin" />
+
+        <TextView
+            android:id="@+id/txtHeaderTitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Driver Requirements"
+            android:textColor="#FFFFFF"
+            android:textSize="@dimen/screen_header_title_size"
+            android:textStyle="bold"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:tag="screen_header_title"
+            android:layout_marginTop="@dimen/screen_header_title_gap"
+            android:layout_marginBottom="@dimen/screen_header_title_gap"
+            android:layout_marginStart="@dimen/screen_header_title_gap"
+            android:layout_marginEnd="@dimen/screen_header_text_inset"
+            app:layout_constraintStart_toEndOf="@id/btnLicenseBack"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:gravity="start|center_vertical" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!-- ====================================================== -->
+    <!-- MAIN CONTENT -->
+    <!-- ====================================================== -->
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        android:scrollbars="none"
+        app:layout_constraintTop_toBottomOf="@id/header"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingHorizontal="20dp"
+            android:paddingTop="20dp"
+            android:paddingBottom="40dp">
+
+            <!-- STEP PROCESS -->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/stepContainer"
+                android:layout_width="match_parent"
+                android:layout_height="82dp">
+
+                <!-- STEP 1 - COMPLETED -->
+                <TextView
+                    android:id="@+id/step1"
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:layout_marginStart="16dp"
+                    android:background="@drawable/bg_step_completed"
+                    android:gravity="center"
+                    android:text="✓"
+                    android:textColor="#FFFFFF"
+                    android:textSize="13sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <!-- STEP 2 - COMPLETED -->
+                <TextView
+                    android:id="@+id/step2"
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:background="@drawable/bg_step_completed"
+                    android:gravity="center"
+                    android:text="✓"
+                    android:textColor="#FFFFFF"
+                    android:textSize="13sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toEndOf="@id/step1"
+                    app:layout_constraintEnd_toStartOf="@id/step3"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintHorizontal_chainStyle="spread" />
+
+                <!-- STEP 3 - ACTIVE -->
+                <TextView
+                    android:id="@+id/step3"
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:background="@drawable/bg_step_active"
+                    android:gravity="center"
+                    android:text="3"
+                    android:textColor="#FFFFFF"
+                    android:textSize="13sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toEndOf="@id/step2"
+                    app:layout_constraintEnd_toStartOf="@id/step4"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <!-- STEP 4 - INACTIVE -->
+                <TextView
+                    android:id="@+id/step4"
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:layout_marginEnd="16dp"
+                    android:background="@drawable/bg_step_inactive"
+                    android:gravity="center"
+                    android:text="4"
+                    android:textColor="#FFFFFF"
+                    android:textSize="13sp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <!-- CONNECTING LINES -->
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="2dp"
+                    android:background="#D9DEE7"
+                    app:layout_constraintStart_toEndOf="@id/step1"
+                    app:layout_constraintEnd_toStartOf="@id/step2"
+                    app:layout_constraintTop_toTopOf="@id/step1"
+                    app:layout_constraintBottom_toBottomOf="@id/step1" />
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="2dp"
+                    android:background="#D9DEE7"
+                    app:layout_constraintStart_toEndOf="@id/step2"
+                    app:layout_constraintEnd_toStartOf="@id/step3"
+                    app:layout_constraintTop_toTopOf="@id/step2"
+                    app:layout_constraintBottom_toBottomOf="@id/step2" />
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="2dp"
+                    android:background="#D9DEE7"
+                    app:layout_constraintStart_toEndOf="@id/step3"
+                    app:layout_constraintEnd_toStartOf="@id/step4"
+                    app:layout_constraintTop_toTopOf="@id/step3"
+                    app:layout_constraintBottom_toBottomOf="@id/step3" />
+
+                <!-- LABELS -->
+                <TextView
+                    android:layout_width="72dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="3dp"
+                    android:gravity="center"
+                    android:text="Account"
+                    android:textColor="#001B43"
+                    android:textSize="9sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="@id/step1"
+                    app:layout_constraintEnd_toEndOf="@id/step1"
+                    app:layout_constraintTop_toBottomOf="@id/step1" />
+
+                <TextView
+                    android:layout_width="82dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="3dp"
+                    android:gravity="center"
+                    android:textStyle="bold"
+                    android:maxLines="1"
+                    android:text="Personal Info"
+                    android:textColor="#001B43"
+                    android:textSize="9sp"
+                    app:layout_constraintStart_toStartOf="@id/step2"
+                    app:layout_constraintEnd_toEndOf="@id/step2"
+                    app:layout_constraintTop_toBottomOf="@id/step2" />
+
+                <TextView
+                    android:layout_width="82dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="3dp"
+                    android:gravity="center"
+                    android:textStyle="bold"
+                    android:maxLines="1"
+                    android:text="Requirements"
+                    android:textColor="#FF8A00"
+                    android:textSize="9sp"
+                    app:layout_constraintStart_toStartOf="@id/step3"
+                    app:layout_constraintEnd_toEndOf="@id/step3"
+                    app:layout_constraintTop_toBottomOf="@id/step3" />
+
+                <TextView
+                    android:layout_width="72dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="3dp"
+                    android:gravity="center"
+                    android:textStyle="bold"
+                    android:text="Review"
+                    android:textColor="#687386"
+                    android:textSize="9sp"
+                    app:layout_constraintStart_toStartOf="@id/step4"
+                    app:layout_constraintEnd_toEndOf="@id/step4"
+                    app:layout_constraintTop_toBottomOf="@id/step4" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <!-- FLAT CONTENT (No CardViews) -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingTop="16dp">
+
+                <!-- DRIVER'S LICENSE SECTION -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Driver's License"
+                        android:textColor="#273142"
+                        android:textSize="22sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:text="License Number"
+                    android:textColor="#344054"
+                    android:textSize="13sp"
+                    android:textStyle="bold" />
+                <EditText
+                    android:id="@+id/edtLicenseNumber"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:background="@drawable/bg_input_field"
+                    android:hint="Enter license number"
+                    android:paddingHorizontal="12dp"
+                    android:textSize="14sp"
+                    android:inputType="text"
+                    android:minHeight="48dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:text="License Expiration Date"
+                    android:textColor="#344054"
+                    android:textSize="13sp"
+                    android:textStyle="bold" />
+                <LinearLayout
+                    android:id="@+id/layoutExpiration"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:background="@drawable/bg_input_field"
+                    android:gravity="center_vertical"
+                    android:paddingHorizontal="12dp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:minHeight="48dp" >
+                    <TextView
+                        android:id="@+id/edtLicenseExpiration"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Select expiration date"
+                        android:textColor="#667085"
+                        android:textSize="14sp" />
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:src="@drawable/ic_calendar"
+                        app:tint="#667085" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/btnScanLicense"
+                    android:layout_width="match_parent"
+                    android:layout_height="128dp"
+                    android:layout_marginTop="12dp"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:background="@drawable/bg_license_scan_tile"
+                    android:foreground="?attr/selectableItemBackground"
+                    android:clipToOutline="true"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:contentDescription="@string/license_camera_scan_both">
+                    <ImageView
+                        android:layout_width="32dp" android:layout_height="32dp"
+                        android:src="@drawable/ic_camera" app:tint="#667085"
+                        android:importantForAccessibility="no" />
+                    <TextView
+                        android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:text="@string/license_camera_scan_both"
+                        android:textColor="#344054" android:textSize="14sp"
+                        android:importantForAccessibility="no" />
+                </LinearLayout>
+                <TextView
+                    android:id="@+id/licenseExpiryOcrStatus"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:visibility="gone"
+                    android:accessibilityLiveRegion="polite"
+                    android:textColor="#667085"
+                    android:textSize="12sp" />
+                <LinearLayout
+                    android:id="@+id/licenseFrontPreview"
+                    android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp" android:orientation="vertical"
+                    android:visibility="gone">
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:orientation="horizontal" android:gravity="center_vertical">
+                        <TextView android:layout_width="0dp" android:layout_height="wrap_content"
+                            android:layout_weight="1" android:text="@string/license_front_short"
+                            android:textColor="#344054" android:textSize="14sp" android:textStyle="bold" />
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/retakeLicenseFront" style="@style/Widget.MaterialComponents.Button.TextButton"
+                            android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:minHeight="48dp" android:text="@string/license_camera_retake"
+                            android:contentDescription="@string/license_retake_front"
+                            android:textAllCaps="false" android:textColor="#001B43"
+                            android:textStyle="bold" app:cornerRadius="12dp" />
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/removeLicenseFront" style="@style/Widget.MaterialComponents.Button.TextButton"
+                            android:layout_width="48dp" android:layout_height="48dp"
+                            android:minWidth="48dp" android:minHeight="48dp" android:padding="0dp"
+                            android:text="@string/license_remove_symbol" android:textSize="24sp"
+                            android:contentDescription="@string/license_remove_front"
+                            android:textColor="#344054" app:cornerRadius="12dp" />
+                    </LinearLayout>
+                    <ImageView android:id="@+id/imgLicenseFront"
+                        android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:adjustViewBounds="true" android:scaleType="fitCenter"
+                        android:contentDescription="@string/license_front_short" />
+                </LinearLayout>
+                <LinearLayout
+                    android:id="@+id/licenseBackPreview"
+                    android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp" android:orientation="vertical"
+                    android:visibility="gone">
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:orientation="horizontal" android:gravity="center_vertical">
+                        <TextView android:layout_width="0dp" android:layout_height="wrap_content"
+                            android:layout_weight="1" android:text="@string/license_back_short"
+                            android:textColor="#344054" android:textSize="14sp" android:textStyle="bold" />
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/retakeLicenseBack" style="@style/Widget.MaterialComponents.Button.TextButton"
+                            android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:minHeight="48dp" android:text="@string/license_camera_retake"
+                            android:contentDescription="@string/license_retake_back"
+                            android:textAllCaps="false" android:textColor="#001B43"
+                            android:textStyle="bold" app:cornerRadius="12dp" />
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/removeLicenseBack" style="@style/Widget.MaterialComponents.Button.TextButton"
+                            android:layout_width="48dp" android:layout_height="48dp"
+                            android:minWidth="48dp" android:minHeight="48dp" android:padding="0dp"
+                            android:text="@string/license_remove_symbol" android:textSize="24sp"
+                            android:contentDescription="@string/license_remove_back"
+                            android:textColor="#344054" app:cornerRadius="12dp" />
+                    </LinearLayout>
+                    <ImageView android:id="@+id/imgLicenseBack"
+                        android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:adjustViewBounds="true" android:scaleType="fitCenter"
+                        android:contentDescription="@string/license_back_short" />
+                </LinearLayout>
+                <TextView
+                    android:id="@+id/licenseFrontOcrStatus"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:accessibilityLiveRegion="polite"
+                    android:visibility="gone"
+                    android:textColor="#667085"
+                    android:textSize="12sp" />
+                <TextView
+                    android:id="@+id/licenseBackOcrStatus"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:accessibilityLiveRegion="polite"
+                    android:visibility="gone"
+                    android:textColor="#667085"
+                    android:textSize="12sp" />
+
+                <!-- POLICE CLEARANCE SECTION -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="32dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Police Clearance"
+                        android:textColor="#273142"
+                        android:textSize="22sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp" android:text="Date of Issue"
+                    android:textColor="#344054" android:textSize="13sp" android:textStyle="bold" />
+                <LinearLayout
+                    android:id="@+id/layoutIssueDate"
+                    android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp" android:background="@drawable/bg_input_field"
+                    android:gravity="center_vertical" android:paddingHorizontal="12dp"
+                    android:clickable="true" android:focusable="true" android:minHeight="48dp">
+                    <TextView
+                        android:id="@+id/txtIssueDate"
+                        android:layout_width="0dp" android:layout_height="wrap_content"
+                        android:layout_weight="1" android:text="Select date of issue"
+                        android:textColor="#667085" android:textSize="14sp" />
+                    <ImageView
+                        android:layout_width="20dp" android:layout_height="20dp"
+                        android:src="@drawable/ic_calendar" app:tint="#667085" />
+                </LinearLayout>
+                <TextView
+                    android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp" android:text="Validity Date"
+                    android:textColor="#344054" android:textSize="13sp" android:textStyle="bold" />
+                <LinearLayout
+                    android:id="@+id/layoutValidityDate"
+                    android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp" android:background="@drawable/bg_input_field"
+                    android:gravity="center_vertical" android:paddingHorizontal="12dp"
+                    android:clickable="true" android:focusable="true" android:minHeight="48dp">
+                    <TextView
+                        android:id="@+id/txtValidityDate"
+                        android:layout_width="0dp" android:layout_height="wrap_content"
+                        android:layout_weight="1" android:text="Select validity date"
+                        android:textColor="#667085" android:textSize="14sp" />
+                    <ImageView
+                        android:layout_width="20dp" android:layout_height="20dp"
+                        android:src="@drawable/ic_calendar" app:tint="#667085" />
+                </LinearLayout>
+                <LinearLayout
+                    android:id="@+id/btnUploadPolice"
+                    android:layout_width="match_parent" android:layout_height="128dp"
+                    android:layout_marginTop="12dp" android:orientation="vertical"
+                    android:gravity="center" android:background="@drawable/bg_license_scan_tile"
+                    android:foreground="?attr/selectableItemBackground" android:clipToOutline="true"
+                    android:clickable="true" android:focusable="true"
+                    android:contentDescription="@string/police_upload">
+                    <ImageView
+                        android:layout_width="32dp" android:layout_height="32dp"
+                        android:src="@drawable/ic_upload" app:tint="#667085"
+                        android:importantForAccessibility="no" />
+                    <TextView
+                        android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp" android:text="@string/police_upload"
+                        android:textColor="#344054" android:textSize="14sp"
+                        android:importantForAccessibility="no" />
+                </LinearLayout>
+                <LinearLayout android:id="@+id/policePhotoPreview"
+                    android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:orientation="vertical" android:visibility="gone">
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:gravity="end|center_vertical" android:orientation="horizontal">
+                        <com.google.android.material.button.MaterialButton android:id="@+id/replacePolicePhoto"
+                            style="@style/Widget.MaterialComponents.Button.TextButton"
+                            android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:minHeight="48dp" android:text="@string/police_replace"
+                            android:contentDescription="@string/police_replace_description" android:textAllCaps="false"
+                            android:textColor="#001B43" android:textStyle="bold" app:cornerRadius="12dp" />
+                        <com.google.android.material.button.MaterialButton android:id="@+id/removePolicePhoto"
+                            style="@style/Widget.MaterialComponents.Button.TextButton"
+                            android:layout_width="48dp" android:layout_height="48dp"
+                            android:minWidth="48dp" android:minHeight="48dp" android:padding="0dp"
+                            android:text="@string/license_remove_symbol" android:textSize="24sp"
+                            android:contentDescription="@string/police_remove" android:textColor="#344054"
+                            app:cornerRadius="12dp" />
+                    </LinearLayout>
+                    <ImageView android:id="@+id/imgPoliceClearance"
+                        android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:adjustViewBounds="true" android:scaleType="fitCenter"
+                        android:contentDescription="@string/police_photo_description" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/policePhotoError"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:accessibilityLiveRegion="polite"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:visibility="gone"
+                android:textColor="#C62828"
+                android:textSize="12sp" />
+
+            <!-- BUTTONS -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnLicenseNext"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:text="Next"
+                android:textAllCaps="false"
+                android:textColor="#FFFFFF"
+                android:textSize="@dimen/action_button_text_size"
+                android:textStyle="bold"
+                app:backgroundTint="#FF8800"
+                app:cornerRadius="12dp"
+                android:minHeight="@dimen/action_button_min_height"
+                android:gravity="center"
+                android:insetTop="0dp"
+                android:insetBottom="0dp"
+                android:paddingTop="8dp"
+                android:paddingBottom="8dp"
+                android:paddingStart="12dp"
+                android:paddingEnd="12dp"
+                android:singleLine="false" />
+
+            <TextView
+                android:id="@+id/btnLicenseBackBottom"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="16dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:text="Back"
+                android:textColor="#FF8800"
+                android:textSize="@dimen/action_button_text_size"
+                android:textStyle="bold"
+                android:minHeight="@dimen/action_button_min_height"
+                android:minWidth="@dimen/touch_target_size"
+                android:gravity="center" />
+
+        </LinearLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

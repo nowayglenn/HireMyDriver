@@ -1,0 +1,6 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="24dp" android:background="@drawable/bg_booking_dialog">
+    <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="No internet connection" android:textSize="22sp" android:textColor="#061B41" android:fontFamily="sans-serif-medium"/>
+    <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="12dp" android:layout_marginBottom="18dp" android:text="Connect to Wi-Fi or mobile data, then tap Try Again to continue." android:textSize="14sp" android:textColor="#667085"/>
+    <com.google.android.material.button.MaterialButton android:id="@+id/networkRetry" style="@style/MapFlowButton" android:text="Try Again"/>
+    <com.google.android.material.button.MaterialButton android:id="@+id/networkLater" style="@style/MapFlowButton.Outline" android:layout_marginTop="12dp" android:text="Cancel"/>
+</LinearLayout>

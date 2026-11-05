@@ -1,0 +1,7 @@
+<resources>
+    <string name="profile_service_area_unset">Wala pang itinakdang lugar ng serbisyo</string>
+    <string name="profile_service_areas_all">Tingnan ang lahat ng %1$d lugar</string>
+    <string name="profile_service_areas_less">Ipakita ang mas kaunti</string>
+    <string name="profile_service_areas_expanded">Pinalawak</string>
+    <string name="profile_service_areas_collapsed">Pinaikli</string>
+</resources>

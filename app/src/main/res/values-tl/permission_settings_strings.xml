@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="permission_precise_granted">Pinapayagan ang eksaktong lokasyon</string>
+    <string name="permission_approximate_granted">Pinapayagan ang tinatayang lokasyon</string>
+    <string name="location_precision_help">Tumutulong hanapin ang pickup at ipakita ang iyong posisyon habang bukas ang mapa. I-tap para pamahalaan ang pahintulot sa settings ng telepono.</string>
+    <string name="foreground_location_note">Humihinto ang location updates kapag umalis ka sa mapa o ni-minimize ang app. Hiwalay ang trip timer notification sa location tracking.</string>
+    <string name="device_location_off">Naka-off ang Location ng telepono. I-on ito sa settings para magamit ang GPS kahit may pahintulot ang app.</string>
+    <string name="permission_settings_unavailable">Buksan ang settings ng telepono para pamahalaan ang mga pahintulot ng app.</string>
+    <string name="notification_prefs_scope">I-save sa teleponong ito ang iyong mga kagustuhan para sa booking at mensahe. Wala pang live booking at message alerts. Pamahalaan ang trip timer notifications sa settings ng telepono.</string>
+    <string name="notification_os_enabled">Notifications sa telepono: Pinapayagan</string>
+    <string name="notification_os_disabled">Notifications sa telepono: Naka-block</string>
+    <string name="notification_phone_settings">Pamahalaan ang notifications sa telepono</string>
+    <string name="notification_saved_local">Na-save ang mga kagustuhan sa teleponong ito</string>
+    <string name="notification_pref_booking_desc">Mga tugon sa booking, pagdating, at status ng biyahe.</string>
+    <string name="notification_pref_chat_desc">Mga bagong mensahe mula sa iyong driver.</string>
+</resources>

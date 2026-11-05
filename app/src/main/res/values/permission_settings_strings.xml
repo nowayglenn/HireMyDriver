@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="permission_precise_granted">Precise location allowed</string>
+    <string name="permission_approximate_granted">Approximate location allowed</string>
+    <string name="location_precision_help">Helps locate your pickup and show your position while the map is open. Tap to manage permission in phone settings.</string>
+    <string name="foreground_location_note">Location updates stop when you leave the map or minimize the app. The trip timer notification is separate from location tracking.</string>
+    <string name="device_location_off">Your phone’s Location setting is off. Turn it on in phone settings to use GPS, even if app permission is allowed.</string>
+    <string name="permission_settings_unavailable">Open your phone settings to manage this app’s permissions.</string>
+    <string name="notification_prefs_scope">Save your booking and message preferences on this phone. Live booking and message alerts are not available yet. Manage trip timer notifications in phone settings.</string>
+    <string name="notification_os_enabled">Phone notifications: Allowed</string>
+    <string name="notification_os_disabled">Phone notifications: Blocked</string>
+    <string name="notification_phone_settings">Manage phone notifications</string>
+    <string name="notification_saved_local">Preferences saved on this phone</string>
+    <string name="notification_pref_booking_desc">Booking responses, arrival, and trip status updates.</string>
+    <string name="notification_pref_chat_desc">New messages from your driver.</string>
+</resources>

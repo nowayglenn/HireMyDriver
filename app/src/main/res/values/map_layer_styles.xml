@@ -1,0 +1,17 @@
+<resources>
+    <style name="MapLayerButton" parent="MapFlowButton.Outline">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:minWidth">0dp</item>
+        <item name="android:minHeight">48dp</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:paddingStart">8dp</item>
+        <item name="android:paddingEnd">8dp</item>
+        <item name="android:paddingTop">8dp</item>
+        <item name="android:paddingBottom">8dp</item>
+        <item name="android:textColor">@color/map_layer_text</item>
+        <item name="backgroundTint">@color/map_layer_background</item>
+        <item name="strokeColor">#DDE4EE</item>
+        <item name="cornerRadius">12dp</item>
+    </style>
+</resources>

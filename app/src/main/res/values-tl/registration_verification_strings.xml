@@ -1,0 +1,6 @@
+<resources>
+    <string name="driver_verification_pending">Naghihintay ng pag-apruba</string>
+    <string name="driver_verification_message">Pakihintay ang pag-apruba ng iyong pagpaparehistro bilang driver.</string>
+    <string name="driver_verification_details">Kailangang suriin ang impormasyon ng iyong account at mga dokumento bago ma-verify ang iyong driver profile.</string>
+    <string name="driver_verification_continue">Magpatuloy</string>
+</resources>

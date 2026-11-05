@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bg_booking_dialog"
+    android:clipToOutline="true"
+    android:fillViewport="true">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="24dp">
+        <TextView
+            style="@style/MapFlowText"
+            android:accessibilityHeading="true"
+            android:fontFamily="sans-serif-medium"
+            android:text="Cancellation reason"
+            android:textSize="22sp" />
+        <TextView
+            style="@style/MapFlowCaption"
+            android:layout_marginTop="8dp"
+            android:text="Please tell us why you need to cancel this request."
+            android:textSize="14sp" />
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/cancelReasonField"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:hint="Other reason, please specify"
+            app:boxBackgroundColor="#FFFFFF"
+            app:boxCornerRadiusTopStart="12dp"
+            app:boxCornerRadiusTopEnd="12dp"
+            app:boxCornerRadiusBottomStart="12dp"
+            app:boxCornerRadiusBottomEnd="12dp"
+            app:boxStrokeColor="#667085"
+            app:hintTextColor="#667085">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/cancelReasonInput"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="top|start"
+                android:inputType="textCapSentences|textMultiLine"
+                android:minLines="3"
+                android:maxLines="5"
+                android:maxLength="1000"
+                android:padding="14dp"
+                android:textColor="#102444"
+                android:textSize="14sp" />
+        </com.google.android.material.textfield.TextInputLayout>
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/cancelReasonContinue"
+            style="@style/MapFlowButton"
+            android:layout_marginTop="20dp"
+            android:text="Continue" />
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/cancelReasonKeep"
+            style="@style/MapFlowButton.Outline"
+            android:layout_marginTop="8dp"
+            android:text="Keep booking" />
+    </LinearLayout>
+</ScrollView>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="top"
+    android:orientation="horizontal"
+    android:paddingVertical="6dp">
+
+    <TextView
+        android:id="@+id/scheduleDay"
+        android:textStyle="bold"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.38"
+        android:paddingEnd="8dp"
+        android:textColor="#061B41"
+        android:textSize="13sp" />
+
+    <TextView
+        android:id="@+id/scheduleHours"
+        android:textStyle="bold"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.62"
+        android:gravity="end"
+        android:textColor="#667085"
+        android:textSize="13sp" />
+</LinearLayout>

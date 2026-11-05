@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Enable only after authenticated driver accounts, conversation provisioning and rules are deployed. -->
+    <bool name="messaging_enabled">true</bool>
+    <string name="messaging_unavailable">Messaging will be available soon.</string>
+    <string name="messaging_no_conversation">Chat will be available once your booking is connected.</string>
+    <string name="messaging_empty">No messages yet.</string>
+    <string name="messaging_unread_empty">No unread messages.</string>
+    <string name="messaging_search_hint">Search conversations</string>
+</resources>

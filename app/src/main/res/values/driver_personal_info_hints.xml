@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="driver_address_example">Barangay, Municipality, Province</string>
+    <string name="driver_bio_example">Example: I am a reliable driver with 3 years of experience, focused on safe and comfortable trips.</string>
+</resources>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent" android:layout_height="wrap_content"
+    android:minHeight="96dp" android:padding="16dp" android:gravity="center_vertical"
+    android:orientation="horizontal" android:background="?attr/selectableItemBackground"
+    android:clickable="true" android:focusable="true">
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/chatRowPhoto"
+        android:minWidth="56dp" android:minHeight="56dp" android:padding="0dp" app:contentPadding="0dp"
+        android:layout_width="56dp" android:layout_height="56dp" android:src="@drawable/no_profile"
+        android:scaleType="centerCrop" android:importantForAccessibility="no"
+        app:shapeAppearanceOverlay="@style/CircleImage" />
+    <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
+        android:layout_weight="1" android:layout_marginStart="16dp" android:orientation="vertical">
+        <TextView android:id="@+id/chatRowName" android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:textSize="16sp" android:textColor="#061B41" android:textStyle="bold" android:maxLines="1" android:ellipsize="end" />
+        <TextView android:id="@+id/chatRowPreview" android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:layout_marginTop="4dp" android:textSize="14sp" android:textColor="#667085" android:maxLines="1" android:ellipsize="end" />
+        <TextView android:id="@+id/chatRowTime" android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:layout_marginTop="4dp" android:textSize="11sp" android:textColor="#667085" />
+    </LinearLayout>
+    <View android:id="@+id/chatRowUnread" android:layout_width="10dp" android:layout_height="10dp"
+        android:layout_marginStart="12dp" android:background="@drawable/bg_orange_circle" android:importantForAccessibility="no" />
+</LinearLayout>

@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F8F9FB">
+
+    <!-- HEADER -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#061B41"
+        app:layout_constraintTop_toTopOf="parent"
+        android:tag="screen_header"
+        android:minHeight="@dimen/screen_header_min_height" >
+
+        <ImageButton
+            android:id="@+id/btnBack"
+            android:layout_width="@dimen/touch_target_size"
+            android:layout_height="@dimen/touch_target_size"
+            android:layout_marginStart="@dimen/screen_header_icon_margin"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="Back"
+            android:padding="12dp"
+            android:src="@drawable/ic_arrow_back"
+            app:tint="@android:color/white"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent" />
+
+        <TextView
+            android:id="@+id/txtTitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/screen_header_title_gap"
+            android:text="Edit Weekly Schedule"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/screen_header_title_size"
+            android:textStyle="bold"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:tag="screen_header_title"
+            android:layout_marginTop="@dimen/screen_header_title_gap"
+            android:layout_marginBottom="@dimen/screen_header_title_gap"
+            android:layout_marginEnd="@dimen/screen_header_text_inset"
+            app:layout_constraintStart_toEndOf="@id/btnBack"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:gravity="start|center_vertical" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!-- CONTENT SCROLLVIEW -->
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        android:scrollbars="none"
+        android:overScrollMode="always"
+        android:clipToPadding="false"
+        android:clipChildren="false"
+        app:layout_constraintTop_toBottomOf="@id/header"
+        app:layout_constraintBottom_toTopOf="@id/bottomArea">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_margin="8dp" android:text="Choose your working days and hours. Turn a day off when you are unavailable. Start and end times must be on the same day." android:textSize="14sp" android:textColor="#667085" android:lineSpacingExtra="3dp"/>
+            <androidx.cardview.widget.CardView android:layout_width="match_parent" android:layout_height="wrap_content" app:cardBackgroundColor="#FFFFFF" app:cardCornerRadius="16dp" app:cardElevation="2dp" app:cardUseCompatPadding="true">
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="16dp">
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:paddingVertical="12dp">
+                        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:gravity="center_vertical">
+                            <TextView android:id="@+id/scheduleDay1Part0" android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content" android:text="Monday" android:textColor="#061B41" android:textSize="15sp" android:textStyle="bold"/>
+                            <com.google.android.material.materialswitch.MaterialSwitch android:id="@+id/scheduleDay1Part1" android:layout_width="wrap_content" android:layout_height="wrap_content" android:contentDescription="Monday availability" android:saveEnabled="false" app:trackColor="@color/switch_track_color"/>
+                        </LinearLayout>
+                        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:baselineAligned="false">
+                            <LinearLayout android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content" android:orientation="vertical" android:layout_marginEnd="12dp">
+                                <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Start time" android:textColor="#667085" android:textSize="12sp" android:layout_marginBottom="6dp"/>
+                                <TextView android:id="@+id/scheduleDay1Part2" android:layout_width="match_parent" android:layout_height="wrap_content" android:minHeight="48dp" android:background="@drawable/bg_dropdown" android:gravity="center" android:padding="10dp" android:textColor="#061B41" android:textSize="14sp" android:clickable="true" android:focusable="true" android:saveEnabled="false"/>
+                            </LinearLayout>
+                            <LinearLayout android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content" android:orientation="vertical" >
+                                <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="End time" android:textColor="#667085" android:textSize="12sp" android:layout_marginBottom="6dp"/>
+                                <TextView android:id="@+id/scheduleDay1Part4" android:layout_width="match_parent" android:layout_height="wrap_content" android:minHeight="48dp" android:background="@drawable/bg_dropdown" android:gravity="center" android:padding="10dp" android:textColor="#061B41" android:textSize="14sp" android:clickable="true" android:focusable="true" android:saveEnabled="false"/>
+                            </LinearLayout>
+                        </LinearLayout>
+                        <TextView android:id="@+id/scheduleError1" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="8dp" android:textColor="#B3261E" android:textSize="12sp" android:accessibilityLiveRegion="polite" android:visibility="gone"/>
+                    </LinearLayout>
+                    <View android:layout_width="match_parent" android:layout_height="1dp" android:background="#F3F4F6"/>
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:paddingVertical="12dp">
+                        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:gravity="center_vertical">
+                            <TextView android:id="@+id/scheduleDay2Part0" android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content" android:text="Tuesday" android:textColor="#061B41" android:textSize="15sp" android:textStyle="bold"/>
+                            <com.google.android.material.materialswitch.MaterialSwitch android:id="@+id/scheduleDay2Part1" android:layout_width="wrap_content" android:layout_height="wrap_content" android:contentDescription="Tuesday availability" android:saveEnabled="false" app:trackColor="@color/switch_track_color"/>
+                        </LinearLayout>
+                        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:baselineAligned="false">
+                            <LinearLayout android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content" android:orientation="vertical" android:layout_marginEnd="12dp">
+                                <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Start time" android:textColor="#667085" android:textSize="12sp" android:layout_marginBottom="6dp"/>
+                                <TextView android:id="@+id/scheduleDay2Part2" android:layout_width="match_parent" android:layout_height="wrap_content" android:minHeight="48dp" android:background="@drawable/bg_dropdown" android:gravity="center" android:padding="10dp" android:textColor="#061B41" android:textSize="14sp" android:clickable="true" android:focusable="true" android:saveEnabled="false"/>
+                            </LinearLayout>
+                            <LinearLayout android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content" android:orientation="vertical" >
+                                <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="End time" android:textColor="#667085" android:textSize="12sp" android:layout_marginBottom="6dp"/>
+                                <TextView android:id="@+id/scheduleDay2Part4" android:layout_width="match_parent" android:layout_height="wrap_content" android:minHeight="48dp" android:background="@drawable/bg_dropdown" android:gravity="center" android:padding="10dp" android:textColor="#061B41" android:textSize="14sp" android:clickable="true" android:focusable="true" android:saveEnabled="false"/>
+                            </LinearLayout>
+                        </LinearLayout>
+                        <TextView android:id="@+id/scheduleError2" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="8dp" android:textColor="#B3261E" android:textSize="12sp" android:accessibilityLiveRegion="polite" android:visibility="gone"/>
+                    </LinearLayout>
+                    <View android:layout_width="match_parent" android:layout_height="1dp" android:background="#F3F4F6"/>
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:paddingVertical="12dp">
+                        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:gravity="center_vertical">
+                            <TextView android:id="@+id/scheduleDay3Part0" android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content" android:text="Wednesday" android:textColor="#061B41" android:textSize="15sp" android:textStyle="bold"/>
+                            <com.google.android.material.materialswitch.MaterialSwitch android:id="@+id/scheduleDay3Part1" android:layout_width="wrap_content" android:layout_height="wrap_content" android:contentDescription="Wednesday availability" android:saveEnabled="false" app:trackColor="@color/switch_track_color"/>
+                        </LinearLayout>
+                        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:baselineAligned="false">
+                            <LinearLayout android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content" android:orientation="vertical" android:layout_marginEnd="12dp">
+                                <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Start time" android:textColor="#667085" android:textSize="12sp" android:layout_marginBottom="6dp"/>
+                                <TextView android:id="@+id/scheduleDay3Part2" android:layout_width="match_parent" android:layout_height="wrap_content" android:minHeight="48dp" android:background="@drawable/bg_dropdown" android:gravity="center" android:padding="10dp" android:textColor="#061B41" android:textSize="14sp" android:clickable="true" android:focusable="true" android:saveEnabled="false"/>
+                            </LinearLayout>
+                            <LinearLayout android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content" android:orientation="vertical" >
+                                <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="End time" android:textColor="#667085" android:textSize="12sp" android:layout_marginBottom="6dp"/>
+                                <TextView android:id="@+id/scheduleDay3Part4" android:layout_width="match_parent" android:layout_height="wrap_content" android:minHeight="48dp" android:background="@drawable/bg_dropdown" android:gravity="center" android:padding="10dp" android:textColor="#061B41" android:textSize="14sp" android:clickable="true" android:focusable="true" android:saveEnabled="false"/>
+                            </LinearLayout>
+                        </LinearLayout>
+                        <TextView android:id="@+id/scheduleError3" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="8dp" android:textColor="#B3261E" android:textSize="12sp" android:accessibilityLiveRegion="polite" android:visibility="gone"/>
+                    </LinearLayout>
+                    <View android:layout_width="match_parent" android:layout_height="1dp" android:background="#F3F4F6"/>
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:paddingVertical="12dp">
+                        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:gravity="center_vertical">
+                            <TextView android:id="@+id/scheduleDay4Part0" android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content" android:text="Thursday" android:textColor="#061B41" android:textSize="15sp" android:textStyle="bold"/>
+                            <com.google.android.material.materialswitch.MaterialSwitch android:id="@+id/scheduleDay4Part1" android:layout_width="wrap_content" android:layout_height="wrap_content" android:contentDescription="Thursday availability" android:saveEnabled="false" app:trackColor="@color/switch_track_color"/>
+                        </LinearLayout>
+                        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:baselineAligned="false">
+                            <LinearLayout android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content" android:orientation="vertical" android:layout_marginEnd="12dp">
+                                <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Start time" android:textColor="#667085" android:textSize="12sp" android:layout_marginBottom="6dp"/>
+                                <TextView android:id="@+id/scheduleDay4Part2" android:layout_width="match_parent" android:layout_height="wrap_content" android:minHeight="48dp" android:background="@drawable/bg_dropdown" android:gravity="center" android:padding="10dp" android:textColor="#061B41" android:textSize="14sp" android:clickable="true" android:focusable="true" android:saveEnabled="false"/>
+                            </LinearLayout>
+                            <LinearLayout android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content" android:orientation="vertical" >
+                                <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="End time" android:textColor="#667085" android:textSize="12sp" android:layout_marginBottom="6dp"/>
+                                <TextView android:id="@+id/scheduleDay4Part4" android:layout_width="match_parent" android:layout_height="wrap_content" android:minHeight="48dp" android:background="@drawable/bg_dropdown" android:gravity="center" android:padding="10dp" android:textColor="#061B41" android:textSize="14sp" android:clickable="true" android:focusable="true" android:saveEnabled="false"/>
+                            </LinearLayout>
+                        </LinearLayout>
+                        <TextView android:id="@+id/scheduleError4" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="8dp" android:textColor="#B3261E" android:textSize="12sp" android:accessibilityLiveRegion="polite" android:visibility="gone"/>
+                    </LinearLayout>
+                    <View android:layout_width="match_parent" android:layout_height="1dp" android:background="#F3F4F6"/>
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:paddingVertical="12dp">
+                        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:gravity="center_vertical">
+                            <TextView android:id="@+id/scheduleDay5Part0" android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content" android:text="Friday" android:textColor="#061B41" android:textSize="15sp" android:textStyle="bold"/>
+                            <com.google.android.material.materialswitch.MaterialSwitch android:id="@+id/scheduleDay5Part1" android:layout_width="wrap_content" android:layout_height="wrap_content" android:contentDescription="Friday availability" android:saveEnabled="false" app:trackColor="@color/switch_track_color"/>
+                        </LinearLayout>
+                        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:baselineAligned="false">
+                            <LinearLayout android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content" android:orientation="vertical" android:layout_marginEnd="12dp">
+                                <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Start time" android:textColor="#667085" android:textSize="12sp" android:layout_marginBottom="6dp"/>
+                                <TextView android:id="@+id/scheduleDay5Part2" android:layout_width="match_parent" android:layout_height="wrap_content" android:minHeight="48dp" android:background="@drawable/bg_dropdown" android:gravity="center" android:padding="10dp" android:textColor="#061B41" android:textSize="14sp" android:clickable="true" android:focusable="true" android:saveEnabled="false"/>
+                            </LinearLayout>
+                            <LinearLayout android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content" android:orientation="vertical" >
+                                <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="End time" android:textColor="#667085" android:textSize="12sp" android:layout_marginBottom="6dp"/>
+                                <TextView android:id="@+id/scheduleDay5Part4" android:layout_width="match_parent" android:layout_height="wrap_content" android:minHeight="48dp" android:background="@drawable/bg_dropdown" android:gravity="center" android:padding="10dp" android:textColor="#061B41" android:textSize="14sp" android:clickable="true" android:focusable="true" android:saveEnabled="false"/>
+                            </LinearLayout>
+                        </LinearLayout>
+                        <TextView android:id="@+id/scheduleError5" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="8dp" android:textColor="#B3261E" android:textSize="12sp" android:accessibilityLiveRegion="polite" android:visibility="gone"/>
+                    </LinearLayout>
+                    <View android:layout_width="match_parent" android:layout_height="1dp" android:background="#F3F4F6"/>
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:paddingVertical="12dp">
+                        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:gravity="center_vertical">
+                            <TextView android:id="@+id/scheduleDay6Part0" android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content" android:text="Saturday" android:textColor="#061B41" android:textSize="15sp" android:textStyle="bold"/>
+                            <com.google.android.material.materialswitch.MaterialSwitch android:id="@+id/scheduleDay6Part1" android:layout_width="wrap_content" android:layout_height="wrap_content" android:contentDescription="Saturday availability" android:saveEnabled="false" app:trackColor="@color/switch_track_color"/>
+                        </LinearLayout>
+                        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:baselineAligned="false">
+                            <LinearLayout android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content" android:orientation="vertical" android:layout_marginEnd="12dp">
+                                <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Start time" android:textColor="#667085" android:textSize="12sp" android:layout_marginBottom="6dp"/>
+                                <TextView android:id="@+id/scheduleDay6Part2" android:layout_width="match_parent" android:layout_height="wrap_content" android:minHeight="48dp" android:background="@drawable/bg_dropdown" android:gravity="center" android:padding="10dp" android:textColor="#061B41" android:textSize="14sp" android:clickable="true" android:focusable="true" android:saveEnabled="false"/>
+                            </LinearLayout>
+                            <LinearLayout android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content" android:orientation="vertical" >
+                                <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="End time" android:textColor="#667085" android:textSize="12sp" android:layout_marginBottom="6dp"/>
+                                <TextView android:id="@+id/scheduleDay6Part4" android:layout_width="match_parent" android:layout_height="wrap_content" android:minHeight="48dp" android:background="@drawable/bg_dropdown" android:gravity="center" android:padding="10dp" android:textColor="#061B41" android:textSize="14sp" android:clickable="true" android:focusable="true" android:saveEnabled="false"/>
+                            </LinearLayout>
+                        </LinearLayout>
+                        <TextView android:id="@+id/scheduleError6" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="8dp" android:textColor="#B3261E" android:textSize="12sp" android:accessibilityLiveRegion="polite" android:visibility="gone"/>
+                    </LinearLayout>
+                    <View android:layout_width="match_parent" android:layout_height="1dp" android:background="#F3F4F6"/>
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:paddingVertical="12dp">
+                        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:gravity="center_vertical">
+                            <TextView android:id="@+id/scheduleDay7Part0" android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content" android:text="Sunday" android:textColor="#061B41" android:textSize="15sp" android:textStyle="bold"/>
+                            <com.google.android.material.materialswitch.MaterialSwitch android:id="@+id/scheduleDay7Part1" android:layout_width="wrap_content" android:layout_height="wrap_content" android:contentDescription="Sunday availability" android:saveEnabled="false" app:trackColor="@color/switch_track_color"/>
+                        </LinearLayout>
+                        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:baselineAligned="false">
+                            <LinearLayout android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content" android:orientation="vertical" android:layout_marginEnd="12dp">
+                                <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Start time" android:textColor="#667085" android:textSize="12sp" android:layout_marginBottom="6dp"/>
+                                <TextView android:id="@+id/scheduleDay7Part2" android:layout_width="match_parent" android:layout_height="wrap_content" android:minHeight="48dp" android:background="@drawable/bg_dropdown" android:gravity="center" android:padding="10dp" android:textColor="#061B41" android:textSize="14sp" android:clickable="true" android:focusable="true" android:saveEnabled="false"/>
+                            </LinearLayout>
+                            <LinearLayout android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content" android:orientation="vertical" >
+                                <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="End time" android:textColor="#667085" android:textSize="12sp" android:layout_marginBottom="6dp"/>
+                                <TextView android:id="@+id/scheduleDay7Part4" android:layout_width="match_parent" android:layout_height="wrap_content" android:minHeight="48dp" android:background="@drawable/bg_dropdown" android:gravity="center" android:padding="10dp" android:textColor="#061B41" android:textSize="14sp" android:clickable="true" android:focusable="true" android:saveEnabled="false"/>
+                            </LinearLayout>
+                        </LinearLayout>
+                        <TextView android:id="@+id/scheduleError7" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="8dp" android:textColor="#B3261E" android:textSize="12sp" android:accessibilityLiveRegion="polite" android:visibility="gone"/>
+                    </LinearLayout>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+            <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_margin="8dp" android:text="Your weekly schedule is saved on this phone." android:textSize="12sp" android:textColor="#667085"/>
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <!-- BOTTOM SAVE BUTTON -->
+    <LinearLayout
+        android:id="@+id/bottomArea"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        android:background="#FFFFFF"
+        android:elevation="8dp"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnSaveSchedule"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Save Schedule"
+            android:textAllCaps="false"
+            android:textColor="#FFFFFF"
+            android:textSize="@dimen/action_button_text_size"
+            android:textStyle="bold"
+            app:backgroundTint="#FF7900"
+            app:cornerRadius="10dp"
+            android:minHeight="@dimen/action_button_min_height"
+            android:gravity="center"
+            android:insetTop="0dp"
+            android:insetBottom="0dp"
+            android:paddingTop="8dp"
+            android:paddingBottom="8dp"
+            android:paddingStart="12dp"
+            android:paddingEnd="12dp"
+            android:singleLine="false" />
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

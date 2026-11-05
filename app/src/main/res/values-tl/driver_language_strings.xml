@@ -1,0 +1,27 @@
+<resources>
+    <string name="driver_settings_title">Mga Setting ng Driver</string>
+    <string name="driver_preferences_title">Mga kagustuhan sa app.</string>
+    <string name="driver_preferences_description">Pamahalaan ang mga notification, lokasyon, wika, at impormasyon ng app.</string>
+    <string name="driver_preferences_heading">MGA KAGUSTUHAN SA APP</string>
+    <string name="driver_information_heading">PRIVACY AT IMPORMASYON</string>
+    <string name="driver_location_summary">Pamahalaan ang lokasyon para sa mapa at biyahe</string>
+    <string name="driver_alerts_summary">Pamahalaan ang mga alert sa setting ng telepono</string>
+    <string name="driver_alerts_enabled">Naka-on · Pamahalaan sa setting ng telepono</string>
+    <string name="driver_alerts_disabled">Naka-off · Pamahalaan sa setting ng telepono</string>
+    <string name="driver_greeting">Magandang umaga,</string>
+    <string name="driver_verified_label">Beripikadong Driver</string>
+    <string name="driver_available_message">Maaari ka nang makatanggap ng bagong booking.</string>
+    <string name="driver_offline_message">Kasalukuyan kang offline.</string>
+    <string name="driver_pending_message">Naghihintay ng pag-apruba. Maaari mong i-on ang availability matapos ang beripikasyon ng admin.</string>
+    <string name="driver_incomplete_message">Kumpletuhin ang impormasyon sa pagmamaneho upang makatanggap ng booking.</string>
+    <string name="driver_rating_label">Rating</string>
+    <string name="driver_upcoming_label">Paparating na Booking</string>
+    <string name="driver_requests_label">Mga Bagong Booking</string>
+    <string name="driver_accept_action">Tanggapin</string>
+    <string name="driver_decline_action">Tanggihan</string>
+    <string name="driver_no_upcoming">Walang paparating na booking.</string>
+    <string name="driver_no_requests">Wala pang mga booking request.</string>
+    <string name="driver_terms_summary">Basahin ang mga tuntunin ng app</string>
+    <string name="driver_privacy_summary">Basahin kung paano pinangangasiwaan ang impormasyon</string>
+    <string name="driver_about_summary">Impormasyon ng app</string>
+</resources>

@@ -1,0 +1,70 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.HireMyDriver" parent="Theme.Material3.Light.NoActionBar">
+        <!-- Customize your light theme here. -->
+        <item name="colorPrimary">#061B41</item>
+        <item name="android:statusBarColor">#061B41</item>
+    </style>
+
+    <style name="Theme.HireMyDriver" parent="Base.Theme.HireMyDriver" />
+    <style name="ThemeOverlay.HireMyDriver.SupportDialog" parent="ThemeOverlay.Material3.MaterialAlertDialog">
+        <item name="colorSurface">#FFFFFF</item>
+        <item name="colorOnSurface">#061B41</item>
+        <item name="colorOnSurfaceVariant">#273142</item>
+        <item name="colorPrimary">#061B41</item>
+        <item name="android:textColorPrimary">#061B41</item>
+        <item name="android:textColorSecondary">#273142</item>
+    </style>
+    <style name="Theme.HireMyDriver.Splash" parent="Theme.HireMyDriver.Welcome">
+        <!-- Do not preview the artwork alone before the complete splash is inflated. -->
+        <item name="android:windowBackground">#061B41</item>
+        <item name="android:windowDisablePreview">true</item>
+        <item name="android:windowLayoutInDisplayCutoutMode" tools:targetApi="28">shortEdges</item>
+        <item name="android:navigationBarColor">@android:color/transparent</item>
+        <item name="android:enforceStatusBarContrast" tools:targetApi="29">false</item>
+        <item name="android:enforceNavigationBarContrast" tools:targetApi="29">false</item>
+        <item name="android:windowSplashScreenBackground" tools:targetApi="31">#061B41</item>
+        <item name="android:windowSplashScreenAnimatedIcon" tools:targetApi="31">@drawable/splash_no_icon</item>
+        <item name="android:windowSplashScreenIconBackgroundColor" tools:targetApi="31">@android:color/transparent</item>
+    </style>
+
+    <style name="Theme.HireMyDriver.Onboarding" parent="Theme.HireMyDriver">
+        <item name="android:windowBackground">@android:color/white</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:windowLightStatusBar">true</item>
+    </style>
+
+    <style name="Theme.HireMyDriver.Welcome" parent="Theme.HireMyDriver">
+        <item name="android:windowBackground">#061B41</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:windowLightStatusBar">false</item>
+    </style>
+
+    <!-- Cover the status-bar area while driver login/home are still creating their content. -->
+    <style name="Theme.HireMyDriver.DriverEntry" parent="Theme.HireMyDriver">
+        <item name="android:windowBackground">@android:color/white</item>
+        <item name="android:windowSplashScreenBackground" tools:targetApi="31">@android:color/white</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:windowLightStatusBar">true</item>
+        <item name="android:enforceStatusBarContrast" tools:targetApi="29">false</item>
+    </style>
+
+    <style name="CircleImage" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">50%</item>
+    </style>
+
+    <style name="BookingPhotoShape" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">12dp</item>
+    </style>
+
+    <style name="CustomSwitch" parent="Widget.AppCompat.CompoundButton.Switch">
+        <item name="android:track">@drawable/switch_track_selector</item>
+        <item name="android:thumb">@drawable/switch_thumb</item>
+        <item name="android:switchMinWidth">54dp</item>
+        <item name="android:trackTint">@null</item>
+        <item name="android:thumbTint">@null</item>
+        <item name="android:showText">false</item>
+    </style>
+</resources>

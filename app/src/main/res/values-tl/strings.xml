@@ -1,0 +1,317 @@
+<resources>
+    <!-- Navigation -->
+    <string name="nav_home">Home</string>
+    <string name="nav_bookings">Mga Booking</string>
+    <string name="nav_messages">Mensahe</string>
+    <string name="nav_profile">Profile</string>
+
+    <!-- Home Screen -->
+    <string name="hello_user">Kamusta, %1$s!</string>
+    <string name="question_today">Saan mo kailangan\nng driver ngayon?</string>
+    <string name="search_hint">Maghanap ng lokasyon o pangalan…</string>
+    <string name="popular_drivers">Mga Sikat na Driver</string>
+    <string name="see_all">Ipakita lahat</string>
+    <string name="find_best_driver">Hanapin ang Pinakamahusay na Driver</string>
+    <string name="ai_recommend_desc">Hanapin ang driver na pinakabagay sa iyong lokasyon, iskedyul, at mga pangangailangan sa biyahe.</string>
+    <string name="ai_recommended">Inirerekomenda para sa Iyo</string>
+
+    <!-- Booking Screen -->
+    <string name="my_bookings_title">Aking mga Booking</string>
+    <string name="tab_all">Lahat</string>
+    <string name="tab_pending">Nakabinbin</string>
+    <string name="tab_accepted">Tinanggap</string>
+    <string name="tab_completed">Tapos na</string>
+    <string name="tab_cancelled">Kanselado</string>
+    <string name="status_on_trip">NASA BIYAHE</string>
+    <string name="status_pending">NAKABINBIN</string>
+    <string name="status_accepted">TINANGGAP</string>
+    <string name="status_completed">TAPOS NA</string>
+    <string name="status_cancelled">KANSELADO</string>
+    <string name="btn_track_trip">Subaybayan ang Biyahe</string>
+    <string name="btn_emergency">Emergency</string>
+    <string name="btn_view_details">Tingnan ang Detalye</string>
+
+    <!-- Profile Screen -->
+    <string name="my_profile_title">Aking Profile</string>
+    <string name="menu_edit_profile">I-edit ang Profile</string>
+    <string name="desc_edit_profile">I-update ang iyong personal na impormasyon</string>
+    <string name="menu_payment_methods">Mga Paraan ng Pagbabayad</string>
+    <string name="desc_payment_methods">Pamahalaan ang iyong mga opsyon sa pagbabayad</string>
+    <string name="menu_my_reviews">Aking mga Review</string>
+    <string name="desc_my_reviews">Tingnan at pamahalaan ang iyong mga review</string>
+    <string name="menu_emergency_contact">Kontak sa Emergency</string>
+    <string name="desc_emergency_contact">Magdagdag o mag-edit ng mga kontak sa emergency</string>
+    <string name="menu_settings">Mga Setting</string>
+    <string name="desc_settings">Mga kagustuhan sa app at iba pa</string>
+    <string name="btn_logout">Mag-log Out</string>
+
+    <!-- Settings Screen -->
+    <string name="settings_title">Mga Setting</string>
+    <string name="menu_notifications">Mga Notification</string>
+    <string name="desc_notifications">Pamahalaan ang iyong mga kagustuhan sa notification</string>
+    <string name="menu_change_password">Palitan ang Password</string>
+    <string name="desc_change_password">I-update ang password ng iyong account</string>
+    <string name="menu_language">Wika</string>
+    <string name="menu_location_permissions">Mga Pahintulot sa Lokasyon</string>
+    <string name="desc_location_permissions">Pamahalaan ang access sa lokasyon</string>
+    <string name="menu_terms_conditions">Mga Tuntunin at Kondisyon</string>
+    <string name="menu_privacy_policy">Patakaran sa Privacy</string>
+    <string name="menu_help_support">Tulong at Suporta</string>
+    <string name="desc_help_support">Humingi ng tulong o makipag-ugnayan sa amin</string>
+    <string name="menu_about">Tungkol sa HireMyDriver</string>
+    <string name="version_text">Bersyon %1$s</string>
+    <string name="menu_delete_account">I-delete ang Account</string>
+    <string name="desc_delete_account">Permanenteng i-delete ang iyong account</string>
+
+    <!-- Notification Settings -->
+    <string name="notifications_guidance">Kontrolin kung paano ka makakatanggap ng mga update at alerto.</string>
+    <string name="label_booking_updates">Mga Update sa Booking</string>
+    <string name="desc_booking_updates">Makakuha ng notification kapag tinanggap, dumating, o natapos na ng driver ang biyahe.</string>
+    <string name="label_chat_messages">Mga Mensahe sa Chat</string>
+    <string name="desc_chat_messages">Makakuha ng alerto para sa mga bagong mensahe mula sa iyong driver.</string>
+    <string name="label_promotions">Mga Promo at Alok</string>
+    <string name="desc_promotions">Manatiling updated sa mga pinakabagong discount at rewards sa driver.</string>
+    <string name="header_email_notifications">Mga Notification sa Email</string>
+    <string name="label_trip_receipts">Mga Resibo ng Biyahe</string>
+    <string name="desc_trip_receipts">Makakuha ng buod ng iyong mga natapos na biyahe sa email.</string>
+    <string name="label_news_updates">Mga Balita at Update sa Produkto</string>
+    <string name="desc_news_updates">Makakuha ng impormasyon tungkol sa mga bagong feature at pagpapabuti sa kaligtasan.</string>
+    <string name="btn_save_preferences">I-save ang mga Kagustuhan</string>
+
+    <!-- About Screen -->
+    <string name="about_app_desc">Ang HireMyDriver ay isang marketplace platform na nakatuon sa pag-uugnay ng mga propesyonal na independiyenteng driver sa mga customer para sa ligtas, maaasahan, at maginhawang biyahe.</string>
+    <string name="developed_by_label">Binuo ni</string>
+    <string name="developer_names">Glenndhel Jay Dano\nMark Laurence Polinar</string>
+    <string name="copyright_text">© 2025 HireMyDriver. Lahat ng karapatan ay reserbado.</string>
+
+    <!-- Delete Account Screen -->
+    <string name="delete_account_confirm_title">I-delete ang iyong account?</string>
+    <string name="delete_account_warning">Sigurado ka bang gusto mong i-delete ang iyong account? Ang aksyong ito ay magdi-disable sa iyong profile at aalisin ang iyong access sa HireMyDriver.</string>
+    <string name="delete_30_days_notice">Ang iyong account ay permanenteng made-delete pagkatapos ng 30 araw. Sa loob ng panahong ito, maaari mo pang ma-recover ang iyong account sa pamamagitan ng muling pag-log in.</string>
+    <string name="btn_confirm_delete">I-delete ang Aking Account</string>
+    <string name="btn_keep_account">Panatilihin ang Aking Account</string>
+
+    <!-- Location Settings -->
+    <string name="location_settings_title">Mga Pahintulot sa Lokasyon</string>
+    <string name="location_guidance">Pamahalaan kung paano ginagamit ng app ang iyong lokasyon.</string>
+    <string name="precise_location_label">Eksaktong Lokasyon</string>
+    <string name="precise_location_desc">Gumagamit ng GPS para mahanap ang eksaktong pickup point at masubaybayan ang iyong biyahe sa real-time.</string>
+    <string name="background_location_label">Payagan sa Background</string>
+    <string name="background_location_desc">Pinapayagan ang driver na makita ang iyong lokasyon kahit naka-minimize ang app.</string>
+    <string name="btn_open_settings">Buksan ang System Settings</string>
+    <string name="status_label">Kasalukuyang Status:</string>
+    <string name="status_granted">Pahintulot ay Naibigay</string>
+    <string name="status_denied">Pahintulot ay Tinanggihan</string>
+
+    <!-- Terms & Conditions Text -->
+    <string name="terms_and_conditions_full_text">
+        Maligayang pagdating sa HireMyDriver. Sa paggamit ng aming platform, sumasang-ayon ka sa mga sumusunod na tuntunin at kondisyon:\n\n
+        1. SAKLAW NG SERBISYO\n
+        Ang HireMyDriver ay isang marketplace platform na nag-uugnay sa mga independiyenteng driver at mga customer. Kami ay hindi nagbibigay ng mismong serbisyo sa transportasyon at hindi responsable sa asal ng mga driver o pasahero.\n\n
+        2. CASH-ONLY NA PAGBABAYAD\n
+        Ang lahat ng bayad para sa serbisyo sa pagmamaneho ay dapat ibigay sa CASH nang direkta sa driver pagkatapos ng biyahe. Ang HireMyDriver ay hindi humahawak ng transaksyong pinansyal sa pagitan ng mga user at hindi mananagot sa anumang hindi pagkakaunawaan sa pagbabayad.\n\n
+        3. RESPONSIBILIDAD NG USER\n
+        Dapat magbigay ang mga user ng tumpak na personal at kontak na impormasyon. Ikaw ay responsable sa pagpapanatili ng pagiging kumpidensyal ng iyong account.\n\n
+        4. KALIGTASAN AT ASAL\n
+        Dapat tratuhin ng mga user at driver ang isa\'t isa nang may respeto. Ang Emergency Alert feature ay dapat gamitin lamang sa mga sitwasyong nanganganib ang buhay. Ang mga ilegal na aktibidad sa biyahe ay magreresulta sa permanenteng pagtatapos ng account.\n\n
+        5. LIMITASYON NG PANANAGUTAN\n
+        Ang HireMyDriver ay hindi mananagot sa anumang pinsala, aksidente, sugat, o pagkawala na resulta ng paggamit ng aming platform o sa serbisyong ibinigay ng mga driver.\n\n
+        6. MGA KANSELASYON\n
+        Ang paulit-ulit na pag-kansela ng mga naka-book na biyahe ay maaaring humantong sa pagsuspinde ng account upang matiyak ang maayos na karanasan para sa lahat.\n\n
+        7. PRIVACY NG DATA\n
+        Ang iyong lokasyon at personal na data ay pinamamahalaan ayon sa aming Patakaran sa Privacy upang mapadali ang ligtas at mahusay na pamamahala ng biyahe.
+    </string>
+
+    <!-- Privacy Policy Text -->
+    <string name="privacy_policy_title">Patakaran sa Privacy</string>
+    <string name="privacy_policy_full_text">
+        Sa HireMyDriver, pinahahalagahan namin ang iyong privacy. Ipinapaliwanag ng patakarang ito kung paano namin kinokolekta at pinoprotektahan ang iyong data:\n\n
+        1. IMPORMASYONG KINOKOLEKTA NAMIN\n
+        Kinokolekta namin ang personal na impormasyong ibinibigay mo (pangalan, email, numero ng telepono) at data ng lokasyon kapag ginagamit mo ang app para mag-book o magbigay ng serbisyo sa pagmamaneho.\n\n
+        2. PAANO NAMIN GINAGAMIT ANG DATA NG LOKASYON\n
+        Upang maibigay ang aming pangunahing serbisyo, kinokolekta namin ang tumpak na data ng lokasyon upang itugma ka sa mga kalapit na driver at masubaybayan ang progreso ng iyong biyahe sa real-time. Ito ay mahalaga para sa kaligtasan at kalidad ng serbisyo.\n\n
+        3. PAGBABAHAGI NG DATA\n
+        Kapag nakumpirma na ang booking, ang iyong pangalan at lokasyon ng pickup ay ibabahagi sa driver. Sa oras ng emergency, ang iyong lokasyon ay ibabahagi sa iyong itinalagang kontak.\n\n
+        4. SEGURIDAD NG DATA\n
+        Nagsasagawa kami ng mga standard na hakbang sa seguridad upang protektahan ang iyong impormasyon mula sa hindi awtorisadong pag-access o pagsisiwalat.\n\n
+        5. PAGPAPANATILI NG DATA\n
+        Pinapanatili namin ang iyong personal na data hangga\'t aktibo ang iyong account o kung kinakailangan upang maibigay sa iyo ang aming mga serbisyo at mapanatili ang mga rekord ng biyahe para sa mga audit sa kaligtasan.\n\n
+        6. IYONG MGA KARAPATAN\n
+        Maaari mong i-update ang iyong profile o i-delete ang iyong account anumang oras sa pamamagitan ng mga setting ng app.
+    </string>
+
+    <!-- Notifications Screen -->
+    <string name="notifications_title">Mga Notification</string>
+    <string name="section_today">Ngayon</string>
+    <string name="section_yesterday">Kahapon</string>
+    <string name="section_earlier">Mas Maaga</string>
+    <string name="no_notifications_msg">Walang bagong notification</string>
+    <string name="btn_mark_all_read">Markahan lahat bilang nabasa</string>
+
+    <!-- Language Settings -->
+    <string name="language_title">Wika</string>
+    <string name="select_preferred_language">Piliin ang iyong gustong wika</string>
+    <string name="lang_english">Ingles</string>
+    <string name="lang_tagalog">Tagalog</string>
+    <string name="lang_ilocano">Ilocano</string>
+    <string name="btn_save_selection">I-save ang Pinili</string>
+
+    <!-- AI Recommendation Result -->
+    <string name="recommended_drivers_title">Mga Inirerekomendang Driver</string>
+    <string name="ai_best_drivers_msg">Narito ang mga pinakamahusay na driver para sa iyo!</string>
+    <string name="ai_based_on_trip">Base sa detalye ng iyong biyahe at mga kagustuhan</string>
+    <string name="match_percent">%1$s na Tugma</string>
+    <string name="exp_vehicle_format">%1$s • %2$s</string>
+    <string name="btn_view_profile">Tingnan ang Profile</string>
+
+    <!-- Driver Details -->
+    <string name="driver_profile_title">Profile ng Driver</string>
+    <string name="reviews_count">(%1$s na review)</string>
+    <string name="years_experience">%1$s taon na karanasan</string>
+    <string name="years_experience_label">%1$s taon na exp.</string>
+    <string name="price_per_hour">₱%1$s/oras</string>
+    <string name="price_per_hour_full">₱%1$s / oras</string>
+    <string name="about_me">Tungkol sa Akin</string>
+    <string name="availability">Availability</string>
+    <string name="response_rate">Response Rate</string>
+    <string name="languages">Mga Wika</string>
+    <string name="btn_book_now">I-book na Ngayon</string>
+    <string name="badge_verified">Beripikado</string>
+    <string name="badge_professional">Propesyonal</string>
+    <string name="badge_highly_rated">Mataas ang Rating</string>
+
+    <!-- Book Driver -->
+    <string name="book_driver_title">I-book ang Driver</string>
+    <string name="booking_details_label">Mga Detalye ng Booking</string>
+    <string name="label_date">Petsa</string>
+    <string name="label_start_time">Oras ng Simula</string>
+    <string name="label_duration">Tagal</string>
+    <string name="label_pickup">Lokasyon ng Pickup</string>
+    <string name="label_destination">Destinasyon</string>
+    <string name="label_vehicle_type">Uri ng Sasakyan (Gusto)</string>
+    <string name="label_notes_optional">Karagdagang Tala (Opsyonal)</string>
+    <string name="hint_notes">hal. mga espesyal na tagubilin…</string>
+    <string name="estimated_fee">Tantiyang Bayad sa Driver</string>
+    <string name="btn_confirm_booking">I-kumpirma ang Booking</string>
+
+    <!-- Confirm Booking -->
+    <string name="confirm_booking_title">I-kumpirma ang Booking</string>
+    <string name="trip_details_label">Mga Detalye ng Biyahe</string>
+    <string name="payment_summary_label">Buod ng Pagbabayad</string>
+    <string name="label_driver_fee">Bayad sa Driver</string>
+    <string name="label_total_amount">Kabuuang Halaga</string>
+    <string name="payment_method_label">Paraan ng Pagbabayad</string>
+    <string name="terms_policy_agreement">Sa pag-kumpirma, sumasang-ayon ka sa aming Mga Tuntunin ng Serbisyo at Patakaran sa Booking.</string>
+    <string name="btn_confirm_and_book">I-kumpirma at I-book</string>
+
+    <!-- Trip In Progress -->
+    <string name="trip_in_progress_title">Kasalukuyang Biyahe</string>
+    <string name="status_driver_on_way">Ang driver ay papunta na</string>
+    <string name="estimated_arrival">Tantiyang dating: %1$d mins</string>
+    <string name="started_at">Nagsimula noong %1$s</string>
+    <string name="emergency_alert_title">Emergency Alert</string>
+    <string name="emergency_alert_desc">Ipadala ang iyong lokasyon sa kontak sa emergency</string>
+    <string name="btn_call_driver">Tawagan ang Driver</string>
+    <string name="btn_message">Mensahe</string>
+
+    <!-- Emergency Contact -->
+    <string name="emergency_contact_title">Kontak sa Emergency</string>
+    <string name="emergency_contact_guidance">Makakatanggap ang kontak na ito ng iyong lokasyon kapag nagpadala ka ng emergency alert habang nasa biyahe.</string>
+    <string name="label_contact_name">Pangalan ng Kontak</string>
+    <string name="label_relationship">Relasyon</string>
+    <string name="label_phone_number">Numero ng Telepono</string>
+    <string name="label_send_trip_details">Ipadala ang detalye ng biyahe (driver, ruta, oras)</string>
+    <string name="btn_save_contact">I-save ang Kontak</string>
+
+    <!-- Emergency Alert Confirmation -->
+    <string name="send_emergency_alert_q">Magpadala ng Emergency Alert?</string>
+    <string name="emergency_alert_confirm_desc">Ito ay magpapadala ng iyong kasalukuyang lokasyon at mga detalye ng biyahe sa iyong kontak sa emergency.</string>
+    <string name="info_to_be_sent">Impormasyong ipapadala:</string>
+    <string name="current_location_label">Iyong kasalukuyang lokasyon</string>
+    <string name="driver_label">Driver: %1$s</string>
+    <string name="trip_time_label">Oras ng biyahe: %1$s</string>
+    <string name="emergency_message_label">Mensahe ng emergency</string>
+    <string name="btn_yes_send_alert">Oo, Ipadala ang Alert</string>
+    <string name="btn_cancel">Kanselahin</string>
+
+    <!-- Customer Reviews -->
+    <string name="reviewed_drivers_msg">Narito ang mga driver na iyong na-review.</string>
+
+    <!-- Messages -->
+    <string name="no_messages_title">Wala pang mensahe</string>
+    <string name="no_messages_desc">Kapag nakipag-ugnayan ka sa isang driver, lalabas dito ang iyong mga pag-uusap.</string>
+    <string name="btn_explore_drivers">Mag-explore ng mga Driver</string>
+
+    <!-- Review Submitted -->
+    <string name="review_submitted_title">Na-submit na ang Review</string>
+    <string name="thank_you">Salamat!</string>
+    <string name="review_submitted_msg">Ang iyong review ay na-submit na.</string>
+    <string name="feedback_help_msg">Ang iyong feedback ay tumutulong sa amin na panatilihing ligtas at maaasahan ang aming komunidad.</string>
+    <string name="btn_back_to_bookings">Bumalik sa Aking mga Booking</string>
+    <string name="btn_view_my_reviews">Tingnan ang Aking mga Review</string>
+
+    <!-- Review Info -->
+    <string name="review_info_title">Suriin ang Iyong Impormasyon</string>
+    <string name="review_info_subtitle">Mangyaring suriin ang iyong mga detalye bago i-submit.</string>
+    <string name="account_info_header">Impormasyon ng Account</string>
+    <string name="personal_info_header">Personal na Impormasyon</string>
+    <string name="requirements_info_header">Impormasyon sa mga Kinakailangan</string>
+    <string name="edit_label">I-edit</string>
+    <string name="uploaded_label">Na-upload</string>
+    <string name="provided_label">Ibinigay</string>
+    <string name="btn_submit_verification">I-submit para sa Beripikasyon</string>
+
+    <!-- Driver Registration -->
+    <string name="driver_registration_title">Pagpaparehistro ng Driver</string>
+    <string name="driver_requirements_title">Mga Kinakailangan sa Driver</string>
+    <string name="account_label">Account</string>
+    <string name="personal_info_label">Personal na Impormasyon</string>
+    <string name="requirements_label">Mga Kinakailangan</string>
+    <string name="review_label">Pagsusuri</string>
+    <string name="drivers_license_label">Lisensya ng Pagmamaneho</string>
+    <string name="license_provide_msg">Mangyaring magbigay ng iyong wastong lisensya sa pagmamaneho.</string>
+    <string name="license_number_label">Numero ng Lisensya</string>
+    <string name="license_expiration_label">Petsa ng Pagkapasok ng Lisensya</string>
+    <string name="front_license_label">Harap ng Lisensya</string>
+    <string name="back_license_label">Likod ng Lisensya</string>
+    <string name="police_clearance_label">Police Clearance</string>
+    <string name="police_provide_msg">Mangyaring magbigay ng iyong wastong police clearance.</string>
+    <string name="date_issue_label">Petsa ng Paglabas</string>
+    <string name="validity_date_label">Petsa ng Bisa</string>
+    <string name="upload_police_clearance">I-upload ang Police Clearance</string>
+    <string name="police_note">Tala: Ang iyong police clearance ay dapat na wasto at hindi expired. Siguraduhin na ang na-upload na file ay malinaw at nababasa.</string>
+    <string name="btn_next">Susunod</string>
+    <string name="btn_back">Bumalik</string>
+
+    <!-- Edit Profile -->
+    <string name="edit_profile_title">I-edit ang Profile</string>
+    <string name="full_name_label">Buong Pangalan</string>
+    <string name="email_address_label">Email Address</string>
+    <string name="phone_number_label">Numero ng Telepono</string>
+    <string name="birth_date_label">Petsa ng Kapanganakan</string>
+    <string name="address_label">Address</string>
+    <string name="btn_save_changes">I-save ang mga Pagbabago</string>
+
+    <!-- Welcome Screen -->
+    <string name="btn_get_started">Magsimula</string>
+    <string name="btn_i_am_customer">Ako ay isang Customer</string>
+    <string name="btn_i_am_driver">Ako ay isang Driver</string>
+
+    <!-- Login Screen -->
+    <string name="login_title">Mag-Log In</string>
+    <string name="login_subtitle">Maligayang pagbabalik! Mangyaring ilagay ang iyong mga detalye.</string>
+    <string name="label_email">Email</string>
+    <string name="label_password">Password</string>
+    <string name="btn_login">Mag-Log In</string>
+    <string name="forgot_password">Nakalimutan ang Password?</string>
+    <string name="no_account_q">Wala pang account?</string>
+    <string name="sign_up">Mag-Sign Up</string>
+    <string name="or_continue_with">O magpatuloy gamit ang</string>
+
+    <!-- Booking Success Screen -->
+    <string name="booking_successful_title">Matagumpay ang Booking</string>
+    <string name="booking_successful_msg">Ang iyong kahilingan sa booking ay matagumpay na naipadala!</string>
+    <string name="booking_success_desc">Susuriin ng driver ang iyong kahilingan sa lalong madaling panahon. Maaari mong subaybayan ang status sa iyong mga booking.</string>
+    <string name="btn_view_bookings">Tingnan ang Aking mga Booking</string>
+    <string name="btn_back_to_home">Bumalik sa Home</string>
+</resources>

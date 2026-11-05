@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="12dp" app:cardBackgroundColor="#FFFFFF" app:cardCornerRadius="16dp" app:cardElevation="0dp" app:strokeColor="#E3E6EA" app:strokeWidth="1dp">
+<LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical">
+<LinearLayout android:id="@+id/helpQuestionToggle" android:layout_width="match_parent" android:layout_height="wrap_content" android:minHeight="64dp" android:orientation="horizontal" android:gravity="center_vertical" android:padding="18dp" android:background="?attr/selectableItemBackground" android:clickable="true" android:focusable="true">
+<TextView android:id="@+id/helpQuestionTitle" android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content" android:textColor="#061B41" android:textSize="15sp" android:textStyle="bold" android:importantForAccessibility="no"/>
+<TextView android:id="@+id/helpQuestionIndicator" android:layout_width="24dp" android:layout_height="wrap_content" android:layout_marginStart="12dp" android:gravity="center" android:text="+" android:textColor="#FF8A00" android:textSize="24sp" android:importantForAccessibility="no"/>
+</LinearLayout>
+<TextView android:id="@+id/helpQuestionAnswer" android:layout_width="match_parent" android:layout_height="wrap_content" android:paddingHorizontal="18dp" android:paddingBottom="18dp" android:textColor="#687386" android:textSize="14sp" android:lineSpacingExtra="4dp" android:visibility="gone"/>
+</LinearLayout>
+</com.google.android.material.card.MaterialCardView>

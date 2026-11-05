@@ -1,0 +1,39 @@
+<?xml version="1.0" ?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools" android:id="@+id/mapFlowScroll" android:layout_width="match_parent" android:layout_height="match_parent" android:background="#FFFFFF">
+        <FrameLayout android:id="@+id/mapArea" android:layout_width="match_parent" android:layout_height="match_parent" android:background="#EDF1EA">
+            <FrameLayout android:id="@+id/mapContainer" android:layout_width="match_parent" android:layout_height="match_parent"/>
+            <LinearLayout android:id="@+id/mapOverlayContent" android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical">
+                <LinearLayout android:id="@+id/mapFloatingHeader" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_margin="16dp" android:orientation="horizontal" android:gravity="center_vertical">
+                    <androidx.appcompat.widget.AppCompatImageButton android:id="@+id/btnBackToHome" style="@style/MapFlowIconButton" android:src="@drawable/ic_arrow_back" android:contentDescription="Back"/>
+                    <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:layout_marginStart="10dp" android:layout_marginEnd="10dp" android:padding="12dp" android:orientation="vertical" android:background="@drawable/bg_map_flow_control">
+                        <TextView android:id="@+id/txtMapTitle" style="@style/MapFlowText" android:text="Your trip" android:layout_marginTop="3dp" android:fontFamily="sans-serif-medium"/>
+                    </LinearLayout>
+                    <androidx.appcompat.widget.AppCompatImageButton android:id="@+id/btnExpandTripMap" style="@style/MapFlowIconButton" android:src="@drawable/ic_map_flow_expand" android:contentDescription="Full-screen map"/>
+                </LinearLayout>
+
+            </LinearLayout>
+            <androidx.appcompat.widget.AppCompatImageButton android:id="@+id/btnMapRecenter" style="@style/MapFlowIconButton" android:src="@drawable/ic_my_location" android:contentDescription="Show all pins" android:layout_gravity="bottom|end" android:layout_marginEnd="16dp" android:layout_marginBottom="52dp"/>
+        </FrameLayout>
+        <androidx.core.widget.NestedScrollView android:id="@+id/mapBottomSheet" android:layout_width="match_parent" android:layout_height="match_parent" android:fillViewport="true" android:background="@drawable/bg_map_flow_sheet" android:clipToOutline="true" app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior" app:behavior_peekHeight="84dp" app:behavior_hideable="true" app:behavior_fitToContents="false" app:behavior_halfExpandedRatio="0.52">
+        <LinearLayout android:id="@+id/mapDetailSheet" android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:background="@drawable/bg_map_flow_sheet" android:paddingStart="22dp" android:paddingEnd="22dp" android:paddingTop="10dp" android:paddingBottom="24dp">
+            <com.google.android.material.bottomsheet.BottomSheetDragHandleView android:layout_width="match_parent" android:layout_height="32dp" android:layout_gravity="center_horizontal" android:layout_marginBottom="8dp" android:contentDescription="Drag to show or hide map details"/>
+            <TextView android:id="@+id/txtTripStateBadge" style="@style/MapFlowCaption" android:text="Driver on the way" android:textColor="#22826D"/>
+            <TextView android:id="@+id/txtTripHeading" style="@style/MapFlowHeading" android:text="Your ride, ready soon."/>
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:gravity="center_vertical" android:layout_marginTop="20dp" android:layout_marginBottom="20dp">
+                <com.google.android.material.imageview.ShapeableImageView android:id="@+id/imgDriverSmall" android:layout_width="48dp" android:layout_height="48dp" android:src="@drawable/no_profile" android:scaleType="centerCrop" app:shapeAppearanceOverlay="@style/MapFlowAvatar" android:background="@drawable/bg_map_flow_field" android:contentDescription="Driver profile"/>
+                <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:layout_marginStart="12dp" android:layout_marginEnd="12dp" android:orientation="vertical">
+                    <TextView android:id="@+id/txtDriverName" style="@style/MapFlowText" android:text="Your driver" android:fontFamily="sans-serif-medium"/>
+                    <TextView android:id="@+id/txtRating" style="@style/MapFlowCaption" android:text="★ 4.9" android:textColor="#D86B0A" android:layout_marginTop="3dp"/>
+                    <TextView android:id="@+id/txtVehicle" style="@style/MapFlowCaption" android:text="SUV"/>
+                </LinearLayout>
+                <com.google.android.material.button.MaterialButton android:id="@+id/btnTripMessage" style="@style/MapFlowButton.Message" android:text="Message" android:layout_width="wrap_content" app:icon="@drawable/icons_message" app:iconTint="#C86B16" app:iconGravity="textTop" app:iconSize="18dp" app:iconPadding="3dp"/>
+            </LinearLayout>
+            <View android:layout_width="match_parent" android:layout_height="1dp" android:background="#EDF0F4"/>
+            <LinearLayout android:id="@+id/tripRouteTimeline" android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:layout_marginTop="14dp"/>
+            <TextView android:id="@+id/txtStartTime" style="@style/MapFlowCaption" android:text="Timer starts after pickup" android:layout_marginTop="18dp" android:background="@drawable/bg_map_flow_field" android:padding="13dp"/>
+            <TextView android:id="@+id/txtTripRequestStatus" style="@style/MapFlowCaption" android:text="" android:visibility="gone" android:layout_marginTop="12dp"/>
+            <com.google.android.material.button.MaterialButton android:id="@+id/btnAddTripDestination" style="@style/MapFlowButton" android:text="Add a destination" android:layout_marginTop="16dp" android:visibility="gone"/>
+            <com.google.android.material.button.MaterialButton android:id="@+id/btnEmergency" style="@style/MapFlowButton.Emergency" android:text="Emergency help" android:layout_marginTop="12dp"/>
+        </LinearLayout>
+        </androidx.core.widget.NestedScrollView>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

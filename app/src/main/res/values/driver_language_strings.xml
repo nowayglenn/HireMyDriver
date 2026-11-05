@@ -1,0 +1,27 @@
+<resources>
+    <string name="driver_settings_title">Driver Settings</string>
+    <string name="driver_preferences_title">App preferences.</string>
+    <string name="driver_preferences_description">Manage notifications, location access, language, and app information.</string>
+    <string name="driver_preferences_heading">APP PREFERENCES</string>
+    <string name="driver_information_heading">PRIVACY &amp; INFORMATION</string>
+    <string name="driver_location_summary">Manage location access for maps and trips</string>
+    <string name="driver_alerts_summary">Manage alerts in your phone settings</string>
+    <string name="driver_alerts_enabled">Enabled · Manage in phone settings</string>
+    <string name="driver_alerts_disabled">Disabled · Manage in phone settings</string>
+    <string name="driver_greeting">Good Morning,</string>
+    <string name="driver_verified_label">Verified Driver</string>
+    <string name="driver_available_message">You are available to receive new booking requests.</string>
+    <string name="driver_offline_message">You are currently offline.</string>
+    <string name="driver_pending_message">Pending approval. You can turn on availability after admin verification.</string>
+    <string name="driver_incomplete_message">Complete your driving information to receive bookings.</string>
+    <string name="driver_rating_label">Rating</string>
+    <string name="driver_upcoming_label">Upcoming Booking</string>
+    <string name="driver_requests_label">New Booking Requests</string>
+    <string name="driver_accept_action">Accept</string>
+    <string name="driver_decline_action">Decline</string>
+    <string name="driver_no_upcoming">No upcoming bookings.</string>
+    <string name="driver_no_requests">No booking requests yet.</string>
+    <string name="driver_terms_summary">Read the app terms</string>
+    <string name="driver_privacy_summary">Read how information is handled</string>
+    <string name="driver_about_summary">App information</string>
+</resources>

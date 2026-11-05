@@ -1,0 +1,39 @@
+<?xml version="1.0" ?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools" android:id="@+id/mapFlowScroll" android:layout_width="match_parent" android:layout_height="match_parent" android:fillViewport="true" android:background="#FFFFFF">
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical">
+        <FrameLayout android:id="@+id/mapArea" android:layout_width="match_parent" android:layout_height="match_parent" android:background="#EDF1EA">
+            <FrameLayout android:id="@+id/changeMapCanvas" android:layout_width="match_parent" android:layout_height="match_parent"/>
+            <LinearLayout android:id="@+id/mapOverlayContent" android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical">
+                <LinearLayout android:id="@+id/mapFloatingHeader" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_margin="16dp" android:orientation="horizontal" android:gravity="center_vertical">
+                    <androidx.appcompat.widget.AppCompatImageButton android:id="@+id/btnBack" style="@style/MapFlowIconButton" android:src="@drawable/ic_arrow_back" android:contentDescription="Back"/>
+                    <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:layout_marginStart="10dp" android:layout_marginEnd="10dp" android:padding="12dp" android:orientation="vertical" android:background="@drawable/bg_map_flow_control">
+                        <TextView style="@style/MapFlowEyebrow" android:text="DRIVER WORKSPACE"/>
+                        <TextView android:id="@+id/txtMapTitle" style="@style/MapFlowText" android:text="Destination change" android:layout_marginTop="3dp" android:fontFamily="sans-serif-medium"/>
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+            <androidx.appcompat.widget.AppCompatImageButton android:id="@+id/btnChangeRecenter" style="@style/MapFlowIconButton" android:src="@drawable/ic_my_location" android:contentDescription="Show all pins" android:layout_gravity="bottom|end" android:layout_marginEnd="16dp" android:layout_marginBottom="52dp"/>
+        </FrameLayout>
+        <LinearLayout android:id="@+id/mapDetailSheet" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="-20dp" android:orientation="vertical" android:background="@drawable/bg_map_flow_sheet" android:paddingStart="22dp" android:paddingEnd="22dp" android:paddingTop="10dp" android:paddingBottom="24dp">
+            <View android:layout_width="32dp" android:layout_height="4dp" android:layout_gravity="center_horizontal" android:background="@drawable/bg_map_flow_handle" android:layout_marginBottom="20dp"/>
+            <TextView android:id="@+id/txtChangeStatus" style="@style/MapFlowCaption" android:text="New destination request" android:textColor="#22826D"/>
+            <TextView style="@style/MapFlowHeading" android:text="One more stop."/>
+            <TextView style="@style/MapFlowCaption" android:text="Your customer would like to add a destination."/>
+            <TextView android:id="@+id/txtRequestedPlace" style="@style/MapFlowText" android:text="" android:textSize="17sp" android:fontFamily="sans-serif-medium" android:layout_marginTop="20dp"/>
+            <TextView android:id="@+id/txtAfterStop" style="@style/MapFlowCaption" android:text="" android:layout_marginTop="4dp"/>
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="22dp" android:background="@drawable/bg_driver_trip_timer" android:padding="18dp" android:orientation="horizontal">
+                <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:layout_marginEnd="12dp" android:orientation="vertical">
+                    <TextView style="@style/MapFlowEyebrow" android:text="REMAINING SERVICE" android:textColor="#C4D0E2"/>
+                    <TextView android:id="@+id/txtChangeRemaining" style="@style/MapFlowText" android:text="" android:textSize="22sp" android:textColor="#FFFFFF" android:layout_marginTop="5dp"/>
+                </LinearLayout>
+                <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:orientation="vertical">
+                    <TextView style="@style/MapFlowEyebrow" android:text="BOOKED DURATION" android:textColor="#C4D0E2" android:gravity="end"/>
+                    <TextView android:id="@+id/txtChangeDuration" style="@style/MapFlowText" android:text="" android:textSize="22sp" android:textColor="#FFFFFF" android:gravity="end" android:layout_marginTop="5dp"/>
+                </LinearLayout>
+            </LinearLayout>
+            <TextView style="@style/MapFlowCaption" android:text="Check the new stop before accepting. Your current service timer continues." android:background="@drawable/bg_map_flow_field" android:padding="13dp" android:layout_marginTop="16dp"/>
+            <com.google.android.material.button.MaterialButton android:id="@+id/btnAcceptDestination" style="@style/MapFlowButton" android:text="Accept destination" android:layout_marginTop="20dp"/>
+            <com.google.android.material.button.MaterialButton android:id="@+id/btnDeclineDestination" style="@style/MapFlowButton.Outline" android:text="Decline change" android:layout_marginTop="10dp"/>
+        </LinearLayout>
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>

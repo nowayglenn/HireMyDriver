@@ -1,0 +1,21 @@
+<?xml version="1.0" ?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools" android:id="@+id/fullScreenMapRoot" android:layout_width="match_parent" android:layout_height="match_parent" android:background="#FFFFFF">
+        <FrameLayout android:id="@+id/mapPlaceholder" android:layout_width="match_parent" android:layout_height="match_parent" android:background="#EDF1EA"/>
+        <LinearLayout android:id="@+id/mapFloatingHeader" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_margin="16dp" android:orientation="horizontal" android:gravity="center_vertical">
+            <androidx.appcompat.widget.AppCompatImageButton android:id="@+id/btnBack" style="@style/MapFlowIconButton" android:src="@drawable/ic_arrow_back" android:contentDescription="Back"/>
+            <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:layout_marginStart="10dp" android:layout_marginEnd="10dp" android:padding="12dp" android:orientation="vertical" android:background="@drawable/bg_map_flow_control">
+                <TextView style="@style/MapFlowEyebrow" android:text="YOUR ROUTE"/>
+                <TextView android:id="@+id/txtMapTitle" style="@style/MapFlowText" android:text="Trip map" android:layout_marginTop="3dp" android:fontFamily="sans-serif-medium"/>
+            </LinearLayout>
+        </LinearLayout>
+        <androidx.appcompat.widget.AppCompatImageButton android:id="@+id/fabRecenter" style="@style/MapFlowIconButton" android:src="@drawable/ic_my_location" android:contentDescription="Show all pins" android:layout_gravity="bottom|end" android:layout_marginEnd="16dp" android:layout_marginBottom="40dp"/>
+        <com.google.android.material.button.MaterialButton android:id="@+id/btnMapDetails" style="@style/MapFlowButton.Outline" android:text="Route details" android:layout_width="wrap_content" android:layout_gravity="bottom|start" android:layout_marginStart="16dp" android:layout_marginBottom="40dp"/>
+    <androidx.core.widget.NestedScrollView android:id="@+id/mapDetailsPanel" android:layout_width="match_parent" android:layout_height="320dp" android:layout_gravity="bottom" android:background="@drawable/bg_map_flow_sheet" android:clipToOutline="true" android:elevation="6dp" android:visibility="gone">
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="24dp">
+            <TextView style="@style/MapFlowHeading" android:text="Route details" android:textSize="22sp" android:accessibilityHeading="true" android:layout_marginBottom="20dp"/>
+            <LinearLayout android:id="@+id/mapRouteTimeline" android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical"/>
+            <TextView android:id="@+id/txtMapLocationDetail" style="@style/MapFlowCaption" android:text="" android:textSize="15sp" android:lineSpacingExtra="4dp" android:layout_marginTop="20dp"/>
+            <com.google.android.material.button.MaterialButton android:id="@+id/btnMapMyLocation" style="@style/MapFlowButton.Outline" android:text="Use my location" android:layout_marginTop="14dp" android:visibility="gone"/>
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+</FrameLayout>

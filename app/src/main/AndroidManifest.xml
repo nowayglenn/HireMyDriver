@@ -1,0 +1,376 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-feature android:name="android.hardware.camera" android:required="false" />
+    <uses-feature android:name="android.hardware.camera.autofocus" android:required="false" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <application
+        android:name=".HireMyDriverApplication"
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.HireMyDriver">
+
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="${MAPS_API_KEY}" />
+        <meta-data
+            android:name="com.example.hiremydriver.ROUTES_API_KEY"
+            android:value="${ROUTES_API_KEY}" />
+
+
+
+        <activity android:screenOrientation="portrait" android:name=".CustomerPhotoCropActivity" android:exported="false" />
+        <activity android:screenOrientation="portrait" android:name=".maps.LocationPickerActivity" android:exported="false" />
+        <activity android:screenOrientation="portrait" android:name=".maps.DriverTripMapActivity" android:exported="false" />
+        <activity android:screenOrientation="portrait" android:name=".maps.DriverDestinationChangeActivity" android:exported="false" />
+
+        <activity android:screenOrientation="portrait" android:name=".DriverHelpCenterActivity" android:exported="false" />
+        <activity android:screenOrientation="portrait" android:name=".CustomerHelpCenterActivity" android:exported="false" />
+        <activity android:screenOrientation="portrait" android:name=".CustomerContactSupportActivity" android:exported="false" />
+        <activity android:screenOrientation="portrait" android:name=".DriverSettingsActivity" android:exported="false" />
+        <activity android:screenOrientation="portrait" android:name=".DriverNotificationsActivity" android:exported="false" />
+        <activity android:screenOrientation="portrait" android:name=".DriverContactSupportActivity" android:exported="false" />
+
+        <!-- Live Tracking Activity -->
+        <activity android:screenOrientation="portrait"
+            android:name=".LiveTrackingActivity"
+            android:exported="false" />
+
+        <!-- Trip In Progress Activity -->
+        <activity android:screenOrientation="portrait"
+            android:name=".TripInProgressActivity"
+            android:exported="false" />
+
+        <!-- Review Submitted Activity -->
+        <activity android:screenOrientation="portrait"
+            android:name=".ReviewSubmittedActivity"
+            android:exported="false" />
+
+        <!-- Rate Driver Activity -->
+        <activity android:screenOrientation="portrait"
+            android:name=".RateDriverActivity"
+            android:exported="false" />
+
+        <!-- AI Results Activity -->
+        <activity android:screenOrientation="portrait"
+            android:name=".AiResultsActivity"
+            android:exported="false" />
+
+        <!-- AI Recommendation Activity -->
+        <activity android:screenOrientation="portrait"
+            android:name=".AiRecommendationActivity"
+            android:exported="false" />
+
+        <!-- Delete Account Activity -->
+        <activity android:screenOrientation="portrait"
+            android:name=".DeleteAccountActivity"
+            android:exported="false" />
+
+        <!-- About Activity -->
+        <activity android:screenOrientation="portrait"
+            android:name=".AboutActivity"
+            android:exported="false" />
+
+        <!-- Privacy Policy Activity -->
+        <activity android:screenOrientation="portrait"
+            android:name=".PrivacyPolicyActivity"
+            android:exported="false" />
+
+        <!-- Terms & Conditions Activity -->
+        <activity android:screenOrientation="portrait"
+            android:name=".TermsConditionsActivity"
+            android:exported="false" />
+
+        <!-- Location Settings Activity -->
+        <activity android:screenOrientation="portrait"
+            android:name=".LocationSettingsActivity"
+            android:exported="false" />
+
+        <!-- Notification Settings Activity -->
+        <activity android:screenOrientation="portrait"
+            android:name=".NotificationSettingsActivity"
+            android:exported="false" />
+
+        <!-- Language Settings Activity -->
+        <activity android:screenOrientation="portrait"
+            android:name=".LanguageSettingsActivity"
+            android:exported="false" />
+
+        <!-- Settings Activity -->
+        <activity android:screenOrientation="portrait"
+            android:name=".SettingsActivity"
+            android:exported="false" />
+
+        <!-- Customer Reviews Activity -->
+        <activity android:screenOrientation="portrait" android:name=".PublicDriverReviewsActivity" android:exported="false" />
+        <activity android:screenOrientation="portrait"
+            android:name=".CustomerReviewsActivity"
+            android:exported="false" />
+
+        <!-- Notifications Activity -->
+        <activity android:screenOrientation="portrait"
+            android:name=".NotificationsActivity"
+            android:exported="false" />
+
+        <!-- Edit Profile Activity -->
+        <activity android:screenOrientation="portrait"
+            android:name=".EditProfileActivity"
+            android:exported="false" />
+
+        <!-- Emergency Alert Confirmation Activity -->
+        <activity android:screenOrientation="portrait"
+            android:name=".EmergencyAlertConfirmActivity"
+            android:exported="false" />
+
+        <!-- Chat Conversation Activity -->
+        <activity android:screenOrientation="portrait"
+            android:name=".ChatConversationActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
+
+        <!-- Booking Success Activity -->
+        <activity android:screenOrientation="portrait"
+            android:name=".BookingSuccessActivity"
+            android:exported="false" />
+
+        <!-- Booking Details Activity -->
+        <activity android:screenOrientation="portrait"
+            android:name=".BookingDetailsActivity"
+            android:exported="false" />
+
+        <!-- Emergency Contact Activity -->
+        <activity android:screenOrientation="portrait"
+            android:name=".EmergencyContactActivity"
+            android:exported="false" />
+
+        <!-- Confirm Booking Activity -->
+        <activity android:screenOrientation="portrait"
+            android:name=".ConfirmBookingActivity"
+            android:exported="false" />
+
+        <!-- Book Driver Activity -->
+        <activity android:screenOrientation="portrait"
+            android:name=".BookDriverActivity"
+            android:exported="false" />
+
+        <!-- Driver Details Activity (for customers) -->
+        <activity android:screenOrientation="portrait"
+            android:name=".DriverDetailsActivity"
+            android:exported="false" />
+
+        <!-- Filter Drivers Activity -->
+        <activity android:screenOrientation="portrait"
+            android:name=".FilterActivity"
+            android:exported="false" />
+
+        <!-- Popular Drivers Activity -->
+        <activity android:screenOrientation="portrait"
+            android:name=".PopularDriversActivity"
+            android:exported="false" />
+
+        <!-- Driver Profile Activity -->
+        <activity android:screenOrientation="portrait"
+            android:name=".DriverProfileActivity"
+            android:exported="false" />
+
+        <!-- Driver Message Unready Activity -->
+        <activity android:screenOrientation="portrait"
+            android:name=".DriverMessageUnreadActivity"
+            android:exported="false" />
+
+        <!-- Driver Message Activity -->
+        <activity android:screenOrientation="portrait"
+            android:name=".DriverMessageActivity"
+            android:exported="false" />
+
+        <!-- Driver Booking Activity Details -->
+        <activity android:screenOrientation="portrait"
+            android:name=".DriverBookingActivity"
+            android:exported="false" />
+
+        <!-- Driver Home Page -->
+        <activity android:screenOrientation="portrait"
+            android:name=".DriverHomeActivity"
+            android:exported="false"
+            android:theme="@style/Theme.HireMyDriver.DriverEntry" />
+
+        <!-- Customer Profile Activity -->
+        <activity android:screenOrientation="portrait"
+            android:name=".ProfileActivity"
+            android:exported="false" />
+
+        <!-- Customer Message Activity -->
+        <activity android:screenOrientation="portrait"
+            android:name=".MessagesActivity"
+            android:exported="false" />
+
+        <!-- Customer Booking Activity -->
+        <activity android:screenOrientation="portrait"
+            android:name=".MyBookingActivity"
+            android:exported="false" />
+
+        <!-- Customer Home Page -->
+        <activity android:screenOrientation="portrait"
+            android:name=".HomeActivity"
+            android:exported="false"
+            android:theme="@style/Theme.HireMyDriver.DriverEntry" />
+
+        <!-- Driver Availability & Schedule Activities -->
+        <activity android:screenOrientation="portrait"
+            android:name=".DriverAvailabilityScheduleActivity"
+            android:exported="false" />
+
+        <activity android:screenOrientation="portrait"
+            android:name=".DriverEditWeeklyScheduleActivity"
+            android:exported="false" />
+
+        <activity android:screenOrientation="portrait"
+            android:name=".DriverUpcomingScheduleActivity"
+            android:exported="false" />
+
+        <!-- Driver Request Details Activity -->
+        <activity android:screenOrientation="portrait"
+            android:name=".DriverRequestDetailsActivity"
+            android:exported="false" />
+
+        <!-- Driver Driving Information Activity -->
+        <activity android:screenOrientation="portrait"
+            android:name=".DriverDrivingInfoActivity"
+            android:exported="false" />
+
+        <!-- Change Password Activity -->
+        <activity android:screenOrientation="portrait"
+            android:name=".ChangePasswordActivity"
+            android:exported="false" />
+
+        <!-- Home Activity -->
+
+        <!-- Driver Accepted Booking Details Activity -->
+        <activity android:screenOrientation="portrait"
+            android:name=".DriverAcceptedBookingDetailsActivity"
+            android:exported="false" />
+
+        <!-- Review Info Activity -->
+        <activity android:screenOrientation="portrait" android:name=".DriverPersonalSettingsActivity" android:exported="false" />
+        <activity android:screenOrientation="portrait" android:name=".DriverDocumentsSettingsActivity" android:exported="false" />
+        <activity android:screenOrientation="portrait" android:name=".DriverDocumentViewerActivity" android:exported="false" />
+        <activity android:screenOrientation="portrait"
+            android:name=".ReviewInfoActivity"
+            android:exported="false" />
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.documents"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/document_photo_paths" />
+        </provider>
+        <activity android:screenOrientation="portrait" android:name=".LicenseCameraActivity" android:exported="false" />
+
+        <!-- License Information -->
+        <activity android:screenOrientation="portrait"
+            android:name=".LicenseInfoActivity"
+            android:exported="false" />
+
+        <!-- Personal Information -->
+        <activity android:screenOrientation="portrait"
+            android:name=".PersonalInfoActivity"
+            android:exported="false" />
+
+        <!-- Driver Registration -->
+        <activity android:screenOrientation="portrait"
+            android:name=".DriverRegistrationActivity"
+            android:exported="false" />
+
+        <!-- Create Password -->
+        <activity android:screenOrientation="portrait"
+            android:name=".CreatePasswordActivity"
+            android:exported="false" />
+
+        <!-- Forget Password -->
+        <activity android:screenOrientation="portrait"
+            android:name=".ForgotPasswordActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
+
+        <!-- Driver Forgot Password Activity -->
+        <activity android:screenOrientation="portrait"
+            android:name=".DriverForgotPasswordActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
+
+        <!-- Driver Login Activity -->
+        <activity android:screenOrientation="portrait"
+            android:name=".DriverLoginActivity"
+            android:exported="false"
+            android:theme="@style/Theme.HireMyDriver.DriverEntry" />
+
+        <!-- Driver Upcoming Bookings -->
+        <activity android:screenOrientation="portrait"
+            android:name=".DriverUpcomingBookingsActivity"
+            android:exported="false" />
+
+        <!-- Driver Booking Requests -->
+        <activity android:screenOrientation="portrait"
+            android:name=".DriverBookingRequestsActivity"
+            android:exported="false" />
+
+        <!-- Customer Sign Up Activity -->
+        <activity android:screenOrientation="portrait"
+            android:name=".CustomerSignUpActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
+
+        <!-- Login Page -->
+        <activity android:screenOrientation="portrait"
+            android:name=".LoginActivity"
+            android:exported="false"
+            android:theme="@style/Theme.HireMyDriver.DriverEntry" />
+
+        <activity android:screenOrientation="portrait"
+            android:name=".SplashActivity"
+            android:exported="true"
+            android:theme="@style/Theme.HireMyDriver.Splash">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <!-- Original onboarding remains available; launch now follows the session routing. -->
+        <activity android:screenOrientation="portrait"
+            android:name=".OnboardingActivity"
+            android:exported="false"
+            android:theme="@style/Theme.HireMyDriver.Onboarding"
+            android:windowSoftInputMode="adjustResize">
+        </activity>
+
+        <!-- Welcome/Main Page -->
+        <activity android:screenOrientation="portrait"
+            android:name=".MainActivity"
+            android:exported="false"
+            android:theme="@style/Theme.HireMyDriver.Welcome"
+            android:windowSoftInputMode="adjustResize" />
+
+        <service android:name=".notifications.AppMessagingService" android:exported="false">
+            <intent-filter><action android:name="com.google.firebase.MESSAGING_EVENT" /></intent-filter>
+        </service>
+        <service android:name=".notifications.NotificationRelayJob" android:permission="android.permission.BIND_JOB_SERVICE" android:exported="true" />
+        <activity android:screenOrientation="portrait" android:name=".notifications.NotificationOpenActivity" android:exported="false" />
+    </application>
+
+</manifest>

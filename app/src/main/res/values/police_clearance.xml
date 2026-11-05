@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="police_photo_required">Police clearance photo is required. Upload a photo.</string>
+    <string name="police_photo_unavailable">Wait for the clearance photo to load. If it does not appear, select a readable photo again.</string>
+</resources>

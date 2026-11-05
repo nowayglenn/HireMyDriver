@@ -1,0 +1,27 @@
+<resources>
+    <string name="driver_settings_title">Dagiti Setting ti Driver</string>
+    <string name="driver_preferences_title">Dagiti kayat iti app.</string>
+    <string name="driver_preferences_description">Imanehar dagiti notification, lokasion, pagsasao, ken impormasyon ti app.</string>
+    <string name="driver_preferences_heading">DAGITI KAYAT ITI APP</string>
+    <string name="driver_information_heading">PRIVACY KEN IMPORMASYON</string>
+    <string name="driver_location_summary">Imanehar ti lokasion para kadagiti mapa ken biyahe</string>
+    <string name="driver_alerts_summary">Imanehar dagiti alert iti setting ti telepono</string>
+    <string name="driver_alerts_enabled">Naka-on · Imanehar iti setting ti telepono</string>
+    <string name="driver_alerts_disabled">Naka-off · Imanehar iti setting ti telepono</string>
+    <string name="driver_greeting">Naimbag a bigat,</string>
+    <string name="driver_verified_label">Napasingked a Driver</string>
+    <string name="driver_available_message">Mabalinmon nga umawat iti baro a booking.</string>
+    <string name="driver_offline_message">Offline-ka ita.</string>
+    <string name="driver_pending_message">Agur-uray iti pammalubos. Mabalinmo nga i-on ti availability kalpasan ti panangpasingked ti admin.</string>
+    <string name="driver_incomplete_message">Kompletuem ti impormasyon ti panagmanehom tapno makaawat iti booking.</string>
+    <string name="driver_rating_label">Rating</string>
+    <string name="driver_upcoming_label">Umay a Booking</string>
+    <string name="driver_requests_label">Dagiti Baro a Booking</string>
+    <string name="driver_accept_action">Awaten</string>
+    <string name="driver_decline_action">Saan nga awaten</string>
+    <string name="driver_no_upcoming">Awan ti umay a booking.</string>
+    <string name="driver_no_requests">Awan pay ti kiddaw a booking.</string>
+    <string name="driver_terms_summary">Basaen dagiti pagannurotan ti app</string>
+    <string name="driver_privacy_summary">Basaen no kasano ti panangimanehar iti impormasyon</string>
+    <string name="driver_about_summary">Impormasyon ti app</string>
+</resources>

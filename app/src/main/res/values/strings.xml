@@ -1,0 +1,389 @@
+<resources>
+    <string name="app_name" translatable="false">Hire My driver</string>
+
+    <!-- Navigation -->
+    <string name="nav_home">Home</string>
+    <string name="nav_bookings">Bookings</string>
+    <string name="nav_messages">Messages</string>
+    <string name="nav_profile">Profile</string>
+
+    <!-- Home Screen -->
+    <string name="hello_user">Hello, %1$s!</string>
+    <string name="question_today">Where do you need a\ndriver today?</string>
+    <string name="search_hint">Search location or name...</string>
+    <string name="popular_drivers">Popular Drivers</string>
+    <string name="see_all">See all</string>
+    <string name="find_best_driver">Find My Best Driver</string>
+    <string name="ai_recommend_desc">Find the best match for your location, schedule,\nand trip needs.</string>
+    <string name="ai_recommended">Recommended for You</string>
+
+    <!-- Booking Screen -->
+    <string name="my_bookings_title">My Bookings</string>
+    <string name="tab_all">All</string>
+    <string name="tab_pending">Pending</string>
+    <string name="tab_accepted">Accepted</string>
+    <string name="tab_completed">Completed</string>
+    <string name="tab_cancelled">Cancelled</string>
+    <string name="status_on_trip">ON TRIP</string>
+    <string name="status_pending">PENDING</string>
+    <string name="status_accepted">ACCEPTED</string>
+    <string name="status_completed">COMPLETED</string>
+    <string name="status_cancelled">CANCELLED</string>
+    <string name="btn_track_trip">Track Trip</string>
+    <string name="btn_emergency">Emergency</string>
+    <string name="btn_view_details">View Details</string>
+
+    <!-- Profile Screen -->
+    <string name="my_profile_title">My Profile</string>
+    <string name="menu_edit_profile">Edit Profile</string>
+    <string name="desc_edit_profile">Update your personal information</string>
+    <string name="menu_payment_methods">Payment Methods</string>
+    <string name="desc_payment_methods">Manage your payment options</string>
+    <string name="menu_my_reviews">My Reviews</string>
+    <string name="desc_my_reviews">See and manage your reviews</string>
+    <string name="menu_emergency_contact">Emergency Contact</string>
+    <string name="desc_emergency_contact">Add or edit emergency contacts</string>
+    <string name="menu_settings">Settings</string>
+    <string name="desc_settings">App preferences and more</string>
+    <string name="btn_logout">Log Out</string>
+
+    <!-- Settings Screen -->
+    <string name="settings_title">Settings</string>
+    <string name="menu_notifications">Notifications</string>
+    <string name="desc_notifications">Manage your notification preferences</string>
+    <string name="menu_change_password">Change Password</string>
+    <string name="desc_change_password">Update your account password</string>
+    <string name="menu_language">Language</string>
+    <string name="menu_location_permissions">Location Permissions</string>
+    <string name="desc_location_permissions">Manage location access</string>
+    <string name="menu_terms_conditions">Terms &amp; Conditions</string>
+    <string name="menu_privacy_policy">Privacy Policy</string>
+    <string name="menu_help_support">Help &amp; Support</string>
+    <string name="desc_help_support">Get help or contact us</string>
+    <string name="menu_about">About HireMyDriver</string>
+    <string name="version_text">Version %1$s</string>
+    <string name="menu_delete_account">Delete Account</string>
+    <string name="desc_delete_account">Permanently delete your account</string>
+
+    <!-- Notification Settings -->
+    <string name="notifications_guidance">Control how you receive updates and alerts.</string>
+    <string name="label_booking_updates">Booking Updates</string>
+    <string name="desc_booking_updates">Get notified when a driver accepts, arrives, or completes a trip.</string>
+    <string name="label_chat_messages">Chat Messages</string>
+    <string name="desc_chat_messages">Receive alerts for new messages from your driver.</string>
+    <string name="label_promotions">Promotions &amp; Offers</string>
+    <string name="desc_promotions">Stay updated on the latest discounts and driver rewards.</string>
+    <string name="header_email_notifications">Email Notifications</string>
+    <string name="label_trip_receipts">Trip Receipts</string>
+    <string name="desc_trip_receipts">Receive summaries of your completed trips via email.</string>
+    <string name="label_news_updates">News &amp; Product Updates</string>
+    <string name="desc_news_updates">Receive info about new features and safety improvements.</string>
+    <string name="btn_save_preferences">Save Preferences</string>
+
+    <!-- About Screen -->
+    <string name="about_app_desc">HireMyDriver is a marketplace platform dedicated to connecting professional independent drivers with customers for safe, reliable, and convenient trips.</string>
+    <string name="developed_by_label">Developed By</string>
+    <string name="developer_names">Glenndhel Jay Dano\nMark Laurence Polinar</string>
+    <string name="copyright_text">© 2025 HireMyDriver. All rights reserved.</string>
+
+    <!-- Delete Account Screen -->
+    <string name="delete_account_confirm_title">Delete your account?</string>
+    <string name="delete_account_warning">Are you sure you want to delete your account? This action will disable your profile and remove your access to HireMyDriver.</string>
+    <string name="delete_30_days_notice">Your account will be permanently deleted after 30 days. During this period, you can still recover your account by logging in again.</string>
+    <string name="btn_confirm_delete">Delete My Account</string>
+    <string name="btn_keep_account">Keep My Account</string>
+
+    <!-- Location Settings -->
+    <string name="location_settings_title">Location Permissions</string>
+    <string name="location_guidance">Manage how the app uses your device location.</string>
+    <string name="precise_location_label">Precise Location</string>
+    <string name="precise_location_desc">Uses GPS to find the exact pickup point and track your trip in real-time.</string>
+    <string name="background_location_label">Allow in Background</string>
+    <string name="background_location_desc">Allows the driver to see your location even when the app is minimized.</string>
+    <string name="btn_open_settings">Open System Settings</string>
+    <string name="status_label">Current Status:</string>
+    <string name="status_granted">Permission Granted</string>
+    <string name="status_denied">Permission Denied</string>
+
+    <!-- Terms & Conditions Text -->
+    <string name="terms_and_conditions_full_text">
+        Welcome to HireMyDriver. By using our platform, you agree to the following terms and conditions:\n\n
+        1. SCOPE OF SERVICE\n
+        HireMyDriver is a marketplace platform that connects independent drivers with customers. We do not provide transportation services ourselves and are not responsible for the conduct of drivers or passengers.\n\n
+        2. CASH-ONLY PAYMENTS\n
+        All payments for driving services must be made in CASH directly to the driver upon completion of the trip. HireMyDriver does not handle financial transactions between users and is not liable for payment disputes.\n\n
+        3. USER RESPONSIBILITIES\n
+        Users must provide accurate personal and contact information. You are responsible for maintaining the confidentiality of your account.\n\n
+        4. SAFETY &amp; CONDUCT\n
+        Users and drivers must treat each other with respect. The Emergency Alert feature should only be used in life-threatening situations. Illegal activities during a trip will result in permanent account termination.\n\n
+        5. LIMITATION OF LIABILITY\n
+        HireMyDriver is not liable for any damages, accidents, injuries, or losses resulting from the use of our platform or the services provided by drivers.\n\n
+        6. CANCELLATIONS\n
+        Repeated cancellations of booked trips may lead to account suspension to ensure a reliable experience for all community members.\n\n
+        7. DATA PRIVACY\n
+        Your location and personal data are handled according to our Privacy Policy to facilitate safe and efficient trip management.
+    </string>
+
+    <!-- Privacy Policy Text -->
+    <string name="privacy_policy_title">Privacy Policy</string>
+    <string name="privacy_policy_full_text">
+        At HireMyDriver, we value your privacy. This policy explains how we collect and protect your data:\n\n
+        1. INFORMATION WE COLLECT\n
+        We collect personal information you provide (name, email, phone number) and location data when you use the app to book or provide driving services.\n\n
+        2. HOW WE USE LOCATION DATA\n
+        To provide our core service, we collect precise location data to match you with nearby drivers and track your trip progress in real-time. This is essential for safety and service quality.\n\n
+        3. DATA SHARING\n
+        When a booking is confirmed, your name and pickup location are shared with the driver. In an emergency, your location is shared with your designated contact.\n\n
+        4. DATA SECURITY\n
+        We implement industry-standard security measures to protect your information from unauthorized access or disclosure.\n\n
+        5. DATA RETENTION\n
+        We retain your personal data for as long as your account is active or as needed to provide you with our services and maintain trip records for safety audits.\n\n
+        6. YOUR RIGHTS\n
+        You can update your profile or delete your account at any time through the app settings.
+    </string>
+
+    <!-- Notifications Screen -->
+    <string name="notifications_title">Notifications</string>
+    <string name="section_today">Today</string>
+    <string name="section_yesterday">Yesterday</string>
+    <string name="section_earlier">Earlier</string>
+    <string name="no_notifications_msg">No new notifications</string>
+    <string name="btn_mark_all_read">Mark all as read</string>
+
+    <!-- Language Settings -->
+    <string name="language_title">Language</string>
+    <string name="select_preferred_language">Select your preferred language</string>
+    <string name="lang_english">English</string>
+    <string name="lang_tagalog">Tagalog</string>
+    <string name="lang_ilocano">Ilocano</string>
+    <string name="btn_save_selection">Save Selection</string>
+
+    <!-- AI Recommendation Result -->
+    <string name="recommended_drivers_title">Recommended Drivers</string>
+    <string name="ai_best_drivers_msg">Here are the best drivers for you!</string>
+    <string name="ai_based_on_trip">Based on your trip details and preferences</string>
+    <string name="match_percent">%1$s Match</string>
+    <string name="exp_vehicle_format">%1$s • %2$s</string>
+    <string name="btn_view_profile">View Profile</string>
+
+    <!-- Driver Details -->
+    <string name="driver_profile_title">Driver Profile</string>
+    <string name="reviews_count">(%1$s reviews)</string>
+    <string name="years_experience">%1$s years experience</string>
+    <string name="years_experience_label">%1$s years exp.</string>
+    <string name="price_per_hour">₱%1$s/hr</string>
+    <string name="price_per_hour_full">₱%1$s / hour</string>
+    <string name="about_me">About Me</string>
+    <string name="availability">Availability</string>
+    <string name="response_rate">Response Rate</string>
+    <string name="languages">Languages</string>
+    <string name="btn_book_now">Book Now</string>
+    <string name="badge_verified">Verified</string>
+    <string name="badge_professional">Professional</string>
+    <string name="badge_highly_rated">Highly Rated</string>
+
+    <!-- Book Driver -->
+    <string name="book_driver_title">Book Driver</string>
+    <string name="booking_details_label">Booking Details</string>
+    <string name="label_date">Date</string>
+    <string name="label_start_time">Start Time</string>
+    <string name="label_duration">Duration</string>
+    <string name="label_pickup">Pickup Location</string>
+    <string name="label_destination">Destination</string>
+    <string name="label_vehicle_type">Vehicle Type (Preferred)</string>
+    <string name="label_notes_optional">Additional Notes (Optional)</string>
+    <string name="hint_notes">e.g. special instructions...</string>
+    <string name="estimated_fee">Estimated Driver Fee</string>
+    <string name="btn_confirm_booking">Confirm Booking</string>
+
+    <!-- Confirm Booking -->
+    <string name="confirm_booking_title">Confirm Booking</string>
+    <string name="trip_details_label">Trip Details</string>
+    <string name="payment_summary_label">Payment Summary</string>
+    <string name="label_driver_fee">Driver Fee</string>
+    <string name="label_total_amount">Total Amount</string>
+    <string name="payment_method_label">Payment Method</string>
+    <string name="terms_policy_agreement">By confirming, you agree to our Terms of Service and Booking Policy.</string>
+    <string name="btn_confirm_and_book">Confirm and Book</string>
+
+    <!-- Trip In Progress -->
+    <string name="trip_in_progress_title">Trip in Progress</string>
+    <string name="status_driver_on_way">Driver is on the way</string>
+    <string name="estimated_arrival">Estimated arrival: %1$d mins</string>
+    <string name="started_at">Started at %1$s</string>
+    <string name="emergency_alert_title">Emergency Alert</string>
+    <string name="emergency_alert_desc">Send your location to emergency contact</string>
+    <string name="btn_call_driver">Call Driver</string>
+    <string name="btn_message">Message</string>
+
+    <!-- Emergency Contact -->
+    <string name="emergency_contact_title">Emergency Contact</string>
+    <string name="emergency_contact_guidance">This contact will receive your location when you send an emergency alert during a trip.</string>
+    <string name="label_contact_name">Contact Name</string>
+    <string name="label_relationship">Relationship</string>
+    <string name="label_phone_number">Phone Number</string>
+    <string name="label_send_trip_details">Send trip details (driver, route, time)</string>
+    <string name="btn_save_contact">Save Contact</string>
+
+    <!-- Emergency Alert Confirmation -->
+    <string name="send_emergency_alert_q">Send Emergency Alert?</string>
+    <string name="emergency_alert_confirm_desc">This will send your current location and trip details to your emergency contact.</string>
+    <string name="info_to_be_sent">Information to be sent:</string>
+    <string name="current_location_label">Your current location</string>
+    <string name="driver_label">Driver: %1$s</string>
+    <string name="trip_time_label">Trip time: %1$s</string>
+    <string name="emergency_message_label">Emergency message</string>
+    <string name="btn_yes_send_alert">Yes, Send Alert</string>
+    <string name="btn_cancel">Cancel</string>
+
+    <!-- Customer Reviews -->
+    <string name="reviewed_drivers_msg">Here are the drivers you\'ve reviewed.</string>
+
+    <!-- Messages -->
+    <string name="no_messages_title">No messages yet</string>
+    <string name="no_messages_desc">When you contact a driver, your conversations will appear here.</string>
+    <string name="btn_explore_drivers">Explore Drivers</string>
+
+    <!-- Review Submitted -->
+    <string name="review_submitted_title">Review Submitted</string>
+    <string name="thank_you">Thank You!</string>
+    <string name="review_submitted_msg">Your review has been submitted.</string>
+    <string name="feedback_help_msg">Your feedback helps us keep\nour community safe and reliable.</string>
+    <string name="btn_back_to_bookings">Back to My Bookings</string>
+    <string name="btn_view_my_reviews">View My Reviews</string>
+
+    <!-- Review Info -->
+    <string name="review_info_title">Review Your Information</string>
+    <string name="review_info_subtitle">Please review your details before submitting.</string>
+    <string name="account_info_header">Account Information</string>
+    <string name="personal_info_header">Personal Information</string>
+    <string name="requirements_info_header">Requirements Information</string>
+    <string name="edit_label">Edit</string>
+    <string name="uploaded_label">Uploaded</string>
+    <string name="provided_label">Provided</string>
+    <string name="btn_submit_verification">Submit for Verification</string>
+
+    <!-- Driver Registration -->
+    <string name="driver_registration_title">Driver Registration</string>
+    <string name="driver_requirements_title">Driver Requirements</string>
+    <string name="account_label">Account</string>
+    <string name="personal_info_label">Personal Info</string>
+    <string name="requirements_label">Requirements</string>
+    <string name="review_label">Review</string>
+    <string name="drivers_license_label">Driver\'s License</string>
+    <string name="license_provide_msg">Please provide your valid driver\'s license.</string>
+    <string name="license_number_label">License Number</string>
+    <string name="license_expiration_label">License Expiration Date</string>
+    <string name="front_license_label">Front of License</string>
+    <string name="back_license_label">Back of License</string>
+    <string name="police_clearance_label">Police Clearance</string>
+    <string name="police_provide_msg">Please provide your valid police clearance.</string>
+    <string name="date_issue_label">Date of Issue</string>
+    <string name="validity_date_label">Validity Date</string>
+    <string name="upload_police_clearance">Upload Police Clearance</string>
+    <string name="police_note">Note: Your police clearance must be valid and not expired. Please make sure the uploaded file is clear and readable.</string>
+    <string name="btn_next">Next</string>
+    <string name="btn_back">Back</string>
+
+    <!-- Welcome Screen -->
+    <string name="btn_get_started">Get Started</string>
+    <string name="btn_i_am_customer">I\'m a Customer</string>
+    <string name="btn_i_am_driver">I\'m a Driver</string>
+
+    <!-- Login Screen -->
+    <string name="login_title">Log In</string>
+    <string name="login_subtitle">Welcome back! Please enter your details.</string>
+    <string name="label_email">Email</string>
+    <string name="label_password">Password</string>
+    <string name="btn_login">Log In</string>
+    <string name="forgot_password">Forgot Password?</string>
+    <string name="no_account_q">Don\'t have an account?</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="or_continue_with">Or continue with</string>
+
+    <!-- Edit Profile -->
+    <string name="edit_profile_title">Edit Profile</string>
+    <string name="full_name_label">Full Name</string>
+    <string name="email_address_label">Email Address</string>
+    <string name="phone_number_label">Phone Number</string>
+    <string name="birth_date_label">Date of Birth</string>
+    <string name="address_label">Address</string>
+    <string name="btn_save_changes">Save Changes</string>
+
+    <!-- Booking Success Screen -->
+    <string name="booking_successful_title">Booking Successful</string>
+    <string name="booking_successful_msg">Your booking request has been sent successfully!</string>
+    <string name="booking_success_desc">The driver will review your request shortly. You can track the status in your bookings.</string>
+    <string name="btn_view_bookings">View My Bookings</string>
+    <string name="btn_back_to_home">Back to Home</string>
+
+    <string name="document_ocr_help">Upload a clear photo to read the number automatically. You can also type it yourself.</string>
+    <string name="document_ocr_reading">Reading document…</string>
+    <string name="document_ocr_filled">Number filled in. Compare it with your document and correct it if needed.</string>
+    <string name="document_ocr_match">The number matches the field. Please check it against your document.</string>
+    <string name="document_ocr_review">The photo may show a different number. Your entry was kept; please compare it with the document.</string>
+    <string name="document_ocr_manual">Text was read, but the document number was not identified. Keep the number and its label visible, retry, or enter it yourself.</string>
+    <string name="document_ocr_no_text">No text was detected. Keep the document upright and fill the guide frame, then try again.</string>
+    <string name="document_ocr_ambiguous">More than one possible number was found. Please check the document and enter the correct number.</string>
+    <string name="document_ocr_open_error">The saved photo could not be opened. Please select it again.</string>
+    <string name="document_ocr_scan_error">The text scanner could not process this photo. Retry or enter the number yourself.</string>
+    <string name="document_ocr_retry">Read document details again</string>
+    <string name="document_expiry_filled">Expiration date filled in (month/day/year). Please check it against your license.</string>
+    <string name="document_expiry_match">Expiration date matches the photo. Please check it against your license.</string>
+    <string name="document_expiry_kept">Your expiration date was kept. Please compare it with the photo.</string>
+    <string name="document_expiry_manual">Expiration date was not identified. Tap the date field to select it yourself.</string>
+    <string name="document_expiry_ambiguous">The expiration date could be interpreted in more than one way. Please select the correct date yourself.</string>
+    <string name="document_ocr_select_photo">Take or upload a document photo first</string>
+    <string name="document_ocr_kept">Your entry was kept. Check the number against your document.</string>
+    <string name="document_ocr_stopped">Reading stopped. Enter the number yourself or select the photo again.</string>
+    <string name="license_camera_front">License • Front</string>
+    <string name="license_camera_back">License • Back</string>
+    <string name="license_camera_take">Take Photo</string>
+    <string name="license_camera_cancel">Cancel</string>
+    <string name="license_camera_retake">Retake</string>
+    <string name="license_camera_use">Use Photo</string>
+    <string name="license_camera_gallery">Upload from Gallery</string>
+    <string name="license_camera_guide">Keep your ID level and fully visible</string>
+    <string name="license_camera_ready">No need to match the guide exactly</string>
+    <string name="license_alignment_perfect">Perfect · Hold still</string>
+    <string name="license_alignment_steady">ID found · Hold steady</string>
+    <string name="license_alignment_position">Show all four edges</string>
+    <string name="license_camera_review">Clear and readable?</string>
+    <string name="license_camera_aligned">Hold still · Auto capture</string>
+    <string name="license_camera_cropping">Cropping ID…</string>
+    <string name="license_camera_crop_retry">ID moved. Align it again.</string>
+    <string name="license_camera_flip">Turn your license over</string>
+    <string name="license_camera_next">Use Front → Back</string>
+    <string name="license_camera_pair_title">Review your license</string>
+    <string name="license_camera_pair_hint">Front + back</string>
+    <string name="license_camera_use_both">Use Photos</string>
+    <string name="license_camera_scan_both">Scan license front &amp; back</string>
+    <string name="license_front_short">Front</string>
+    <string name="license_back_short">Back</string>
+    <string name="license_scan_front">Scan front</string>
+    <string name="license_scan_back">Scan back</string>
+    <string name="license_retake_front">Retake license front</string>
+    <string name="license_retake_back">Retake license back</string>
+    <string name="license_remove_front">Remove license front</string>
+    <string name="license_remove_back">Remove license back</string>
+    <string name="license_remove_symbol" translatable="false">×</string>
+    <string name="license_photo_view">View photo</string>
+    <string name="license_camera_photo_description">Captured license photo for review</string>
+    <string name="license_camera_starting">Opening camera…</string>
+    <string name="license_camera_saving">Preparing photo…</string>
+    <string name="license_camera_error">Camera unavailable. Please try again.</string>
+    <string name="license_camera_save_error">Could not save this photo. Please try again.</string>
+    <string name="license_camera_permission">Allow camera access to scan your license.</string>
+    <string name="license_camera_allow">Allow Camera</string>
+    <string name="license_camera_settings">Open Settings</string>
+    <string name="license_camera_retry">Try Again</string>
+    <string name="police_upload">Upload photo</string>
+    <string name="police_replace">Replace</string>
+    <string name="police_replace_description">Replace police clearance from photos</string>
+    <string name="police_remove">Remove police clearance photo</string>
+    <string name="police_photo_description">Captured police clearance</string>
+    <string name="customer_sign_in">Login</string>
+    <string name="customer_sign_up">Sign Up</string>
+    <string name="customer_reset_sent">If an account exists for this email, a password reset link will be sent. Check your inbox and spam folder.</string>
+    <string name="customer_reset_sending">Sending…</string>
+</resources>

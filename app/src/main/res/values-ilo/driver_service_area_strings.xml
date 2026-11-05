@@ -1,0 +1,7 @@
+<resources>
+    <string name="profile_service_area_unset">Awan pay naitakder a lugar ti serbisio</string>
+    <string name="profile_service_areas_all">Kitaen amin a %1$d a lugar</string>
+    <string name="profile_service_areas_less">Ipakita ti basbassit</string>
+    <string name="profile_service_areas_expanded">Nailawlawa</string>
+    <string name="profile_service_areas_collapsed">Naipabassit</string>
+</resources>

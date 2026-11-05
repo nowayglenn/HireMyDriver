@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bg_pending_approval_dialog"
+    android:clipToOutline="true"
+    android:fillViewport="true">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center_horizontal"
+        android:padding="24dp">
+        <ImageView
+            android:visibility="gone"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/bg_pending_icon"
+            android:padding="18dp"
+            android:src="@drawable/ic_verification_clock"
+            android:importantForAccessibility="no" />
+        <TextView
+            android:id="@+id/txtVerificationPending"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="0dp"
+            android:gravity="center"
+            android:text="@string/driver_verification_pending"
+            android:textColor="#061B41"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:accessibilityHeading="true" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:gravity="center"
+            android:text="@string/driver_verification_message"
+            android:textColor="#273142"
+            android:textSize="15sp"
+            android:lineSpacingExtra="3dp" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:gravity="center"
+            android:text="@string/driver_verification_details"
+            android:textColor="#687386"
+            android:textSize="13sp"
+            android:lineSpacingExtra="3dp" />
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnVerificationContinue"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:minHeight="@dimen/action_button_min_height"
+            android:paddingVertical="12dp"
+            android:paddingHorizontal="16dp"
+            android:insetTop="0dp"
+            android:insetBottom="0dp"
+            android:text="@string/driver_verification_continue"
+            android:textAllCaps="false"
+            android:textColor="#FFFFFF"
+            android:textSize="@dimen/action_button_text_size"
+            android:textStyle="bold"
+            app:backgroundTint="#FF8A00"
+            app:cornerRadius="12dp" />
+    </LinearLayout>
+</ScrollView>

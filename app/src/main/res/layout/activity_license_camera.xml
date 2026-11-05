@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:background="#07162B" android:orientation="vertical" android:padding="16dp">
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:gravity="center_vertical" android:orientation="horizontal">
+        <TextView android:id="@+id/licenseCameraTitle" android:layout_width="0dp"
+            android:layout_height="wrap_content" android:layout_weight="1"
+            android:textColor="#FFFFFF" android:textSize="22sp" android:textStyle="bold" />
+        <com.google.android.material.button.MaterialButton android:textStyle="bold"
+            android:id="@+id/closeLicenseCamera" android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:minHeight="48dp"
+            android:text="@string/license_camera_cancel" android:textColor="#FFFFFF"
+            app:backgroundTint="#153057" app:cornerRadius="12dp" />
+    </LinearLayout>
+    <TextView android:id="@+id/licenseCameraHint" android:layout_width="match_parent"
+        android:layout_height="wrap_content" android:layout_marginVertical="10dp"
+        android:gravity="center"
+        android:text="@string/license_camera_guide" android:textColor="#D6E2F4" android:textSize="14sp"
+        android:accessibilityLiveRegion="polite" />
+    <com.example.hiremydriver.LicenseCameraFrame android:layout_width="match_parent" android:layout_height="0dp"
+        android:layout_weight="1" android:background="@drawable/bg_license_camera_preview"
+        android:layout_marginVertical="8dp">
+        <androidx.camera.view.PreviewView android:id="@+id/licenseCameraPreview"
+            android:layout_width="match_parent" android:layout_height="match_parent" />
+        <com.example.hiremydriver.LicenseGuideView android:id="@+id/licenseCameraGuide"
+            android:layout_width="match_parent" android:layout_height="match_parent"
+            android:importantForAccessibility="no" />
+
+        <TextView android:id="@+id/licenseAlignmentLabel" android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:minHeight="32dp"
+            android:layout_gravity="top|center_horizontal" android:layout_marginTop="20dp"
+            android:gravity="center" android:paddingHorizontal="20dp"
+            android:text="@string/license_alignment_position" android:textColor="#FFFFFF"
+            android:textSize="18sp" android:textStyle="bold" android:accessibilityLiveRegion="polite"
+            android:shadowColor="#CC000000" android:shadowRadius="4" android:shadowDy="1" />
+        <ImageView android:id="@+id/licensePhotoReview" android:layout_width="match_parent"
+            android:layout_height="match_parent" android:background="#000000"
+            android:scaleType="fitCenter" android:visibility="gone"
+            android:contentDescription="@string/license_camera_photo_description" />
+        <LinearLayout android:id="@+id/licensePairReview" android:layout_width="match_parent"
+            android:layout_height="match_parent" android:orientation="vertical" android:padding="12dp"
+            android:background="#0E213A" android:visibility="gone">
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:gravity="center_vertical" android:orientation="horizontal">
+                <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1"
+                    android:text="@string/license_front_short" android:textColor="#FFFFFF" android:textSize="15sp" />
+                <com.google.android.material.button.MaterialButton android:textStyle="bold" android:id="@+id/retakePairFront"
+                    android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:minHeight="48dp" android:text="@string/license_camera_retake"
+                    android:textColor="#FFFFFF" app:backgroundTint="#203B5B" app:cornerRadius="12dp" />
+            </LinearLayout>
+            <ImageView android:id="@+id/pairFrontPhoto" android:layout_width="match_parent"
+                android:layout_height="0dp" android:layout_weight="1" android:scaleType="fitCenter"
+                android:contentDescription="@string/license_front_short" />
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:gravity="center_vertical" android:orientation="horizontal">
+                <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1"
+                    android:text="@string/license_back_short" android:textColor="#FFFFFF" android:textSize="15sp" />
+                <com.google.android.material.button.MaterialButton android:textStyle="bold" android:id="@+id/retakePairBack"
+                    android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:minHeight="48dp" android:text="@string/license_camera_retake"
+                    android:textColor="#FFFFFF" app:backgroundTint="#203B5B" app:cornerRadius="12dp" />
+            </LinearLayout>
+            <ImageView android:id="@+id/pairBackPhoto" android:layout_width="match_parent"
+                android:layout_height="0dp" android:layout_weight="1" android:scaleType="fitCenter"
+                android:contentDescription="@string/license_back_short" />
+        </LinearLayout>
+        <com.example.hiremydriver.LicenseCropAnimationView android:id="@+id/licenseCropAnimation"
+            android:layout_width="match_parent" android:layout_height="match_parent"
+            android:visibility="gone" android:importantForAccessibility="no" />
+    </com.example.hiremydriver.LicenseCameraFrame>
+    <TextView android:id="@+id/licenseCameraStatus" android:layout_width="match_parent"
+        android:layout_height="42dp" android:layout_marginTop="8dp"
+        android:textColor="#FFFFFF" android:textSize="14sp" android:gravity="center"
+        android:accessibilityLiveRegion="polite" />
+    <com.google.android.material.button.MaterialButton android:textStyle="bold" android:id="@+id/captureLicensePhoto"
+        android:layout_width="match_parent" android:layout_height="wrap_content" android:minHeight="52dp"
+        android:visibility="gone" android:text="@string/license_camera_allow" android:textColor="#FFFFFF"
+        app:backgroundTint="#FF9100" app:cornerRadius="12dp" />
+    <LinearLayout android:id="@+id/licensePhotoReviewActions"
+        android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:orientation="horizontal" android:visibility="gone">
+        <com.google.android.material.button.MaterialButton android:textStyle="bold" android:id="@+id/retakeLicensePhoto"
+            android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1"
+            android:minHeight="52dp" android:text="@string/license_camera_retake"
+            android:textColor="#FFFFFF" app:backgroundTint="#153057" app:cornerRadius="12dp" />
+        <com.google.android.material.button.MaterialButton android:textStyle="bold" android:id="@+id/acceptLicensePhoto"
+            android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1"
+            android:layout_marginStart="12dp" android:minHeight="52dp"
+            android:text="@string/license_camera_use" android:textColor="#FFFFFF"
+            app:backgroundTint="#FF9100" app:cornerRadius="12dp" />
+    </LinearLayout>
+</LinearLayout>

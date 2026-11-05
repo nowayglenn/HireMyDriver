@@ -1,0 +1,50 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal">
+    <FrameLayout
+        android:layout_width="24dp"
+        android:layout_height="match_parent">
+        <View
+            android:id="@+id/routeConnector"
+            android:layout_width="2dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_horizontal"
+            android:background="#FF7900"
+            android:importantForAccessibility="no" />
+        <View
+            android:id="@+id/routeDot"
+            android:layout_width="10dp"
+            android:layout_height="10dp"
+            android:layout_gravity="top|center_horizontal"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/bg_orange_dot"
+            android:importantForAccessibility="no" />
+    </FrameLayout>
+    <LinearLayout
+        android:id="@+id/routePointText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:layout_marginStart="8dp"
+        android:orientation="vertical"
+        android:paddingBottom="16dp">
+        <TextView
+            android:id="@+id/routePointName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            android:textColor="#061B41"
+            tools:text="Panglao Elementary School" />
+        <TextView
+            android:id="@+id/routePointCaption"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:textSize="12sp"
+            android:textColor="#667085"
+            tools:text="Destination 1" />
+    </LinearLayout>
+</LinearLayout>

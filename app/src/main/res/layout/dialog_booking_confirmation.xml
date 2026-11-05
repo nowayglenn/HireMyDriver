@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bg_booking_dialog"
+    android:clipToOutline="true"
+    android:fillViewport="true">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="24dp">
+        <ImageView
+            android:id="@+id/bookingDialogIcon"
+            android:visibility="gone"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:background="@drawable/bg_pending_icon"
+            android:padding="12dp"
+            android:src="@drawable/ic_check_circle"
+            android:importantForAccessibility="no"
+            app:tint="#FF7900" />
+        <TextView
+            android:id="@+id/bookingDialogTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="0dp"
+            android:fontFamily="sans-serif-medium"
+            android:textStyle="normal"
+            android:textSize="22sp"
+            android:textColor="#061B41" />
+        <TextView
+            android:id="@+id/bookingDialogMessage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:fontFamily="sans-serif"
+            android:textStyle="normal"
+            android:textSize="14sp"
+            android:textColor="#667085"
+            android:lineSpacingExtra="4dp" />
+        <com.google.android.material.checkbox.MaterialCheckBox
+            android:id="@+id/bookingDialogCheck"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="48dp"
+            android:layout_marginTop="16dp"
+            android:fontFamily="sans-serif"
+            android:textSize="14sp"
+            android:textColor="#061B41"
+            android:visibility="gone" />
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/bookingDialogConfirm"
+            style="@style/MapFlowButton"
+            android:layout_marginTop="24dp" />
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/bookingDialogCancel"
+            style="@style/MapFlowButton.Outline"
+            android:layout_marginTop="8dp" />
+    </LinearLayout>
+</ScrollView>

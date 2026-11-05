@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Shared metrics remain density-independent. Text and containers can grow with font scale. -->
+    <dimen name="screen_header_min_height">72dp</dimen>
+    <dimen name="screen_header_title_size">20sp</dimen>
+    <dimen name="screen_header_text_inset">24dp</dimen>
+    <dimen name="screen_header_icon_margin">12dp</dimen>
+    <dimen name="screen_header_title_gap">8dp</dimen>
+    <dimen name="touch_target_size">48dp</dimen>
+    <dimen name="action_button_min_height">48dp</dimen>
+    <dimen name="action_button_text_size">16sp</dimen>
+    <dimen name="compact_button_text_size">14sp</dimen>
+</resources>

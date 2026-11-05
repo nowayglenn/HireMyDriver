@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="driver_document_not_provided">Not provided</string>
+    <string name="driver_document_loading">Loading document…</string>
+    <string name="driver_document_unavailable">Document unavailable on this phone.</string>
+    <string name="driver_document_uploaded">Uploaded document</string>
+    <string name="driver_document_save_error">Could not save your documents. Please try again.</string>
+    <string name="driver_document_front">License front</string>
+    <string name="driver_document_back">License back</string>
+    <string name="driver_document_police">Police clearance</string>
+    <string name="driver_document_close">Close document</string>
+    <string name="driver_document_zoom_hint">Pinch to zoom · Double-tap to reset</string>
+</resources>

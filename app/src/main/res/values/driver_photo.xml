@@ -1,0 +1,5 @@
+<resources>
+    <string name="driver_photo_change">Change driver profile photo</string>
+    <string name="driver_photo_saved">Profile photo saved on this phone</string>
+    <string name="driver_photo_error">Could not save this photo. Please try another image.</string>
+</resources>

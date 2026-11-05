@@ -1,0 +1,4 @@
+<resources>
+    <string name="refresh_bookings">Refresh bookings</string>
+    <string name="driver_refresh_failed">Could not refresh. Please try again.</string>
+</resources>

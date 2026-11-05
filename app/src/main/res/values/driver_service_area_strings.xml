@@ -1,0 +1,7 @@
+<resources>
+    <string name="profile_service_area_unset">Service area not set</string>
+    <string name="profile_service_areas_all">View all %1$d areas</string>
+    <string name="profile_service_areas_less">Show less</string>
+    <string name="profile_service_areas_expanded">Expanded</string>
+    <string name="profile_service_areas_collapsed">Collapsed</string>
+</resources>

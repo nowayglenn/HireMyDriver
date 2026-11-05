@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF">
+
+    <!-- Shared sizing and a wrapping title/action row keep long labels from overlapping. -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="@dimen/screen_header_min_height"
+        android:background="#061B41"
+        android:tag="screen_header"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageButton
+            android:id="@+id/btnBack"
+            android:layout_width="@dimen/touch_target_size"
+            android:layout_height="@dimen/touch_target_size"
+            android:layout_marginStart="@dimen/screen_header_icon_margin"
+            android:layout_marginTop="12dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="Back"
+            android:padding="12dp"
+            android:src="@drawable/ic_arrow_back"
+            app:tint="@android:color/white"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/notificationHeaderTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:tag="screen_header_title"
+            android:text="@string/notifications_title"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/screen_header_title_size"
+            android:textStyle="bold"
+            android:includeFontPadding="false" />
+
+        <TextView
+            android:id="@+id/btnMarkRead"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:minHeight="@dimen/touch_target_size"
+            android:minWidth="@dimen/touch_target_size"
+            android:paddingHorizontal="8dp"
+            android:paddingVertical="8dp"
+            android:text="@string/btn_mark_all_read"
+            android:textColor="#B0B8C1"
+            android:textSize="@dimen/compact_button_text_size"
+            android:includeFontPadding="false"
+            android:gravity="end|center_vertical"
+            android:background="?attr/selectableItemBackground"
+            android:clickable="true"
+            android:focusable="true" />
+
+        <androidx.constraintlayout.helper.widget.Flow
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/screen_header_title_gap"
+            android:layout_marginEnd="@dimen/screen_header_icon_margin"
+            android:layout_marginVertical="@dimen/screen_header_title_gap"
+            app:constraint_referenced_ids="notificationHeaderTitle,btnMarkRead"
+            app:flow_wrapMode="chain"
+            app:flow_horizontalStyle="spread_inside"
+            app:flow_firstHorizontalStyle="spread_inside"
+            app:flow_firstHorizontalBias="0"
+            app:flow_lastHorizontalStyle="spread_inside"
+            app:flow_lastHorizontalBias="1"
+            app:flow_verticalAlign="baseline"
+            app:flow_horizontalGap="12dp"
+            app:flow_verticalGap="0dp"
+            app:layout_constraintStart_toEndOf="@id/btnBack"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/header">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingHorizontal="20dp"
+                android:paddingVertical="12dp"
+                android:background="#FFF4E5"
+                android:text="Design preview · Sample notifications"
+                android:textColor="#8A4B00"
+                android:textSize="12sp" />
+
+            <!-- TODAY SECTION -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="8dp"
+                android:text="@string/section_today"
+                android:textColor="#667085"
+                android:textSize="13sp"
+                android:textStyle="bold"
+                android:textAllCaps="true"
+                android:letterSpacing="0.05" />
+
+            <include layout="@layout/item_notification" android:id="@+id/notif1" />
+            <View android:layout_width="match_parent" android:layout_height="1dp" android:background="#F2F4F7" android:layout_marginStart="84dp" />
+
+            <include layout="@layout/item_notification" android:id="@+id/notif2" />
+
+            <View android:layout_width="match_parent" android:layout_height="1dp" android:background="#F2F4F7" android:layout_marginStart="84dp" />
+            <include layout="@layout/item_notification" android:id="@+id/driverNotifReminder" />
+            <View android:layout_width="match_parent" android:layout_height="1dp" android:background="#F2F4F7" android:layout_marginStart="84dp" />
+            <include layout="@layout/item_notification" android:id="@+id/driverNotifDestination" />
+
+            <!-- YESTERDAY SECTION -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginBottom="8dp"
+                android:text="@string/section_yesterday"
+                android:textColor="#667085"
+                android:textSize="13sp"
+                android:textStyle="bold"
+                android:textAllCaps="true"
+                android:letterSpacing="0.05" />
+
+            <include layout="@layout/item_notification" android:id="@+id/notif3" />
+            <View android:layout_width="match_parent" android:layout_height="1dp" android:background="#F2F4F7" android:layout_marginStart="84dp" />
+
+            <include layout="@layout/item_notification" android:id="@+id/notif4" />
+
+            <!-- EARLIER SECTION -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginBottom="8dp"
+                android:text="@string/section_earlier"
+                android:textColor="#667085"
+                android:textSize="13sp"
+                android:textStyle="bold"
+                android:textAllCaps="true"
+                android:letterSpacing="0.05" />
+
+            <include layout="@layout/item_notification" android:id="@+id/notif5" />
+
+            <View android:layout_width="match_parent" android:layout_height="1dp" android:background="#F2F4F7" android:layout_marginStart="84dp" />
+            <include layout="@layout/item_notification" android:id="@+id/driverNotifLicense" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="40dp" />
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

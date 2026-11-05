@@ -1,0 +1,6 @@
+<resources>
+    <string name="driver_verification_pending">Pending approval</string>
+    <string name="driver_verification_message">Please wait for approval of your driver registration.</string>
+    <string name="driver_verification_details">Your account information and documents need to be reviewed before your driver profile can be verified.</string>
+    <string name="driver_verification_continue">Continue</string>
+</resources>

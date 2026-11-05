@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent" android:layout_height="wrap_content" android:fillViewport="true">
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:gravity="center_horizontal"
+    android:padding="24dp"
+    android:background="@drawable/bg_booking_card">
+
+    <!-- Light Blue Circle with Blue Play Icon -->
+    <com.google.android.material.imageview.ShapeableImageView
+        android:visibility="gone"
+        android:layout_width="72dp"
+        android:layout_height="72dp"
+        android:background="#EFF6FF"
+        android:padding="20dp"
+        android:src="@drawable/ic_play_arrow"
+        app:shapeAppearanceOverlay="@style/CircleImage"
+        app:tint="#1D4ED8" />
+
+    <!-- Title -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="0dp"
+        android:text="Start Service?"
+        android:textColor="#061B41"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <!-- Subtitle -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:gravity="center"
+        android:lineSpacingExtra="3dp"
+        android:text="Confirm that you have picked up the customer and are starting the trip."
+        android:textColor="#667085"
+        android:textSize="14sp" />
+
+    <!-- Yes, Start Service Button -->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnConfirmStart"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Yes, Start Service"
+        android:textAllCaps="false"
+        android:textColor="#FFFFFF"
+        android:textSize="@dimen/action_button_text_size"
+        android:textStyle="bold"
+        app:backgroundTint="#FF7900"
+        app:cornerRadius="10dp"
+        android:minHeight="@dimen/action_button_min_height"
+        android:paddingTop="8dp"
+        android:paddingBottom="8dp"
+        android:paddingStart="12dp"
+        android:paddingEnd="12dp"
+        android:insetTop="0dp"
+        android:insetBottom="0dp"
+        android:singleLine="false"
+        android:gravity="center" />
+
+    <!-- Cancel Button -->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnCancelStart"
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Cancel"
+        android:textAllCaps="false"
+        android:textColor="#061B41"
+        android:textSize="@dimen/action_button_text_size"
+        android:textStyle="bold"
+        app:strokeColor="#D1D5DB"
+        app:strokeWidth="1dp"
+        app:cornerRadius="10dp"
+        android:minHeight="@dimen/action_button_min_height"
+        android:paddingTop="8dp"
+        android:paddingBottom="8dp"
+        android:paddingStart="12dp"
+        android:paddingEnd="12dp"
+        android:insetTop="0dp"
+        android:insetBottom="0dp"
+        android:singleLine="false"
+        android:gravity="center" />
+
+</LinearLayout>
+</ScrollView>

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/driverExtensionCard"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="18dp"
+    android:padding="16dp"
+    android:orientation="vertical"
+    android:background="@drawable/bg_booking_reference"
+    android:visibility="gone">
+
+    <TextView
+        android:id="@+id/txtDriverExtensionTitle"
+        style="@style/MapFlowText"
+        android:text="Extension request"
+        android:textSize="16sp"
+        android:fontFamily="sans-serif-medium" />
+
+    <TextView
+        android:id="@+id/txtDriverExtensionAmount"
+        style="@style/MapFlowText"
+        android:layout_marginTop="8dp"
+        android:fontFamily="sans-serif-medium" />
+
+    <TextView
+        android:id="@+id/txtDriverExtensionEnd"
+        style="@style/MapFlowCaption"
+        android:layout_marginTop="6dp"
+        android:lineSpacingExtra="3dp" />
+
+    <LinearLayout
+        android:id="@+id/driverExtensionActions"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="14dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnDeclineExtension"
+            style="@style/MapFlowButton.Outline"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:paddingStart="8dp"
+            android:paddingEnd="8dp"
+            android:textSize="13sp"
+            android:text="Decline" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnAcceptExtension"
+            style="@style/MapFlowButton"
+            android:layout_width="0dp"
+            android:layout_weight="1.4"
+            android:layout_marginStart="10dp"
+            android:paddingStart="8dp"
+            android:paddingEnd="8dp"
+            android:textSize="13sp"
+            android:text="Accept extension" />
+    </LinearLayout>
+</LinearLayout>

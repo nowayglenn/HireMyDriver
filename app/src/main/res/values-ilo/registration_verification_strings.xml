@@ -1,0 +1,6 @@
+<resources>
+    <string name="driver_verification_pending">Agur-uray iti pannakaaprobar</string>
+    <string name="driver_verification_message">Pangngaasim nga urayen ti pannakaaprobar ti rehistrasionmo kas driver.</string>
+    <string name="driver_verification_details">Masapul a marepaso ti impormasion ti account-mo ken dagiti dokumentom sakbay a ma-verify ti driver profile-mo.</string>
+    <string name="driver_verification_continue">Agtuloy</string>
+</resources>

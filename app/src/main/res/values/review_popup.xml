@@ -1,0 +1,6 @@
+<resources>
+    <style name="ReviewOptionsPopup" parent="Widget.AppCompat.PopupMenu">
+        <item name="android:popupBackground">@drawable/bg_booking_dialog</item>
+        <item name="android:popupAnimationStyle">@style/BookingDialogAnimation</item>
+    </style>
+</resources>

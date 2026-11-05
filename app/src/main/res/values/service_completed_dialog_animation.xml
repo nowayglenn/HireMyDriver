@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="ServiceCompletedDialogAnimation">
+        <item name="android:windowEnterAnimation">@anim/service_completed_dialog_enter</item>
+        <item name="android:windowExitAnimation">@anim/booking_dialog_exit</item>
+    </style>
+</resources>

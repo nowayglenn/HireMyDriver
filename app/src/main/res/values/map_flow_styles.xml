@@ -1,0 +1,98 @@
+<?xml version="1.0" ?>
+<resources>
+    
+
+    <style name="MapFlowText">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:fontFamily">sans-serif</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:letterSpacing">0</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">#102444</item>
+    </style>
+    
+
+    <style name="MapFlowCaption" parent="MapFlowText">
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">#718096</item>
+    </style>
+    
+
+    <style name="MapFlowEyebrow" parent="MapFlowCaption">
+        <item name="android:textSize">10sp</item>
+        <item name="android:letterSpacing">0.1</item>
+    </style>
+    
+
+    <style name="MapFlowHeading" parent="MapFlowText">
+        <item name="android:textSize">23sp</item>
+        <item name="android:fontFamily">sans-serif-medium</item>
+        <item name="android:layout_marginTop">7dp</item>
+        <item name="android:layout_marginBottom">8dp</item>
+    </style>
+    
+
+    <style name="MapFlowButton" parent="Widget.MaterialComponents.Button">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:minHeight">50dp</item>
+        <item name="android:fontFamily">sans-serif-medium</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:letterSpacing">0</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:textColor">#FFFFFF</item>
+        <item name="backgroundTint">#FF7900</item>
+        <item name="cornerRadius">14dp</item>
+        <item name="android:stateListAnimator">@null</item>
+        <item name="android:elevation">0dp</item>
+        <item name="android:insetTop">0dp</item>
+        <item name="android:insetBottom">0dp</item>
+        <item name="android:paddingTop">12dp</item>
+        <item name="android:paddingBottom">12dp</item>
+        <item name="android:paddingStart">16dp</item>
+        <item name="android:paddingEnd">16dp</item>
+    </style>
+    
+
+    <style name="MapFlowButton.Outline" parent="MapFlowButton">
+        <item name="android:textColor">#102444</item>
+        <item name="backgroundTint">#FFFFFF</item>
+        <item name="strokeColor">#E4E9EF</item>
+        <item name="strokeWidth">1dp</item>
+    </style>
+    
+
+    <style name="MapFlowButton.Message" parent="MapFlowButton">
+        <item name="android:textColor">#C86B16</item>
+        <item name="backgroundTint">#FFF3E8</item>
+        <item name="android:textSize">11sp</item>
+        <item name="android:minWidth">52dp</item>
+        <item name="android:paddingStart">10dp</item>
+        <item name="android:paddingEnd">10dp</item>
+    </style>
+    
+
+    <style name="MapFlowButton.Emergency" parent="MapFlowButton">
+        <item name="android:textColor">#FFFFFF</item>
+        <item name="backgroundTint">#D92D20</item>
+        <item name="android:textSize">13sp</item>
+    </style>
+    
+
+    <style name="MapFlowIconButton">
+        <item name="android:layout_width">48dp</item>
+        <item name="android:layout_height">48dp</item>
+        <item name="android:padding">14dp</item>
+        <item name="android:background">@drawable/bg_map_flow_control</item>
+        <item name="tint">#102444</item>
+    </style>
+    
+
+    <style name="MapFlowAvatar" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">14dp</item>
+    </style>
+    
+
+</resources>

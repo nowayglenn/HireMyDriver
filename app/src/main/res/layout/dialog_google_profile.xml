@@ -1,0 +1,12 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent" android:layout_height="wrap_content" android:background="@drawable/bg_booking_dialog" android:fillViewport="true">
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="24dp">
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Complete your profile" android:textColor="#061B41" android:textSize="22sp" android:fontFamily="sans-serif-medium"/>
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="8dp" android:text="Confirm your name and add your contact number to book a driver." android:textSize="14sp" android:textColor="#667085"/>
+        <EditText android:id="@+id/googleProfileName" android:layout_width="match_parent" android:layout_height="wrap_content" android:minHeight="56dp" android:hint="Full name" android:inputType="textPersonName" android:maxLength="120"/>
+        <EditText android:id="@+id/googleProfilePhone" android:layout_width="match_parent" android:layout_height="wrap_content" android:minHeight="56dp" android:hint="Phone number" android:inputType="phone" android:maxLength="20"/>
+        <CheckBox android:id="@+id/googleProfileTerms" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="I agree to the Terms &amp; Conditions" android:textSize="14sp"/>
+        <TextView android:id="@+id/googleProfileTermsLink" android:layout_width="match_parent" android:layout_height="wrap_content" android:minHeight="48dp" android:gravity="center_vertical" android:text="Read Terms &amp; Conditions" android:textColor="#FF7900" android:textSize="14sp"/>
+        <com.google.android.material.button.MaterialButton android:id="@+id/googleProfileContinue" style="@style/MapFlowButton" android:text="Continue"/>
+        <com.google.android.material.button.MaterialButton android:id="@+id/googleProfileCancel" style="@style/MapFlowButton.Outline" android:text="Cancel"/>
+    </LinearLayout>
+</ScrollView>
